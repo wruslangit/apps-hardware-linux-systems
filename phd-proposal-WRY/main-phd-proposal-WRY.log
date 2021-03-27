@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.22)  27 MAR 2021 13:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.22)  27 MAR 2021 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -225,7 +225,7 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 \c@blind@pangramcount=\count271
 \c@blind@pangrammax=\count272
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 55.
+Package hyperref Info: Option `colorlinks' set `true' on input line 56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pageslts/pageslts.sty
 Package: pageslts 2015/12/21 v1.2f Refers to special pages' numbers/names (HMM)
@@ -361,10 +361,6 @@ s
 )
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 85.
-
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 86.
 
 
@@ -372,8 +368,8 @@ Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 87.
 
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
-less on input line 99.
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 88.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
@@ -382,6 +378,10 @@ less on input line 100.
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
 less on input line 101.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 102.
 
 (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2019/11/15 version 4.22 text color boxes
@@ -1258,10 +1258,10 @@ Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 \minrowclearance=\skip89
 )
 
-Package array Warning: Redefining primitive column r on input line 180.
+Package array Warning: Redefining primitive column r on input line 181.
 
 
-Package array Warning: Redefining primitive column l on input line 181.
+Package array Warning: Redefining primitive column l on input line 182.
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
@@ -1454,12 +1454,12 @@ Package: glossary-tree 2020/02/13 v4.45 (NLCT)
 \openout7 = `main-phd-proposal-WRY.glo'.
 
 Package glossaries Info: Writing glossary file main-phd-proposal-WRY.glo on inp
-ut line 208.
+ut line 209.
 \glo@acronym@file=\write8
 \openout8 = `main-phd-proposal-WRY.acn'.
 
 Package glossaries Info: Writing glossary file main-phd-proposal-WRY.acn on inp
-ut line 208.
+ut line 209.
 (./00-preliminaries/Glossary-List.tex) (./00-preliminaries/Acronym-List.tex)
 (/usr/share/texlive/texmf-dist/tex/latex/imakeidx/imakeidx.sty
 Package: imakeidx 2016/10/15 v1.3e Package for typesetting indices in a synchro
@@ -3326,15 +3326,15 @@ Overfull \hbox (3.07921pt too wide) in paragraph at lines 331--331
 No file main-phd-proposal-WRY.acr.
 
 Package glossaries-extra Warning: Glossary `acronym' is missing on input line 3
-63.
+53.
 
 
 Package glossaries-extra Warning: Rerun required to build the glossary `acronym
-' or check TeX's shell escape allows you to run makeindex on input line 363.
+' or check TeX's shell escape allows you to run makeindex on input line 353.
 
 No file main-phd-proposal-WRY.gls.
 
-Package glossaries-extra Warning: Glossary `main' is missing on input line 368.
+Package glossaries-extra Warning: Glossary `main' is missing on input line 358.
 
 
 [228
@@ -3344,7 +3344,7 @@ Package glossaries-extra Warning: Glossary `main' is missing on input line 368.
 ]
 
 Package glossaries-extra Warning: Rerun required to build the glossary `main' o
-r check TeX's shell escape allows you to run makeindex on input line 368.
+r check TeX's shell escape allows you to run makeindex on input line 358.
 
 [229
 
@@ -3359,8 +3359,8 @@ AED: pageslts setting LastPage
 
 ] 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 385.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 385.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 372.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 372.
 \c@pagesLTS.arabic.1.local.count=\count419
 
 AED: pageslts setting VeryLastPage via AfterLastShipout 
@@ -3372,8 +3372,8 @@ Package pageslts Info: Total number of pages is odd.
 
 
 (./main-phd-proposal-WRY.aux (./00-preliminaries/Title-Cover.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 385.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 385.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 372.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 372.
 Package rerunfilecheck Info: File `main-phd-proposal-WRY.out' has not changed.
 (rerunfilecheck)             Checksum: 0D9DFDDE6790D7787ED9F7D8BEE8F270;15539.
 
@@ -3383,7 +3383,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 385.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 372.
  ) 
 Here is how much of TeX's memory you used:
  56300 strings out of 481239
