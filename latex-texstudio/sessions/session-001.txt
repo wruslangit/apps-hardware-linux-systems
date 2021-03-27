@@ -1,0 +1,81 @@
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ date
+Sat 27 Mar 2021 10:02:19 AM +08
+
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ uname -a
+Linux hpelitebook8470p-ub2004-rt38 5.4.66-rt38 #1 SMP PREEMPT_RT 
+Sat Sep 26 16:51:59 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ lsb_release -a
+LSB Version:	core-11.1.0ubuntu2-noarch:security-11.1.0ubuntu2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.2 LTS
+Release:	20.04
+Codename:	focal
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ 
+
+=========================================================== 
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ ls -al
+total 24
+drwxrwxr-x 5 wruslan wruslan 4096 Mar 27 08:11 .
+drwxrwxr-x 5 wruslan wruslan 4096 Mar 27 08:10 ..
+drwxrwxr-x 3 wruslan wruslan 4096 Mar 27 08:15 dot-graphviz
+drwxrwxr-x 8 wruslan wruslan 4096 Mar 27 09:55 .git
+drwxrwxr-x 3 wruslan wruslan 4096 Mar 27 09:54 latex-texstudio
+-rw-rw-r-- 1 wruslan wruslan   37 Mar 25 05:54 README.md
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$
+
+=========================================================== 
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ tree ./
+./
+├── dot-graphviz
+│   └── docs
+│       ├── 01-Drawing Graphs using Dot and Graphviz.pdf
+│       └── 02-GraphViz Examples and Tutorial.pdf
+├── latex-texstudio
+│   └── docs
+│       ├── 01-The-TeXbook-Knuth-1983.pdf
+│       ├── 02-Latex-Wikibooks-2008.pdf
+│       └── LaTeX-SUMMARY-Screenshot.png
+└── README.md
+
+4 directories, 6 files
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ 
+
+===========================================================
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ git add .
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ git commit -m "initial commit"
+[master 101bd64] initial commit
+ 12 files changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/PhD-Proposal-Defense-(27Dec2018)-DONE.odp
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/PhD-Proposal-Defense-(27Dec2018)-DONE.pdf
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/PhD-Proposal-Defense-(27Dec2018)-Draft-14.odp
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/PhD-Proposal-Defense-(27Dec2018)-Draft-14.pdf
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/YouTube-CNC-Machine-Operations.mp4
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/images/Literature-Survey-01.png
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/images/Literature-Survey-02.png
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/images/Literature-Survey-03.png
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/images/Raspberry-Pi-3-on-CNC.png
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/images/Slide-2.png
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/images/Slide-Image-CNC-Research-Machine.png
+ delete mode 100755 latex-texstudio/docs/00-PhD-Presentation-Slides/images/You-Tube-Video.png
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ 
+
+===========================================================
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ git push origin master
+Username for 'https://github.com': wruslandr
+Password for 'https://wruslandr@github.com': XXxxxxdr  (no dot)
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 313 bytes | 313.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/wruslandr/Haskell-Leksah.git
+   3bfe4f1..101bd64  master -> master
+wruslan@hpelitebook8470p-ub2004-rt38:~/github/wruslandr/Haskell-Leksah$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+
