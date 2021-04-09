@@ -1,0 +1,519 @@
+INSTALL DOXYGEN + DOXYWIZARD
+
+The executable doxygen is the main program that parses the sources and generates the documentation. See section Doxygen usage for more detailed usage information.
+
+Optionally, the executable doxywizard can be used, which is a graphical front-end for editing the configuration file that is used by doxygen and for running doxygen in a graphical environment.
+
+=========================================================
+wruslan@Bluewks-Ub1804-rt38-64b:~$ date
+Sat Mar 21 00:35:36 +08 2020
+
+wruslan@Bluewks-Ub1804-rt38-64b:~$ uname -a
+Linux Bluewks-Ub1804-rt38-64b 4.19.94-rt38 #1 SMP PREEMPT RT Sat Jan 18 15:38:09 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@Bluewks-Ub1804-rt38-64b:~$ lsb_release -a
+LSB Version: core-9.20170808ubuntu1-noarch:security-9.20170808ubuntu1-noarch
+Distributor ID: Ubuntu
+Description: Ubuntu 18.04.4 LTS
+Release: 18.04
+Codename: bionic
+wruslan@Bluewks-Ub1804-rt38-64b:~$
+
+SOURCES
+===========================================================
+wruslan@Bluewks-Ub1804-rt38-64b:~$ cd apps4/
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ ls -al
+total 46292
+drwxrwxr-x  5 wruslan wruslan     4096 Mar 21 00:33 .
+drwxr-xr-x 39 wruslan wruslan     4096 Mar 20 11:31 ..
+drwxrwxr-x  2 wruslan wruslan     4096 Mar 20 02:56 DEBS
+-rw-rw-r--  1 wruslan wruslan 44585771 Aug 29  2019 doxygen-1.8.16.linux.bin.tar.gz
+-rw-r--r--  1 wruslan wruslan  1446966 Aug  8  2019 doxygen_manual-1.8.16.pdf
+-rw-rw-r--  1 wruslan wruslan  1341086 Aug 29  2019 doxygen_manual-1.8.16.pdf.zip
+drwxr-xr-x  8 wruslan wruslan     4096 Mar 21 00:33 Hardware-Bitscope
+drwxr-xr-x 10 wruslan wruslan     4096 Mar 20 02:58 zekr
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$
+
+PREQUISITES TO INSTALL DOXYGEN + DOXYWIZARD
+===========================================================
+
+FLEX, BISON, LIBICONV
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which flex
+/usr/bin/flex
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ flex --version
+flex 2.6.4
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which bison
+/usr/bin/bison
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ bison --version
+bison (GNU Bison) 3.0.4
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ locate lib/libiconv
+/usr/local/lib/libiconv.la
+/usr/local/lib/libiconv.so
+/usr/local/lib/libiconv.so.2
+/usr/local/lib/libiconv.so.2.6.1
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$
+
+MAKE, STRIP
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which make
+/usr/bin/make
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ make --version
+GNU Make 4.1 Built for x86_64-pc-linux-gnu.
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which strip
+/usr/bin/strip
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ strip --version
+GNU strip (GNU Binutils for Ubuntu) 2.30
+
+PYTHON
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ python --version
+Python 2.7.17
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ python3 --version
+Python 3.6.9
+
+CMAKE
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which cmake
+/usr/bin/cmake
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ cmake --version
+cmake version 3.10.2
+
+QMAKE
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which qmake
+/usr/bin/qmake
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ qmake --version
+QMake version 3.1
+Using Qt version 5.14.0 in /home/wruslan/apps/apps2/Qt5.14.0/5.14.0/gcc_64/lib
+
+PDFLATEX (TEX LIVE)
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which pdflatex
+/usr/bin/pdflatex
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ pdflatex --version
+pdfTeX 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian)
+kpathsea version 6.2.3
+Copyright 2017 Han The Thanh (pdfTeX) et al.
+Compiled with libpng 1.6.34; using libpng 1.6.34
+Compiled with zlib 1.2.11; using zlib 1.2.11
+Compiled with poppler version 0.62.0
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$
+
+GRAPHVIZ - PYTHON XDOT
+=============================
+xdot.py is an interactive viewer for graphs written in Graphviz's dot language.
+xdot - Visualize dot graphs via the xdot format.
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which xdot
+/usr/bin/xdot
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ xdot --version
+xdot: error: unrecognized arguments: --version
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ sudo -H pip install xdot
+Requirement already satisfied: xdot in /usr/lib/python3/dist-packages (0.9)
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ sudo -H pip3 install xdot
+Requirement already satisfied: xdot in /usr/lib/python3/dist-packages (0.9)
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import xdot
+>>> help (xdot)
+....
+....
+GRAPHVIZ - DOT
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which dot
+/usr/bin/dot
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ dot -V
+dot - graphviz version 2.40.1 (20161225.0304)
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ dot -v
+dot - graphviz version 2.40.1 (20161225.0304)
+libdir = "/usr/lib/x86_64-linux-gnu/graphviz"
+Activated plugin library: libgvplugin_dot_layout.so.6
+Using layout: dot:dot_layout
+Activated plugin library: libgvplugin_core.so.6
+Using render: dot:core
+Using device: dot:dot:core
+The plugin configuration file:
+/usr/lib/x86_64-linux-gnu/graphviz/config6a
+was successfully loaded.
+    render :  cairo dot dot_json fig gd json json0 map mp pic pov ps svg tk vml vrml xdot xdot_json
+    layout :  circo dot fdp neato nop nop1 nop2 osage patchwork sfdp twopi
+    textlayout :  textlayout
+    device :  canon cmap cmapx cmapx_np dot dot_json eps fig gd gd2 gif gv imap imap_np ismap jpe jpeg jpg json json0 mp pdf pic plain plain-ext png pov ps ps2 svg svgz tk vml vmlz vrml wbmp x11 xdot xdot1.2 xdot1.4 xdot_json xlib
+    loadimage :  (lib) eps gd gd2 gif jpe jpeg jpg png ps svg xbm
+
+GHOSTSCRIPT
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ which gs
+/usr/bin/gs
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ gs --version
+9.26
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ gs --help
+GPL Ghostscript 9.26 (2018-11-20)
+Copyright (C) 2018 Artifex Software, Inc.  All rights reserved.
+Usage: gs [switches] [file1.ps file2.ps ...]
+Most frequently used switches: (you can use # in place of =)
+ -dNOPAUSE           no pause after page   | -q       `quiet', fewer messages
+ -g<width>x<height>  page size in pixels   | -r<res>  pixels/inch resolution
+ -sDEVICE=<devname>  select device         | -dBATCH  exit after last file
+ -sOutputFile=<file> select output file: - for stdout, |command for pipe,
+                                         embed %d or %ld for page #
+Input formats: PostScript PostScriptLevel1 PostScriptLevel2 PostScriptLevel3 PDF
+Default output device: x11alpha
+Available devices: ....
+
+DOCBOOK
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ sudo apt-get install docbook
+Reading package lists... Done
+Building dependency tree      
+Reading state information... Done
+docbook is already the newest version (4.5-6).
+
+===========================================================
+CONFIGURE DOXYGEN
+===========================================================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ ls -al
+total 46300
+drwxrwxr-x  5 wruslan wruslan     4096 Mar 21 01:12 .
+drwxr-xr-x 39 wruslan wruslan     4096 Mar 20 11:31 ..
+drwxrwxr-x  2 wruslan wruslan     4096 Mar 20 02:56 DEBS
+-rw-rw-r--  1 wruslan wruslan 44585771 Aug 29  2019 doxygen-1.8.16.linux.bin.tar.gz
+-rw-r--r--  1 wruslan wruslan  1446966 Aug  8  2019 doxygen_manual-1.8.16.pdf
+-rw-rw-r--  1 wruslan wruslan  1341086 Aug 29  2019 doxygen_manual-1.8.16.pdf.zip
+drwxr-xr-x  8 wruslan wruslan     4096 Mar 21 00:33 Hardware-Bitscope
+-rw-rw-r--  1 wruslan wruslan     7094 Mar 21 01:12 install-doxygen-and-doxywizard.txt
+drwxr-xr-x 10 wruslan wruslan     4096 Mar 20 02:58 zekr
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ tar -xf doxygen-1.8.16.linux.bin.tar.gz
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4$ cd doxygen-1.8.16/
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ ls -al
+total 56
+drwxrwxr-x 4 wruslan wruslan  4096 Aug  8  2019 .
+drwxrwxr-x 6 wruslan wruslan  4096 Mar 21 01:13 ..
+drwxrwxr-x 2 wruslan wruslan  4096 Aug  8  2019 bin
+-rwxr-xr-x 1 wruslan wruslan  2693 Aug  8  2019 configure
+drwxrwxr-x 3 wruslan wruslan  4096 Aug  8  2019 html
+-rw-rw-r-- 1 wruslan wruslan   178 Aug  8  2019 INSTALL
+-rw-r--r-- 1 wruslan wruslan 18007 Aug  8  2019 LICENSE
+-rw-r--r-- 1 wruslan wruslan   305 Aug  8  2019 Makefile.in
+-rw-rw-r-- 1 wruslan wruslan   533 Aug  8  2019 README
+-rw-rw-r-- 1 wruslan wruslan     7 Aug  8  2019 VERSION
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ mkdir build
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ cd build/
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$ cmake -G "Unix Makefiles" ..
+CMake Error: The source directory "/home/wruslan/apps4/doxygen-1.8.16" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$ cmake -Dbuild_wizard=YES ..
+CMake Error: The source directory "/home/wruslan/apps4/doxygen-1.8.16" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$ cmake -L ..
+CMake Error: The source directory "/home/wruslan/apps4/doxygen-1.8.16" does not appear to contain CMakeLists.txt.
+Specify --help for usage, or press the help button on the CMake GUI.
+-- Cache values
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$ cmake --help
+Usage
+
+  cmake [options] <path-to-source>
+  cmake [options] <path-to-existing-build>
+
+Specify a source directory to (re-)generate a build system for it in the
+current working directory.  Specify an existing build directory to
+re-generate its build system.
+
+Options
+  -C <initial-cache>           = Pre-load a script to populate the cache.
+  -D <var>[:<type>]=<value>    = Create a cmake cache entry.
+  -U <globbing_expr>           = Remove matching entries from CMake cache.
+  -G <generator-name>          = Specify a build system generator.
+  -T <toolset-name>            = Specify toolset name if supported by
+                                 generator.
+  -A <platform-name>           = Specify platform name if supported by
+                                 generator.
+  -Wdev                        = Enable developer warnings.
+  -Wno-dev                     = Suppress developer warnings.
+  -Werror=dev                  = Make developer warnings errors.
+  -Wno-error=dev               = Make developer warnings not errors.
+  -Wdeprecated                 = Enable deprecation warnings.
+  -Wno-deprecated              = Suppress deprecation warnings.
+  -Werror=deprecated           = Make deprecated macro and function warnings
+                                 errors.
+  -Wno-error=deprecated        = Make deprecated macro and function warnings
+                                 not errors.
+  -E                           = CMake command mode.
+  -L[A][H]                     = List non-advanced cached variables.
+  --build <dir>                = Build a CMake-generated project binary tree.
+  -N                           = View mode only.
+  -P <file>                    = Process script mode.
+  --find-package               = Run in pkg-config like mode.
+  --graphviz=[file]            = Generate graphviz of dependencies, see
+                                 CMakeGraphVizOptions.cmake for more.
+  --system-information [file]  = Dump information about this system.
+  --debug-trycompile           = Do not delete the try_compile build tree.
+                                 Only useful on one try_compile at a time.
+  --debug-output               = Put cmake in a debug mode.
+  --trace                      = Put cmake in trace mode.
+  --trace-expand               = Put cmake in trace mode with variable
+                                 expansion.
+  --trace-source=<file>        = Trace only this CMake file/module.  Multiple
+                                 options allowed.
+  --warn-uninitialized         = Warn about uninitialized values.
+  --warn-unused-vars           = Warn about unused variables.
+  --no-warn-unused-cli         = Don't warn about command line options.
+  --check-system-vars          = Find problems with variable usage in system
+                                 files.
+  --help,-help,-usage,-h,-H,/? = Print usage information and exit.
+  --version,-version,/V [<f>]  = Print version number and exit.
+  --help-full [<f>]            = Print all help manuals and exit.
+  --help-manual <man> [<f>]    = Print one help manual and exit.
+  --help-manual-list [<f>]     = List help manuals available and exit.
+  --help-command <cmd> [<f>]   = Print help for one command and exit.
+  --help-command-list [<f>]    = List commands with help available and exit.
+  --help-commands [<f>]        = Print cmake-commands manual and exit.
+  --help-module <mod> [<f>]    = Print help for one module and exit.
+  --help-module-list [<f>]     = List modules with help available and exit.
+  --help-modules [<f>]         = Print cmake-modules manual and exit.
+  --help-policy <cmp> [<f>]    = Print help for one policy and exit.
+  --help-policy-list [<f>]     = List policies with help available and exit.
+  --help-policies [<f>]        = Print cmake-policies manual and exit.
+  --help-property <prop> [<f>] = Print help for one property and exit.
+  --help-property-list [<f>]   = List properties with help available and
+                                 exit.
+  --help-properties [<f>]      = Print cmake-properties manual and exit.
+  --help-variable var [<f>]    = Print help for one variable and exit.
+  --help-variable-list [<f>]   = List variables with help available and exit.
+  --help-variables [<f>]       = Print cmake-variables manual and exit.
+
+Generators
+
+The following generators are available on this platform:
+  Unix Makefiles               = Generates standard UNIX makefiles.
+  Ninja                        = Generates build.ninja files.
+  Watcom WMake                 = Generates Watcom WMake makefiles.
+  CodeBlocks - Ninja           = Generates CodeBlocks project files.
+  CodeBlocks - Unix Makefiles  = Generates CodeBlocks project files.
+  CodeLite - Ninja             = Generates CodeLite project files.
+  CodeLite - Unix Makefiles    = Generates CodeLite project files.
+  Sublime Text 2 - Ninja       = Generates Sublime Text 2 project files.
+  Sublime Text 2 - Unix Makefiles
+                               = Generates Sublime Text 2 project files.
+  Kate - Ninja                 = Generates Kate project files.
+  Kate - Unix Makefiles        = Generates Kate project files.
+  Eclipse CDT4 - Ninja         = Generates Eclipse CDT 4.0 project files.
+  Eclipse CDT4 - Unix Makefiles= Generates Eclipse CDT 4.0 project files.
+  KDevelop3                    = Generates KDevelop 3 project files.
+  KDevelop3 - Unix Makefiles   = Generates KDevelop 3 project files.
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16/build$ cd ..
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ ls -al bin
+total 125180
+drwxrwxr-x 2 wruslan wruslan      4096 Aug  8  2019 .
+drwxrwxr-x 5 wruslan wruslan      4096 Mar 21 01:14 ..
+-rwxrwxr-x 1 wruslan wruslan 127406840 Aug  8  2019 doxygen
+-rwxrwxr-x 1 wruslan wruslan    702720 Aug  8  2019 doxyindexer
+-rwxrwxr-x 1 wruslan wruslan     59512 Aug  8  2019 doxysearch.cgi
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+
+BEFORE CONFIGURE
+===========================================================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ ls -al
+total 56
+drwxrwxr-x 4 wruslan wruslan  4096 Aug  8  2019 .
+drwxrwxr-x 6 wruslan wruslan  4096 Mar 21 01:13 ..
+drwxrwxr-x 2 wruslan wruslan  4096 Aug  8  2019 bin
+-rwxr-xr-x 1 wruslan wruslan  2693 Aug  8  2019 configure
+drwxrwxr-x 3 wruslan wruslan  4096 Aug  8  2019 html
+-rw-rw-r-- 1 wruslan wruslan   178 Aug  8  2019 INSTALL
+-rw-r--r-- 1 wruslan wruslan 18007 Aug  8  2019 LICENSE
+-rw-r--r-- 1 wruslan wruslan   305 Aug  8  2019 Makefile.in
+-rw-rw-r-- 1 wruslan wruslan   533 Aug  8  2019 README
+-rw-rw-r-- 1 wruslan wruslan     7 Aug  8  2019 VERSION
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+CONFIGURE
+=============================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ ./configure
+  Checking for GNU install tool... using /usr/bin/install
+  Created Makefile from Makefile.in...
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+AFTER CONFIGURE
+===========================================================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ ls -al
+total 68
+drwxrwxr-x 5 wruslan wruslan  4096 Mar 21 01:19 .
+drwxrwxr-x 6 wruslan wruslan  4096 Mar 21 01:19 ..
+drwxrwxr-x 2 wruslan wruslan  4096 Aug  8  2019 bin
+drwxrwxr-x 2 wruslan wruslan  4096 Mar 21 01:14 build
+-rwxr-xr-x 1 wruslan wruslan  2693 Aug  8  2019 configure
+drwxrwxr-x 3 wruslan wruslan  4096 Aug  8  2019 html
+-rw-rw-r-- 1 wruslan wruslan   178 Aug  8  2019 INSTALL
+-rw-r--r-- 1 wruslan wruslan 18007 Aug  8  2019 LICENSE
+-rw-rw-r-- 1 wruslan wruslan   122 Mar 21 01:19 .makeconfig  <=== NEW
+-rw-rw-r-- 1 wruslan wruslan   507 Mar 21 01:19 Makefile     <=== NEW
+-rw-r--r-- 1 wruslan wruslan   305 Aug  8  2019 Makefile.in
+-rw-rw-r-- 1 wruslan wruslan   533 Aug  8  2019 README
+-rw-rw-r-- 1 wruslan wruslan     7 Aug  8  2019 VERSION
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+===========================================================
+COMPILE DOXYGEN
+===========================================================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ sudo make
+/usr/bin/install -d /usr/local/bin
+/usr/bin/install -d /usr/local/doc/doxygen
+/usr/bin/install -m 755 bin/doxygen    /usr/local/bin
+/usr/bin/install -m 755 bin/doxytag    /usr/local/bin
+/usr/bin/install: cannot stat 'bin/doxytag': No such file or directory
+Makefile:13: recipe for target 'install' failed
+make: *** [install] Error 1
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ ls -al /usr/local/bin | grep doxy
+-rwxr-xr-x  1 root root 127406840 Mar 21 01:23 doxygen
+-rwxr-xr-x  1 root root    702720 Jan 20 08:16 doxyindexer
+-rwxr-xr-x  1 root root     59512 Jan 20 08:16 doxysearch.cgi
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+===========================================================
+INSTALL DOXYGEN
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ sudo updatedb
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ sudo ldconfig
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ sudo depmod -a
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ which doxygen
+/usr/local/bin/doxygen
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ doxygen
+error: Doxyfile not found and no input file specified!
+Doxygen version 1.8.16
+Copyright Dimitri van Heesch 1997-2019
+
+You can use doxygen in a number of ways:
+
+1) Use doxygen to generate a template configuration file:
+    doxygen [-s] -g [configName]
+
+    If - is used for configName doxygen will write to standard output.
+
+2) Use doxygen to update an old configuration file:
+    doxygen [-s] -u [configName]
+
+3) Use doxygen to generate documentation using an existing configuration file:
+    doxygen [configName]
+
+    If - is used for configName doxygen will read from standard input.
+
+4) Use doxygen to generate a template file controlling the layout of the
+   generated documentation:
+    doxygen -l [layoutFileName.xml]
+
+5) Use doxygen to generate a template style sheet file for RTF, HTML or Latex.
+    RTF:        doxygen -w rtf styleSheetFile
+    HTML:       doxygen -w html headerFile footerFile styleSheetFile [configFile]
+    LaTeX:      doxygen -w latex headerFile footerFile styleSheetFile [configFile]
+
+6) Use doxygen to generate a rtf extensions file
+    RTF:   doxygen -e rtf extensionsFile
+
+7) Use doxygen to compare the used configuration file with the template configuration file
+    doxygen -x [configFile]
+
+8) Use doxygen to show a list of built-in emojis.
+    doxygen -f emoji outputFileName
+
+    If - is used for outputFileName doxygen will write to standard output.
+
+If -s is specified the comments of the configuration items in the config file will be omitted.
+If configName is omitted 'Doxyfile' will be used as a default.
+
+-v print version string
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+===========================================================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ locate doxyfile
+/home/wruslan/apps/apps2/Qt5.14.0/5.14.0/Src/qtwebengine/src/3rdparty/chromium/third_party/flatbuffers/src/docs/source/doxyfile
+/home/wruslan/apps/apps2/Qt5.14.0/5.14.0/Src/qtwebengine/src/3rdparty/chromium/third_party/jsoncpp/source/doc/doxyfile.in
+/home/wruslan/apps/apps2/Qt5.14.0/5.14.0/Src/qtwebengine/src/3rdparty/chromium/third_party/jsoncpp/source/doc/web_doxyfile.in
+/home/wruslan/apps2/boost_1_72_0/libs/gil/doc/doxyfile
+/home/wruslan/apps2/boost_1_72_0/libs/sort/doc/doxygen/sort_doxyfile.txt
+/home/wruslan/apps2/boost_1_72_0/tools/build/src/tools/doxygen/windows-paths-check.doxyfile
+/usr/share/boost-build/src/tools/doxygen/windows-paths-check.doxyfile
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+===========================================================
+doxygen newest version (1.8.13-10) versus doxygen-1.8.16
+===========================================================
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ sudo apt-get install doxygen
+Reading package lists... Done
+Building dependency tree      
+Reading state information... Done
+doxygen is already the newest version (1.8.13-10).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ ls -al /usr/bin | grep doxy
+-rwxr-xr-x  1 root   root        4231 Apr 29  2015 dh_doxygen
+-rwxr-xr-x  1 root   root    14924104 Mar 12  2018 doxygen
+-rwxr-xr-x  1 root   root      637168 Mar 12  2018 doxyindexer
+-rwxr-xr-x  1 root   root       47272 Mar 12  2018 doxysearch.cgi
+-rwxr-xr-x  1 root   root      608504 Mar 12  2018 doxywizard
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ ls -al /usr/local/bin | grep doxy
+-rwxr-xr-x  1 root root 127406840 Mar 21 01:30 doxygen
+-rwxr-xr-x  1 root root    702720 Jan 20 08:16 doxyindexer
+-rwxr-xr-x  1 root root     59512 Jan 20 08:16 doxysearch.cgi
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ sudo cp /usr/bin/doxywizard /usr/local/bin/doxywizard
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ sudo updatedb
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ ls -al /usr/local/bin | grep doxy
+-rwxr-xr-x  1 root root 127406840 Mar 21 01:30 doxygen
+-rwxr-xr-x  1 root root    702720 Jan 20 08:16 doxyindexer
+-rwxr-xr-x  1 root root     59512 Jan 20 08:16 doxysearch.cgi
+-rwxr-xr-x  1 root root    608504 Mar 21 01:36 doxywizard
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+===========================================================
+ALHAMDULILLAH 3 TIMES.
+===========================================================
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ which doxywizard
+/usr/local/bin/doxywizard
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$ doxywizard
+
+.... <GUI Front-End appears> ....
+
+wruslan@Bluewks-Ub1804-rt38-64b:~/apps4/doxygen-1.8.16$
+
+===========================================================
+
+-- 
+WASSALAM
+wruslandr
+

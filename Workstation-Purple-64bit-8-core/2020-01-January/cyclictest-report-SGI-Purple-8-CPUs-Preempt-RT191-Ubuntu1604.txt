@@ -1,0 +1,221 @@
+wruslan@sgi-ub1604-lts-64b:~$ date
+Tue Jan 21 13:31:06 +08 2020
+
+wruslan@sgi-ub1604-lts-64b:~$ uname -a
+Linux sgi-ub1604-lts-64b 4.4.208-rt191 #1 SMP PREEMPT RT Mon Jan 20 21:53:39 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@sgi-ub1604-lts-64b:~$ lsb_release -a
+LSB Version:	core-9.20160110ubuntu0.2-amd64:core-9.20160110ubuntu0.2-noarch:security-9.20160110ubuntu0.2-amd64:security-9.20160110ubuntu0.2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.6 LTS
+Release:	16.04
+Codename:	xenial
+wruslan@sgi-ub1604-lts-64b:~$ 
+
+INSTALL CYCLICTEST Ver 1.0
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~$ cd apps4
+wruslan@sgi-ub1604-lts-64b:~/apps4$ 
+wruslan@sgi-ub1604-lts-64b:~/apps4$ ls -al
+total 8
+drwxrwxr-x  2 wruslan wruslan 4096 Jan 21 12:47 .
+drwxr-xr-x 46 wruslan wruslan 4096 Jan 21 13:33 ..
+wruslan@sgi-ub1604-lts-64b:~/apps4$ 
+
+REF: https://wiki.linuxfoundation.org/realtime/documentation/howto/tools/rt-tests
+===========================================================
+Compile and install
+rt-tests suite can be installed from source. Therefore the libnuma and build-essentials are required. The given example is for a Debian based system:
+
+sudo apt-get install build-essential libnuma-dev
+
+libnuma-dev is required for build. Usually, it's safe to have libnuma-dev installed also in non-NUMA systems, but if you don't want to install the NUMA libs (e.g. in embedded environment) then compile with make NUMA=0.
+
+Clone source code (check out the latest stable branch, because the master branch is not used for stable release any more), compile it and install it to the local filesystem
+
+git clone git://git.kernel.org/pub/scm/utils/rt-tests/rt-tests.git
+cd rt-tests
+git checkout stable/v1.0
+make all
+make install
+
+The last step is optional. All compiled programs can be executed from the build directory directly. If only a single program should be compiled only the single make target for the specific program could be executed (example for cyclictest):
+
+make cyclictest
+
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps4$ sudo apt-get install build-essential libnuma-dev
+[sudo] password for wruslan: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+build-essential is already the newest version (12.1ubuntu2).
+libnuma-dev is already the newest version (2.0.11-1ubuntu1.1).
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+wruslan@sgi-ub1604-lts-64b:~/apps4$ 
+
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps4$ git clone git://git.kernel.org/pub/scm/utils/rt-tests/rt-tests.git
+Cloning into 'rt-tests'...
+remote: Enumerating objects: 3514, done.
+remote: Counting objects: 100% (3514/3514), done.
+remote: Compressing objects: 100% (1628/1628), done.
+remote: Total 3514 (delta 2127), reused 3021 (delta 1831)
+Receiving objects: 100% (3514/3514), 716.76 KiB | 329.00 KiB/s, done.
+Resolving deltas: 100% (2127/2127), done.
+Checking connectivity... done.
+wruslan@sgi-ub1604-lts-64b:~/apps4$ 
+
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps4$ cd rt-tests/
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ git checkout stable/v1.0
+Branch stable/v1.0 set up to track remote branch stable/v1.0 from origin.
+Switched to a new branch 'stable/v1.0'
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ ls -al
+total 68
+drwxrwxr-x  6 wruslan wruslan  4096 Jan 21 13:40 .
+drwxrwxr-x  3 wruslan wruslan  4096 Jan 21 13:38 ..
+drwxrwxr-x  2 wruslan wruslan  4096 Jan 21 13:40 bld
+-rw-rw-r--  1 wruslan wruslan 17987 Jan 21 13:40 COPYING
+drwxrwxr-x  8 wruslan wruslan  4096 Jan 21 13:40 .git
+-rw-rw-r--  1 wruslan wruslan    94 Jan 21 13:38 .gitattributes
+-rw-rw-r--  1 wruslan wruslan   294 Jan 21 13:38 .gitignore
+-rw-rw-r--  1 wruslan wruslan   159 Jan 21 13:40 MAINTAINERS
+-rw-rw-r--  1 wruslan wruslan  6978 Jan 21 13:40 Makefile
+-rw-rw-r--  1 wruslan wruslan  4013 Jan 21 13:40 README.markdown
+drwxrwxr-x  2 wruslan wruslan  4096 Jan 21 13:40 scripts
+drwxrwxr-x 16 wruslan wruslan  4096 Jan 21 13:40 src
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ make all
+....
+....
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ ls -al
+total 456
+drwxrwxr-x  6 wruslan wruslan  4096 Jan 21 13:41 .
+drwxrwxr-x  3 wruslan wruslan  4096 Jan 21 13:38 ..
+drwxrwxr-x  2 wruslan wruslan  4096 Jan 21 13:41 bld
+-rw-rw-r--  1 wruslan wruslan 17987 Jan 21 13:40 COPYING
+-rwxrwxr-x  1 wruslan wruslan 65616 Jan 21 13:41 cyclictest
+drwxrwxr-x  8 wruslan wruslan  4096 Jan 21 13:40 .git
+-rw-rw-r--  1 wruslan wruslan    94 Jan 21 13:38 .gitattributes
+-rw-rw-r--  1 wruslan wruslan   294 Jan 21 13:38 .gitignore
+-rwxrwxr-x  1 wruslan wruslan 19808 Jan 21 13:41 hackbench
+lrwxrwxrwx  1 wruslan wruslan    30 Jan 21 13:41 hwlatdetect -> src/hwlatdetect/hwlatdetect.py
+-rw-rw-r--  1 wruslan wruslan   159 Jan 21 13:40 MAINTAINERS
+-rw-rw-r--  1 wruslan wruslan  6978 Jan 21 13:40 Makefile
+-rwxrwxr-x  1 wruslan wruslan 25496 Jan 21 13:41 pip_stress
+-rwxrwxr-x  1 wruslan wruslan 49280 Jan 21 13:41 pi_stress
+-rwxrwxr-x  1 wruslan wruslan 34264 Jan 21 13:41 pmqtest
+-rwxrwxr-x  1 wruslan wruslan 29752 Jan 21 13:41 ptsematest
+-rw-rw-r--  1 wruslan wruslan  4013 Jan 21 13:40 README.markdown
+-rwxrwxr-x  1 wruslan wruslan 20144 Jan 21 13:41 rt-migrate-test
+drwxrwxr-x  2 wruslan wruslan  4096 Jan 21 13:40 scripts
+-rwxrwxr-x  1 wruslan wruslan 24904 Jan 21 13:41 sendme
+-rwxrwxr-x  1 wruslan wruslan 29480 Jan 21 13:41 signaltest
+-rwxrwxr-x  1 wruslan wruslan 34184 Jan 21 13:41 sigwaittest
+drwxrwxr-x 16 wruslan wruslan  4096 Jan 21 13:40 src
+-rwxrwxr-x  1 wruslan wruslan 34480 Jan 21 13:41 svsematest
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ sudo make install
+if test -n "/usr/lib/python2.7/dist-packages" ; then \
+	mkdir -p "/usr/local/bin" "/usr/local/share/man/man8" ; \
+	install -D -m 755 src/hwlatdetect/hwlatdetect.py /usr/lib/python2.7/dist-packages/hwlatdetect.py ; \
+	rm -f "/usr/local/bin/hwlatdetect" ; \
+	ln -s /usr/lib/python2.7/dist-packages/hwlatdetect.py "/usr/local/bin/hwlatdetect" ; \
+	gzip -c src/hwlatdetect/hwlatdetect.8 >"/usr/local/share/man/man8/hwlatdetect.8.gz" ; \
+fi
+mkdir -p "/usr/local/bin" "/usr/local/share/man/man4"
+mkdir -p "/usr/local/src" "/usr/local/share/man/man8"
+cp cyclictest hackbench pip_stress pi_stress pmqtest ptsematest rt-migrate-test sendme signaltest sigwaittest svsematest "/usr/local/bin"
+install -D -m 644 src/backfire/backfire.c "/usr/local/src/backfire/backfire.c"
+install -m 644 src/backfire/Makefile "/usr/local/src/backfire/Makefile"
+gzip -c src/backfire/backfire.4 >"/usr/local/share/man/man4/backfire.4.gz"
+gzip -c src/cyclictest/cyclictest.8 >"/usr/local/share/man/man8/cyclictest.8.gz"
+gzip -c src/pi_tests/pi_stress.8 >"/usr/local/share/man/man8/pi_stress.8.gz"
+gzip -c src/ptsematest/ptsematest.8 >"/usr/local/share/man/man8/ptsematest.8.gz"
+gzip -c src/rt-migrate-test/rt-migrate-test.8 >"/usr/local/share/man/man8/rt-migrate-test.8.gz"
+gzip -c src/sigwaittest/sigwaittest.8 >"/usr/local/share/man/man8/sigwaittest.8.gz"
+gzip -c src/svsematest/svsematest.8 >"/usr/local/share/man/man8/svsematest.8.gz"
+gzip -c src/pmqtest/pmqtest.8 >"/usr/local/share/man/man8/pmqtest.8.gz"
+gzip -c src/backfire/sendme.8 >"/usr/local/share/man/man8/sendme.8.gz"
+gzip -c src/hackbench/hackbench.8 >"/usr/local/share/man/man8/hackbench.8.gz"
+gzip -c src/signaltest/signaltest.8 >"/usr/local/share/man/man8/signaltest.8.gz"
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ which cyclictest
+/usr/local/bin/cyclictest
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ ls -al /usr/bin/cyclictest 
+-rwxr-xr-x 1 root root 49632 Nov  3  2017 /usr/bin/cyclictest
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ ls -al /usr/local/bin/cyclictest 
+-rwxr-xr-x 1 root root 65616 Jan 21 13:43 /usr/local/bin/cyclictest
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ sudo rm -rf /usr/bin/cyclictest 
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ sudo updatedb
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ locate bin/cyclictest
+/usr/local/bin/cyclictest
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ sudo ./cyclictest -c 1 --mlockall --smp --priority=80 --interval=200 --distance=0
+# /dev/cpu_dma_latency set to 0us
+policy: fifo: loadavg: 0.17 0.19 0.22 1/1007 6025           
+
+T: 0 ( 6011) P:80 I:200 C: 305770 Min:      2 Act:    2 Avg:    2 Max:      51
+T: 1 ( 6012) P:80 I:200 C: 305738 Min:      1 Act:    2 Avg:    2 Max:      94
+T: 2 ( 6013) P:80 I:200 C: 305706 Min:      2 Act:    2 Avg:    2 Max:      19
+T: 3 ( 6014) P:80 I:200 C: 305673 Min:      2 Act:    2 Avg:    2 Max:      12
+T: 4 ( 6015) P:80 I:200 C: 305631 Min:      1 Act:    2 Avg:    2 Max:       9
+T: 5 ( 6016) P:80 I:200 C: 305608 Min:      2 Act:    2 Avg:    2 Max:      60
+T: 6 ( 6017) P:80 I:200 C: 305575 Min:      2 Act:    4 Avg:    2 Max:      12
+T: 7 ( 6018) P:80 I:200 C: 305542 Min:      2 Act:    3 Avg:    2 Max:      63
+^C
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ sudo ./cyclictest -c 1 --mlockall --smp --priority=80 --interval=200 --distance=0 -f -b 200
+# /dev/cpu_dma_latency set to 0us
+INFO: debugfs mountpoint: /sys/kernel/debug/tracing/
+policy: fifo: loadavg: 0.38 0.24 0.24 4/1010 6045          
+
+T: 0 ( 6032) P:80 I:200 C: 308232 Min:     13 Act:   17 Avg:   16 Max:      44
+T: 1 ( 6033) P:80 I:200 C: 308002 Min:     11 Act:   16 Avg:   16 Max:      64
+T: 2 ( 6034) P:80 I:200 C: 307773 Min:     12 Act:   17 Avg:   17 Max:      44
+T: 3 ( 6035) P:80 I:200 C: 307542 Min:     12 Act:   17 Avg:   16 Max:      36
+T: 4 ( 6036) P:80 I:200 C: 307311 Min:     13 Act:   16 Avg:   15 Max:      35
+T: 5 ( 6037) P:80 I:200 C: 307069 Min:     11 Act:   20 Avg:   16 Max:      32
+T: 6 ( 6038) P:80 I:200 C: 306815 Min:     14 Act:   16 Avg:   16 Max:      37
+T: 7 ( 6039) P:80 I:200 C: 306547 Min:     11 Act:   27 Avg:   17 Max:      79
+^C
+# Thread Ids: 06032 06033 06034 06035 06036 06037 06038 06039
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ sudo ./cyclictest -c 1 --mlockall --smp --priority=80 --interval=200 --distance=0 -f -b 100
+# /dev/cpu_dma_latency set to 0us
+INFO: debugfs mountpoint: /sys/kernel/debug/tracing/
+policy: fifo: loadavg: 1.06 0.46 0.31 2/1001 6064           
+
+T: 0 ( 6052) P:80 I:200 C: 305755 Min:     13 Act:   17 Avg:   16 Max:      62
+T: 1 ( 6053) P:80 I:200 C: 305507 Min:     11 Act:   20 Avg:   16 Max:      42
+T: 2 ( 6054) P:80 I:200 C: 305247 Min:     13 Act:   17 Avg:   16 Max:      38
+T: 3 ( 6055) P:80 I:200 C: 304977 Min:     11 Act:   16 Avg:   16 Max:      77
+T: 4 ( 6056) P:80 I:200 C: 304707 Min:     12 Act:   17 Avg:   16 Max:      41
+T: 5 ( 6057) P:80 I:200 C: 304435 Min:     11 Act:   16 Avg:   16 Max:      36
+T: 6 ( 6058) P:80 I:200 C: 304164 Min:     13 Act:   17 Avg:   17 Max:      89
+T: 7 ( 6059) P:80 I:200 C: 303893 Min:     11 Act:   16 Avg:   16 Max:      63
+^C
+# Thread Ids: 06052 06053 06054 06055 06056 06057 06058 06059
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES.
+===========================================================
+
+
+

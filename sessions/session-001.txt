@@ -1,0 +1,120 @@
+date : Fri 09 Apr 2021 11:19:50 PM +08
+
+wruslan@HPEliteBk8470p-ubstudio-20:~/github/wruslangit/apps-hardware-linux-systems$ uname -a
+Linux HPEliteBk8470p-ubstudio-20 5.10.25-rt35 #3 SMP PREEMPT_RT Wed Apr 7 12:33:26 +08 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@HPEliteBk8470p-ubstudio-20:~/github/wruslangit/apps-hardware-linux-systems$ lsb_release -a
+LSB Version:	core-11.1.0ubuntu2-noarch:security-11.1.0ubuntu2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.2 LTS
+Release:	20.04
+Codename:	focal
+wruslan@HPEliteBk8470p-ubstudio-20:~/github/wruslangit/apps-hardware-linux-systems$ 
+
+wruslan@HPEliteBk8470p-ubstudio-20:~/github/wruslangit/apps-hardware-linux-systems$ ls -al
+total 32
+drwxrwxr-x  7 wruslan wruslan 4096 Apr  9 22:13 .
+drwxrwxr-x 25 wruslan wruslan 4096 Apr  9 21:33 ..
+drwxrwxr-x  8 wruslan wruslan 4096 Apr  9 21:29 .git
+drwxrwxr-x  4 wruslan wruslan 4096 Apr  9 21:54 HPEliteBook-6930p-32bit-2-core
+drwxrwxr-x  5 wruslan wruslan 4096 Apr  9 21:53 HPEliteBook-8470p-64bit-4-core
+-rw-rw-r--  1 wruslan wruslan   56 Apr  9 21:27 README.md
+drwxrwxr-x  4 wruslan wruslan 4096 Apr  9 22:32 Workstation-Blue-64bit-4-core
+drwxrwxr-x  5 wruslan wruslan 4096 Apr  9 22:38 Workstation-Purple-64bit-8-core
+wruslan@HPEliteBk8470p-ubstudio-20:~/github/wruslangit/apps-hardware-linux-systems$ 
+
+wruslan@HPEliteBk8470p-ubstudio-20:~/github/wruslangit/apps-hardware-linux-systems$ tree ./
+./
+├── HPEliteBook-6930p-32bit-2-core
+│   ├── hardware
+│   │   └── Hardware-Profile-32-bit HPElitebook-6930p.txt
+│   └── software
+├── HPEliteBook-8470p-64bit-4-core
+│   ├── 2020-10-05-environment-profiles
+│   │   ├── Ubuntu-1604-environment-profile.txt
+│   │   ├── Ubuntu18.04-32bit-environment-profile.txt
+│   │   ├── Ubuntu-1804-environment-profile.txt
+│   │   └── Ubuntu-2004-environment-profile.txt
+│   ├── Hard-Disk-Partitions-OSes.txt
+│   ├── hardware
+│   │   └── Hardware-Profile-64-bit HPElitebook-8470p.txt
+│   └── software
+│       ├── DEV-SDA1-ubuntu-18.04.5-LTS-linux-4.19.148-rt64-environment-profile.txt
+│       ├── DEV-SDA3-ubstudio-20.04.2-LTS-linux-5.10.25-rt35-environment-profile.txt
+│       ├── DEV-SDB5-ubuntu-16.04.7-LTS-linux-4.4.208-rt191-environment-profile.txt
+│       └── DEV-SDB6-ubuntu-20.04.2-LTS-linux-5.4.66-rt38-environment-profile.txt
+├── README.md
+├── Workstation-Blue-64bit-4-core
+│   ├── 2020-03-March
+│   │   ├── Bitscope-64bit-Screenshots
+│   │   │   ├── Screenshot at 2020-03-20 22-22-41.png
+│   │   │   ├── Screenshot at 2020-03-20 22-24-41.png
+│   │   │   ├── Screenshot at 2020-03-20 22-26-23.png
+│   │   │   ├── Screenshot at 2020-03-20 22-27-44.png
+│   │   │   ├── Screenshot at 2020-03-20 22-29-01.png
+│   │   │   ├── Screenshot at 2020-03-20 22-30-18.png
+│   │   │   ├── Screenshot at 2020-03-20 22-32-12.png
+│   │   │   ├── Screenshot at 2020-03-20 22-34-45.png
+│   │   │   ├── Screenshot at 2020-03-20 22-41-41.png
+│   │   │   ├── Screenshot at 2020-03-20 22-42-10.png
+│   │   │   ├── Screenshot at 2020-03-20 23-03-42.png
+│   │   │   ├── Screenshot at 2020-03-20 23-54-35.png
+│   │   │   └── Screenshot from 2020-01-25 13-29-02.png
+│   │   ├── BlueWks-install-doxygen-and-doxywizard.txt
+│   │   ├── Install-bitscope-DSO-64bit.txt
+│   │   └── source-pthread-rt-barrier-dyn-queue
+│   │       ├── dtstamp
+│   │       │   ├── dtstamp.cpp
+│   │       │   └── dtstamp.hpp
+│   │       ├── pthread-rt-barrier
+│   │       │   ├── pthread_rt_barrier.cpp
+│   │       │   └── pthread_rt_barrier.hpp
+│   │       ├── pthread-rt-barrier-dyn-queue.cpp
+│   │       ├── random-dbl-pthread-rt-dyn-queue
+│   │       │   ├── random_dbl_pthread_rt_dyn_queue.cpp
+│   │       │   └── random_dbl_pthread_rt_dyn_queue.hpp
+│   │       └── random_int_dbl
+│   │           ├── random_int_dbl.cpp
+│   │           └── random_int_dbl.hpp
+│   └── 2020-04-April
+│       └── source-BLUEwks-pci-to-parallel-port
+│           ├── BLUEwks-pci-to-parallel-port.cpp
+│           ├── dtstamp
+│           │   ├── dtstamp.cpp
+│           │   └── dtstamp.hpp
+│           └── pci-parallel-port
+│               ├── pci_parallel_port.cpp
+│               └── pci_parallel_port.hpp
+└── Workstation-Purple-64bit-8-core
+    ├── 2020-01-January
+    │   ├── 001-The-8-CPUs-100pct-loaded-Screenshot from 2020-01-20 21-19-04.png
+    │   ├── 002-The-8-CPUs-100pct-Kernel-Stress-test-Screenshot from 2019-01-15 23-12-03.png
+    │   ├── 003-The-8-CPUs-100pct-Preempt-RT-kernel-compilation-Screenshot from 2020-01-20 21-35-01.png
+    │   ├── cyclic-test-purple-workstation.txt
+    │   └── cyclictest-report-SGI-Purple-8-CPUs-Preempt-RT191-Ubuntu1604.txt
+    ├── 2020-03-March
+    │   ├── install-boost-sgi-purple-wks-git-clone.txt
+    │   ├── source-using-boost
+    │   │   ├── dtstamp.cpp
+    │   │   ├── dtstamp.hpp
+    │   │   ├── random_int_dbl.cpp
+    │   │   ├── random_int_dbl.hpp
+    │   │   ├── random_int_dyn_queue.cpp
+    │   │   ├── random_int_dyn_queue.hpp
+    │   │   └── using-gcc93-boost.cpp
+    │   └── using-boost-realtime-dynamic-queue.txt
+    └── 2020-04-April
+        └── source-Purplewks-pci-to-parallel-port
+            ├── dtstamp
+            │   ├── dtstamp.cpp
+            │   └── dtstamp.hpp
+            ├── pci-parallel-port
+            │   ├── pci_parallel_port.cpp
+            │   └── pci_parallel_port.hpp
+            └── SGIwks-pci-to-parallel-port.cpp
+
+27 directories, 60 files
+wruslan@HPEliteBk8470p-ubstudio-20:~/github/wruslangit/apps-hardware-linux-systems$ 
+
+
+

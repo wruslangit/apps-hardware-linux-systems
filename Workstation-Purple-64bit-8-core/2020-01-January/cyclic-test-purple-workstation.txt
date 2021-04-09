@@ -1,0 +1,55 @@
+Ha ha ha. Now we have 8 CPU threads running realtime (see below). Thank you Prof Singh for the SGI Workstation. 
+
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ sudo ./cyclictest -c 1 --mlockall --smp --priority=80 --interval=200 --distance=0 -f -b 200
+# /dev/cpu_dma_latency set to 0us
+INFO: debugfs mountpoint: /sys/kernel/debug/tracing/
+policy: fifo: loadavg: 0.38 0.24 0.24 4/1010 6045          
+
+T: 0 ( 6032) P:80 I:200 C: 308232 Min:     13 Act:   17 Avg:   16 Max:      44
+T: 1 ( 6033) P:80 I:200 C: 308002 Min:     11 Act:   16 Avg:   16 Max:      64
+T: 2 ( 6034) P:80 I:200 C: 307773 Min:     12 Act:   17 Avg:   17 Max:      44
+T: 3 ( 6035) P:80 I:200 C: 307542 Min:     12 Act:   17 Avg:   16 Max:      36
+T: 4 ( 6036) P:80 I:200 C: 307311 Min:     13 Act:   16 Avg:   15 Max:      35
+T: 5 ( 6037) P:80 I:200 C: 307069 Min:     11 Act:   20 Avg:   16 Max:      32
+T: 6 ( 6038) P:80 I:200 C: 306815 Min:     14 Act:   16 Avg:   16 Max:      37
+T: 7 ( 6039) P:80 I:200 C: 306547 Min:     11 Act:   27 Avg:   17 Max:      79
+^C
+# Thread Ids: 06032 06033 06034 06035 06036 06037 06038 06039
+wruslan@sgi-ub1604-lts-64b:~/apps4/rt-tests$ 
+
+See the attached screenshots.
+
+Kah kah kah. To get the SGI working I had to buy a new graphic display card (RM 290 only), because the original is too old and buggy (the screen display freezes while I am working. Had to reboot many times.) 
+
+Also, I cannot upgrade or increase the RAM memory (currently 6 GB) because it is SGI PROPRIETARY hardware. This is unlike the standard normal PC memory. He he he.
+
+The old SAMSUNG display monitor that comes with the SGI Workstation is long gone (kaput ....). I am using my own HP 2309m large workstation display monitor. (bought second hand for RM 450). He he he.
+
+Dr Fadhlur. The hardware for realtime is very sensitive. They say, most of the time we cannot meet RUNTIME REQUIREMENTS because of hardware. There is no prtoblem with software. We can fix software. He he he. That means I have to go to UMP one day, to install and tell you when we run tests, where and how it failed to meet DEADLINES because of hardware. Which messed up the maximum or worst case time latency. 
+
+All my love.
+-- 
+WASSALAM
+wruslandr
+
+=========================================================
+SGI Workstation machine
+=========================================================
+wruslan@sgi-ub1604-lts-64b:~$ date
+Tue Jan 21 13:31:06 +08 2020
+
+wruslan@sgi-ub1604-lts-64b:~$ uname -a
+Linux sgi-ub1604-lts-64b 4.4.208-rt191 #1 SMP PREEMPT RT Mon Jan 20 21:53:39 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@sgi-ub1604-lts-64b:~$ lsb_release -a
+LSB Version:	core-9.20160110ubuntu0.2-amd64:core-9.20160110ubuntu0.2-noarch:security-9.20160110ubuntu0.2-amd64:security-9.20160110ubuntu0.2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.6 LTS
+Release:	16.04
+Codename:	xenial
+wruslan@sgi-ub1604-lts-64b:~$ 
+
+INSTALL CYCLICTEST Ver 1.0
+===========================================================
+
+

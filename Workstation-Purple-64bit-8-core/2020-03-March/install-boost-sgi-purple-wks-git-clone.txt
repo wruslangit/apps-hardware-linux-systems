@@ -1,0 +1,1139 @@
+File: install-boost-sgi-bluewks-git-clone.txt
+
+===========================================================
+REF: https://github.com/boostorg/wiki/wiki/Getting-Started%3A-Overview
+
+On POSIX-like operating systems, with a one-time download:
+
+	git clone --recursive https://github.com/boostorg/boost.git
+	cd boost
+	git checkout develop # or whatever branch you want to use
+	./bootstrap.sh
+	./b2 headers
+
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~$ cd apps3
+wruslan@sgi-ub1604-lts-64b:~/apps3$ ls -al
+total 12
+drwxrwxr-x  3 wruslan wruslan 4096 Mar 10 16:42 .
+drwxr-xr-x 49 wruslan wruslan 4096 Mar 15 06:05 ..
+drwxrwxr-x  3 wruslan wruslan 4096 Mar 10 16:41 adaprojects
+wruslan@sgi-ub1604-lts-64b:~/apps3$ 
+
+wruslan@sgi-ub1604-lts-64b:~/apps3$ date
+Sun Mar 15 09:21:35 +08 2020
+wruslan@sgi-ub1604-lts-64b:~/apps3$ uname -a
+Linux sgi-ub1604-lts-64b 4.4.208-rt191 #1 SMP PREEMPT RT Mon Jan 20 21:53:39 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+wruslan@sgi-ub1604-lts-64b:~/apps3$ 
+wruslan@sgi-ub1604-lts-64b:~/apps3$ lsb_release -a
+LSB Version:	core-9.20160110ubuntu0.2-amd64:core-9.20160110ubuntu0.2-noarch:security-9.20160110ubuntu0.2-amd64:security-9.20160110ubuntu0.2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.6 LTS
+Release:	16.04
+Codename:	xenial
+wruslan@sgi-ub1604-lts-64b:~/apps3$ 
+
+STEP 1 
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps3$ git clone --recursive https://github.com/boostorg/boost.git
+Cloning into 'boost'...
+remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (22/22), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 244976 (delta 11), reused 15 (delta 6), pack-reused 244954
+Receiving objects: 100% (244976/244976), 60.86 MiB | 1.02 MiB/s, done.
+Resolving deltas: 100% (156657/156657), done.
+Checking connectivity... done.
+....
+....
+
+STEP 2
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps3$ ls -al
+total 16
+drwxrwxr-x  4 wruslan wruslan 4096 Mar 15 08:10 .
+drwxr-xr-x 49 wruslan wruslan 4096 Mar 15 06:05 ..
+drwxrwxr-x  3 wruslan wruslan 4096 Mar 10 16:41 adaprojects
+drwxrwxr-x  9 wruslan wruslan 4096 Mar 15 08:11 boost
+wruslan@sgi-ub1604-lts-64b:~/apps3$
+ 
+wruslan@sgi-ub1604-lts-64b:~/apps3$ cd boost/
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ ls -al
+total 168
+drwxrwxr-x   9 wruslan wruslan  4096 Mar 15 08:11 .
+drwxrwxr-x   4 wruslan wruslan  4096 Mar 15 08:10 ..
+-rw-rw-r--   1 wruslan wruslan  1219 Mar 15 08:11 appveyor.yml
+-rw-rw-r--   1 wruslan wruslan   850 Mar 15 08:11 boost-build.jam
+-rw-rw-r--   1 wruslan wruslan 19265 Mar 15 08:11 boostcpp.jam
+-rw-rw-r--   1 wruslan wruslan   989 Mar 15 08:11 boost.css
+-rw-rw-r--   1 wruslan wruslan  6308 Mar 15 08:11 boost.png
+-rw-rw-r--   1 wruslan wruslan  2450 Mar 15 08:11 bootstrap.bat
+-rwxrwxr-x   1 wruslan wruslan 10629 Mar 15 08:11 bootstrap.sh
+drwxrwxr-x   2 wruslan wruslan  4096 Mar 15 08:11 .circleci
+-rw-rw-r--   1 wruslan wruslan   470 Mar 15 08:11 CMakeLists.txt
+drwxrwxr-x   7 wruslan wruslan  4096 Mar 15 08:11 doc
+drwxrwxr-x   9 wruslan wruslan  4096 Mar 15 08:11 .git
+-rw-rw-r--   1 wruslan wruslan  3917 Mar 15 08:11 .gitattributes
+-rw-rw-r--   1 wruslan wruslan   158 Mar 15 08:11 .gitignore
+-rw-rw-r--   1 wruslan wruslan 17301 Mar 15 08:11 .gitmodules
+-rw-rw-r--   1 wruslan wruslan   769 Mar 15 08:11 index.htm
+-rw-rw-r--   1 wruslan wruslan  6037 Mar 15 08:11 index.html
+-rw-rw-r--   1 wruslan wruslan   291 Mar 15 08:11 INSTALL
+-rw-rw-r--   1 wruslan wruslan 11934 Mar 15 08:11 Jamroot
+drwxrwxr-x 137 wruslan wruslan  4096 Mar 15 08:11 libs
+-rw-rw-r--   1 wruslan wruslan  1338 Mar 15 08:11 LICENSE_1_0.txt
+drwxrwxr-x   4 wruslan wruslan  4096 Mar 15 08:11 more
+-rw-rw-r--   1 wruslan wruslan   541 Mar 15 08:11 README.md
+-rw-rw-r--   1 wruslan wruslan  2608 Mar 15 08:11 rst.css
+drwxrwxr-x   2 wruslan wruslan  4096 Mar 15 08:11 status
+drwxrwxr-x  14 wruslan wruslan  4096 Mar 15 08:11 tools
+-rw-rw-r--   1 wruslan wruslan  2568 Mar 15 08:11 .travis.yml
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ 
+
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ cat INSTALL 
+See ./index.html for information about this release. The "Getting Started" 
+section is a useful starting place.
+
+---------------------------
+Copyright Beman Dawes, 2008
+
+Distributed under the Boost Software License, Version 1.0.
+See ./LICENSE_1_0.txt or http://www.boost.org/LICENSE_1_0.txt 
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ 
+
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ cat README.md 
+# Boost C++ Libraries
+
+The Boost project provides free peer-reviewed portable C++ source libraries.
+
+We emphasize libraries that work well with the C++ Standard Library. Boost
+libraries are intended to be widely useful, and usable across a broad spectrum
+of applications. The Boost license encourages both commercial and non-commercial use
+and does not require attribution for binary use.
+
+The project website is www.boost.org, where you can obtain more information and
+[download](https://www.boost.org/users/download/) the current release.
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ 
+
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ ./bootstrap.sh 
+Building Boost.Build engine with toolset gcc... tools/build/src/engine/b2
+Detecting Python version... 2.7
+Detecting Python root... /usr
+Unicode/ICU support for Boost.Regex?... /usr
+Generating Boost.Build configuration in project-config.jam for gcc...
+
+Bootstrapping is done. To build, run:
+
+    ./b2
+    
+To generate header files, run:
+
+    ./b2 headers
+
+To adjust configuration, edit 'project-config.jam'.
+Further information:
+
+   - Command line help:
+     ./b2 --help
+     
+   - Getting started guide: 
+     http://www.boost.org/more/getting_started/unix-variants.html
+     
+   - Boost.Build documentation:
+     http://www.boost.org/build/
+
+===========================================================
+STEP 3
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ ./b2
+Performing configuration checks
+
+    - default address-model    : 64-bit
+    - default architecture     : x86
+
+Building the Boost C++ Libraries.
+
+
+    - symlinks supported       : yes
+    - C++11 mutex              : no
+    - lockfree boost::atomic_flag : no
+    - Boost.Config Feature Check: cxx11_auto_declarations : no
+    - Boost.Config Feature Check: cxx11_constexpr : no
+    - Boost.Config Feature Check: cxx11_defaulted_functions : no
+    - Boost.Config Feature Check: cxx11_final : no
+    - Boost.Config Feature Check: cxx11_hdr_mutex : no
+    - Boost.Config Feature Check: cxx11_hdr_tuple : no
+    - Boost.Config Feature Check: cxx11_lambdas : no
+    - Boost.Config Feature Check: cxx11_noexcept : no
+    - Boost.Config Feature Check: cxx11_nullptr : no
+    - Boost.Config Feature Check: cxx11_rvalue_references : no
+    - Boost.Config Feature Check: cxx11_template_aliases : no
+    - Boost.Config Feature Check: cxx11_thread_local : no
+    - Boost.Config Feature Check: cxx11_variadic_templates : no
+    - has_icu builds           : yes
+warning: Graph library does not contain MPI-based parallel components.
+note: to enable them, add "using mpi ;" to your user-config.jam.
+note: to suppress this message, pass "--without-graph_parallel" to bjam.
+    - zlib                     : yes
+    - bzip2                    : no
+    - lzma                     : no
+    - zstd                     : no
+    - lzma                     : no  (cached)
+    - has_lzma_cputhreads builds : no
+    - iconv (libc)             : yes
+    - icu                      : yes
+    - native-atomic-int32-supported : yes
+    - native-syslog-supported  : yes
+    - pthread-supports-robust-mutexes : yes
+    - compiler-supports-ssse3  : yes
+    - compiler-supports-avx2   : yes
+    - gcc visibility           : yes
+    - long double support      : yes
+warning: skipping optional Message Passing Interface (MPI) library.
+note: to enable MPI support, add "using mpi ;" to user-config.jam.
+note: to suppress this message, pass "--without-mpi" to bjam.
+note: otherwise, you can safely ignore this message.
+    - libbacktrace builds      : yes
+    - addr2line builds         : yes
+    - WinDbg builds            : no
+    - WinDbgCached builds      : no
+    - BOOST_COMP_GNUC >= 4.3.0 : yes
+    - zlib                     : yes
+    - bzip2                    : no
+    - lzma                     : no
+    - zstd                     : no
+
+Component configuration:
+
+    - atomic                   : building
+    - chrono                   : building
+    - container                : building
+    - context                  : building
+    - contract                 : building
+    - coroutine                : building
+    - date_time                : building
+    - exception                : building
+    - fiber                    : building
+    - filesystem               : building
+    - graph                    : building
+    - graph_parallel           : building
+    - headers                  : building
+    - iostreams                : building
+    - locale                   : building
+    - log                      : building
+    - math                     : building
+    - mpi                      : building
+    - nowide                   : building
+    - program_options          : building
+    - python                   : building
+    - random                   : building
+    - regex                    : building
+    - serialization            : building
+    - stacktrace               : building
+    - system                   : building
+    - test                     : building
+    - thread                   : building
+    - timer                    : building
+    - type_erasure             : building
+    - wave                     : building
+
+...patience...
+...found 6125 targets...
+...updating 2397 targets...
+mklink-or-dir boost/chrono
+mklink-or-dir boost/container
+mklink-or-dir boost/intrusive
+mklink-or-dir boost/move
+link.mklink boost/predef.h
+mklink-or-dir boost/mpl
+mklink-or-dir boost/ratio
+mklink-or-dir boost/utility
+link.mklink boost/rational.hpp
+link.mklink boost/integer_traits.hpp
+mklink-or-dir boost/preprocessor
+boost-install.generate-cmake-config- bin.v2/libs/headers/build/stage/boost_headers-config.cmake
+boost-install.generate-cmake-config-version- bin.v2/libs/headers/build/stage/boost_headers-config-version.cmake
+link.mklink boost/operators.hpp
+link.mklink boost/call_traits.hpp
+mklink-or-dir boost/integer
+link.mklink boost/throw_exception.hpp
+link.mklink boost/utility/enable_if.hpp
+link.mklink boost/operators_v1.hpp
+link.mklink boost/detail/call_traits.hpp
+mklink-or-dir boost/assert
+mklink-or-dir boost/exception
+link.mklink boost/exception/exception.hpp
+mklink-or-dir boost/system
+mklink-or-dir boost/winapi
+boost-install.generate-cmake-config- bin.v2/libs/chrono/build/stage/boost_chrono-config.cmake
+link.mklink boost/cerrno.hpp
+....
+....
+./boost/bind.hpp:41:265: note: #pragma message: The practice of declaring the Bind placeholders (_1, _2, ...) in the global namespace is deprecated. Please use <boost/bind/bind.hpp> + using namespace boost::placeholders, or define BOOST_BIND_GLOBAL_PLACEHOLDERS to retain the current behavior.
+gcc.archive bin.v2/libs/wave/build/gcc-5.4.0/release/link-static/threadapi-pthread/threading-multi/visibility-hidden/libboost_wave.a
+boost-install.generate-cmake-variant- bin.v2/libs/wave/build/gcc-5.4.0/release/link-static/threadapi-pthread/threading-multi/visibility-hidden/libboost_wave-variant-static.cmake
+common.copy /home/wruslan/apps3/boost/stage/lib/cmake/boost_wave-1.73.0/libboost_wave-variant-static.cmake
+common.copy /home/wruslan/apps3/boost/stage/lib/libboost_wave.a
+...updated 2397 targets...
+
+
+The Boost C++ Libraries were successfully built!
+
+The following directory should be added to compiler include paths:
+
+    /home/wruslan/apps3/boost
+
+The following directory should be added to linker library paths:
+
+    /home/wruslan/apps3/boost/stage/lib
+
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ 
+
+===========================================================
+STEP 4
+===========================================================
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ ./b2 headers
+Performing configuration checks
+
+    - default address-model    : 64-bit (cached)
+    - default architecture     : x86 (cached)
+    - symlinks supported       : yes (cached)
+...found 1171 targets...
+wruslan@sgi-ub1604-lts-64b:~/apps3/boost$ 
+
+ALHAMDULILLAH 3 TIMES.
+
+===========================================================
+.... Continued from step 1
+===========================================================
+....
+Submodule 'accumulators' (https://github.com/boostorg/accumulators.git) registered for path 'libs/accumulators'
+Submodule 'algorithm' (https://github.com/boostorg/algorithm.git) registered for path 'libs/algorithm'
+Submodule 'align' (https://github.com/boostorg/align.git) registered for path 'libs/align'
+Submodule 'any' (https://github.com/boostorg/any.git) registered for path 'libs/any'
+Submodule 'array' (https://github.com/boostorg/array.git) registered for path 'libs/array'
+Submodule 'asio' (https://github.com/boostorg/asio.git) registered for path 'libs/asio'
+Submodule 'assert' (https://github.com/boostorg/assert.git) registered for path 'libs/assert'
+Submodule 'assign' (https://github.com/boostorg/assign.git) registered for path 'libs/assign'
+Submodule 'atomic' (https://github.com/boostorg/atomic.git) registered for path 'libs/atomic'
+Submodule 'beast' (https://github.com/boostorg/beast.git) registered for path 'libs/beast'
+Submodule 'bimap' (https://github.com/boostorg/bimap.git) registered for path 'libs/bimap'
+Submodule 'bind' (https://github.com/boostorg/bind.git) registered for path 'libs/bind'
+Submodule 'callable_traits' (https://github.com/boostorg/callable_traits.git) registered for path 'libs/callable_traits'
+Submodule 'chrono' (https://github.com/boostorg/chrono.git) registered for path 'libs/chrono'
+Submodule 'circular_buffer' (https://github.com/boostorg/circular_buffer.git) registered for path 'libs/circular_buffer'
+Submodule 'compatibility' (https://github.com/boostorg/compatibility.git) registered for path 'libs/compatibility'
+Submodule 'compute' (https://github.com/boostorg/compute.git) registered for path 'libs/compute'
+Submodule 'concept_check' (https://github.com/boostorg/concept_check.git) registered for path 'libs/concept_check'
+Submodule 'config' (https://github.com/boostorg/config.git) registered for path 'libs/config'
+Submodule 'container' (https://github.com/boostorg/container.git) registered for path 'libs/container'
+Submodule 'container_hash' (https://github.com/boostorg/container_hash.git) registered for path 'libs/container_hash'
+Submodule 'context' (https://github.com/boostorg/context.git) registered for path 'libs/context'
+Submodule 'contract' (https://github.com/boostorg/contract.git) registered for path 'libs/contract'
+Submodule 'conversion' (https://github.com/boostorg/conversion.git) registered for path 'libs/conversion'
+Submodule 'convert' (https://github.com/boostorg/convert.git) registered for path 'libs/convert'
+Submodule 'core' (https://github.com/boostorg/core.git) registered for path 'libs/core'
+Submodule 'coroutine' (https://github.com/boostorg/coroutine.git) registered for path 'libs/coroutine'
+Submodule 'coroutine2' (https://github.com/boostorg/coroutine2.git) registered for path 'libs/coroutine2'
+Submodule 'crc' (https://github.com/boostorg/crc.git) registered for path 'libs/crc'
+Submodule 'date_time' (https://github.com/boostorg/date_time.git) registered for path 'libs/date_time'
+Submodule 'detail' (https://github.com/boostorg/detail.git) registered for path 'libs/detail'
+Submodule 'dll' (https://github.com/boostorg/dll.git) registered for path 'libs/dll'
+Submodule 'dynamic_bitset' (https://github.com/boostorg/dynamic_bitset.git) registered for path 'libs/dynamic_bitset'
+Submodule 'endian' (https://github.com/boostorg/endian.git) registered for path 'libs/endian'
+Submodule 'exception' (https://github.com/boostorg/exception.git) registered for path 'libs/exception'
+Submodule 'fiber' (https://github.com/boostorg/fiber.git) registered for path 'libs/fiber'
+Submodule 'filesystem' (https://github.com/boostorg/filesystem.git) registered for path 'libs/filesystem'
+Submodule 'flyweight' (https://github.com/boostorg/flyweight.git) registered for path 'libs/flyweight'
+Submodule 'foreach' (https://github.com/boostorg/foreach.git) registered for path 'libs/foreach'
+Submodule 'format' (https://github.com/boostorg/format.git) registered for path 'libs/format'
+Submodule 'function' (https://github.com/boostorg/function.git) registered for path 'libs/function'
+Submodule 'function_types' (https://github.com/boostorg/function_types.git) registered for path 'libs/function_types'
+Submodule 'functional' (https://github.com/boostorg/functional.git) registered for path 'libs/functional'
+Submodule 'fusion' (https://github.com/boostorg/fusion.git) registered for path 'libs/fusion'
+Submodule 'geometry' (https://github.com/boostorg/geometry.git) registered for path 'libs/geometry'
+Submodule 'gil' (https://github.com/boostorg/gil.git) registered for path 'libs/gil'
+Submodule 'graph' (https://github.com/boostorg/graph.git) registered for path 'libs/graph'
+Submodule 'graph_parallel' (https://github.com/boostorg/graph_parallel.git) registered for path 'libs/graph_parallel'
+Submodule 'hana' (https://github.com/boostorg/hana.git) registered for path 'libs/hana'
+Submodule 'headers' (https://github.com/boostorg/headers.git) registered for path 'libs/headers'
+Submodule 'heap' (https://github.com/boostorg/heap.git) registered for path 'libs/heap'
+Submodule 'histogram' (https://github.com/boostorg/histogram.git) registered for path 'libs/histogram'
+Submodule 'hof' (https://github.com/boostorg/hof.git) registered for path 'libs/hof'
+Submodule 'icl' (https://github.com/boostorg/icl.git) registered for path 'libs/icl'
+Submodule 'integer' (https://github.com/boostorg/integer.git) registered for path 'libs/integer'
+Submodule 'interprocess' (https://github.com/boostorg/interprocess.git) registered for path 'libs/interprocess'
+Submodule 'intrusive' (https://github.com/boostorg/intrusive.git) registered for path 'libs/intrusive'
+Submodule 'io' (https://github.com/boostorg/io.git) registered for path 'libs/io'
+Submodule 'iostreams' (https://github.com/boostorg/iostreams.git) registered for path 'libs/iostreams'
+Submodule 'iterator' (https://github.com/boostorg/iterator.git) registered for path 'libs/iterator'
+Submodule 'lambda' (https://github.com/boostorg/lambda.git) registered for path 'libs/lambda'
+Submodule 'lexical_cast' (https://github.com/boostorg/lexical_cast.git) registered for path 'libs/lexical_cast'
+Submodule 'local_function' (https://github.com/boostorg/local_function.git) registered for path 'libs/local_function'
+Submodule 'locale' (https://github.com/boostorg/locale.git) registered for path 'libs/locale'
+Submodule 'lockfree' (https://github.com/boostorg/lockfree.git) registered for path 'libs/lockfree'
+Submodule 'log' (https://github.com/boostorg/log.git) registered for path 'libs/log'
+Submodule 'logic' (https://github.com/boostorg/logic.git) registered for path 'libs/logic'
+Submodule 'math' (https://github.com/boostorg/math.git) registered for path 'libs/math'
+Submodule 'metaparse' (https://github.com/boostorg/metaparse.git) registered for path 'libs/metaparse'
+Submodule 'move' (https://github.com/boostorg/move.git) registered for path 'libs/move'
+Submodule 'mp11' (https://github.com/boostorg/mp11.git) registered for path 'libs/mp11'
+Submodule 'mpi' (https://github.com/boostorg/mpi.git) registered for path 'libs/mpi'
+Submodule 'mpl' (https://github.com/boostorg/mpl.git) registered for path 'libs/mpl'
+Submodule 'msm' (https://github.com/boostorg/msm.git) registered for path 'libs/msm'
+Submodule 'multi_array' (https://github.com/boostorg/multi_array.git) registered for path 'libs/multi_array'
+Submodule 'multi_index' (https://github.com/boostorg/multi_index.git) registered for path 'libs/multi_index'
+Submodule 'multiprecision' (https://github.com/boostorg/multiprecision.git) registered for path 'libs/multiprecision'
+Submodule 'nowide' (https://github.com/boostorg/nowide.git) registered for path 'libs/nowide'
+Submodule 'numeric_conversion' (https://github.com/boostorg/numeric_conversion.git) registered for path 'libs/numeric/conversion'
+Submodule 'interval' (https://github.com/boostorg/interval.git) registered for path 'libs/numeric/interval'
+Submodule 'odeint' (https://github.com/boostorg/odeint.git) registered for path 'libs/numeric/odeint'
+Submodule 'ublas' (https://github.com/boostorg/ublas.git) registered for path 'libs/numeric/ublas'
+Submodule 'optional' (https://github.com/boostorg/optional.git) registered for path 'libs/optional'
+Submodule 'outcome' (https://github.com/boostorg/outcome.git) registered for path 'libs/outcome'
+Submodule 'parameter' (https://github.com/boostorg/parameter.git) registered for path 'libs/parameter'
+Submodule 'parameter_python' (https://github.com/boostorg/parameter_python.git) registered for path 'libs/parameter_python'
+Submodule 'phoenix' (https://github.com/boostorg/phoenix.git) registered for path 'libs/phoenix'
+Submodule 'poly_collection' (https://github.com/boostorg/poly_collection.git) registered for path 'libs/poly_collection'
+Submodule 'polygon' (https://github.com/boostorg/polygon.git) registered for path 'libs/polygon'
+Submodule 'pool' (https://github.com/boostorg/pool.git) registered for path 'libs/pool'
+Submodule 'predef' (https://github.com/boostorg/predef.git) registered for path 'libs/predef'
+Submodule 'preprocessor' (https://github.com/boostorg/preprocessor.git) registered for path 'libs/preprocessor'
+Submodule 'process' (https://github.com/boostorg/process.git) registered for path 'libs/process'
+Submodule 'program_options' (https://github.com/boostorg/program_options.git) registered for path 'libs/program_options'
+Submodule 'property_map' (https://github.com/boostorg/property_map.git) registered for path 'libs/property_map'
+Submodule 'property_tree' (https://github.com/boostorg/property_tree.git) registered for path 'libs/property_tree'
+Submodule 'proto' (https://github.com/boostorg/proto.git) registered for path 'libs/proto'
+Submodule 'ptr_container' (https://github.com/boostorg/ptr_container.git) registered for path 'libs/ptr_container'
+Submodule 'python' (https://github.com/boostorg/python.git) registered for path 'libs/python'
+Submodule 'qvm' (https://github.com/boostorg/qvm.git) registered for path 'libs/qvm'
+Submodule 'random' (https://github.com/boostorg/random.git) registered for path 'libs/random'
+Submodule 'range' (https://github.com/boostorg/range.git) registered for path 'libs/range'
+Submodule 'ratio' (https://github.com/boostorg/ratio.git) registered for path 'libs/ratio'
+Submodule 'rational' (https://github.com/boostorg/rational.git) registered for path 'libs/rational'
+Submodule 'regex' (https://github.com/boostorg/regex.git) registered for path 'libs/regex'
+Submodule 'safe_numerics' (https://github.com/boostorg/safe_numerics.git) registered for path 'libs/safe_numerics'
+Submodule 'scope_exit' (https://github.com/boostorg/scope_exit.git) registered for path 'libs/scope_exit'
+Submodule 'serialization' (https://github.com/boostorg/serialization.git) registered for path 'libs/serialization'
+Submodule 'signals2' (https://github.com/boostorg/signals2.git) registered for path 'libs/signals2'
+Submodule 'smart_ptr' (https://github.com/boostorg/smart_ptr.git) registered for path 'libs/smart_ptr'
+Submodule 'sort' (https://github.com/boostorg/sort.git) registered for path 'libs/sort'
+Submodule 'spirit' (https://github.com/boostorg/spirit.git) registered for path 'libs/spirit'
+Submodule 'stacktrace' (https://github.com/boostorg/stacktrace.git) registered for path 'libs/stacktrace'
+Submodule 'statechart' (https://github.com/boostorg/statechart.git) registered for path 'libs/statechart'
+Submodule 'static_assert' (https://github.com/boostorg/static_assert.git) registered for path 'libs/static_assert'
+Submodule 'system' (https://github.com/boostorg/system.git) registered for path 'libs/system'
+Submodule 'test' (https://github.com/boostorg/test.git) registered for path 'libs/test'
+Submodule 'thread' (https://github.com/boostorg/thread.git) registered for path 'libs/thread'
+Submodule 'throw_exception' (https://github.com/boostorg/throw_exception.git) registered for path 'libs/throw_exception'
+Submodule 'timer' (https://github.com/boostorg/timer.git) registered for path 'libs/timer'
+Submodule 'tokenizer' (https://github.com/boostorg/tokenizer.git) registered for path 'libs/tokenizer'
+Submodule 'tti' (https://github.com/boostorg/tti.git) registered for path 'libs/tti'
+Submodule 'tuple' (https://github.com/boostorg/tuple.git) registered for path 'libs/tuple'
+Submodule 'type_erasure' (https://github.com/boostorg/type_erasure.git) registered for path 'libs/type_erasure'
+Submodule 'type_index' (https://github.com/boostorg/type_index.git) registered for path 'libs/type_index'
+Submodule 'type_traits' (https://github.com/boostorg/type_traits.git) registered for path 'libs/type_traits'
+Submodule 'typeof' (https://github.com/boostorg/typeof.git) registered for path 'libs/typeof'
+Submodule 'units' (https://github.com/boostorg/units.git) registered for path 'libs/units'
+Submodule 'unordered' (https://github.com/boostorg/unordered.git) registered for path 'libs/unordered'
+Submodule 'utility' (https://github.com/boostorg/utility.git) registered for path 'libs/utility'
+Submodule 'uuid' (https://github.com/boostorg/uuid.git) registered for path 'libs/uuid'
+Submodule 'variant' (https://github.com/boostorg/variant.git) registered for path 'libs/variant'
+Submodule 'variant2' (https://github.com/boostorg/variant2.git) registered for path 'libs/variant2'
+Submodule 'vmd' (https://github.com/boostorg/vmd.git) registered for path 'libs/vmd'
+Submodule 'wave' (https://github.com/boostorg/wave.git) registered for path 'libs/wave'
+Submodule 'winapi' (https://github.com/boostorg/winapi.git) registered for path 'libs/winapi'
+Submodule 'xpressive' (https://github.com/boostorg/xpressive.git) registered for path 'libs/xpressive'
+Submodule 'yap' (https://github.com/boostorg/yap.git) registered for path 'libs/yap'
+Submodule 'auto_index' (https://github.com/boostorg/auto_index.git) registered for path 'tools/auto_index'
+Submodule 'bcp' (https://github.com/boostorg/bcp.git) registered for path 'tools/bcp'
+Submodule 'boost_install' (https://github.com/boostorg/boost_install.git) registered for path 'tools/boost_install'
+Submodule 'boostbook' (https://github.com/boostorg/boostbook.git) registered for path 'tools/boostbook'
+Submodule 'boostdep' (https://github.com/boostorg/boostdep.git) registered for path 'tools/boostdep'
+Submodule 'build' (https://github.com/boostorg/build.git) registered for path 'tools/build'
+Submodule 'check_build' (https://github.com/boostorg/check_build.git) registered for path 'tools/check_build'
+Submodule 'cmake' (https://github.com/boostorg/cmake.git) registered for path 'tools/cmake'
+Submodule 'docca' (https://github.com/boostorg/docca.git) registered for path 'tools/docca'
+Submodule 'inspect' (https://github.com/boostorg/inspect.git) registered for path 'tools/inspect'
+Submodule 'litre' (https://github.com/boostorg/litre.git) registered for path 'tools/litre'
+Submodule 'quickbook' (https://github.com/boostorg/quickbook.git) registered for path 'tools/quickbook'
+
+=============================
+Cloning into 'libs/accumulators'...
+remote: Enumerating objects: 1506, done.
+remote: Total 1506 (delta 0), reused 0 (delta 0), pack-reused 1506
+Receiving objects: 100% (1506/1506), 1.28 MiB | 653.00 KiB/s, done.
+Resolving deltas: 100% (961/961), done.
+Checking connectivity... done.
+Submodule path 'libs/accumulators': checked out 'b12a189fefd17ff3a6a68fc24b4135f0e0c498f6'
+=============================
+Cloning into 'libs/algorithm'...
+remote: Enumerating objects: 60, done.
+remote: Counting objects: 100% (60/60), done.
+remote: Compressing objects: 100% (53/53), done.
+remote: Total 4591 (delta 14), reused 19 (delta 5), pack-reused 4531
+Receiving objects: 100% (4591/4591), 3.71 MiB | 902.00 KiB/s, done.
+Resolving deltas: 100% (2708/2708), done.
+Checking connectivity... done.
+Submodule path 'libs/algorithm': checked out 'e59958cc4d7559e70047f7ff3e467bdc9a670e63'
+=============================
+Cloning into 'libs/align'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 1581 (delta 0), reused 4 (delta 0), pack-reused 1573
+Receiving objects: 100% (1581/1581), 309.54 KiB | 263.00 KiB/s, done.
+Resolving deltas: 100% (1049/1049), done.
+Checking connectivity... done.
+Submodule path 'libs/align': checked out 'b8e81e10bee1af5556cc47abef042219f35ec010'
+=============================
+Cloning into 'libs/any'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 933 (delta 0), reused 4 (delta 0), pack-reused 926
+Receiving objects: 100% (933/933), 179.41 KiB | 270.00 KiB/s, done.
+Resolving deltas: 100% (412/412), done.
+Checking connectivity... done.
+Submodule path 'libs/any': checked out '05c367488dda0118e7b6e0ffb704a91bd72969f7'
+=============================
+Cloning into 'libs/array'...
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 796 (delta 0), reused 1 (delta 0), pack-reused 795
+Receiving objects: 100% (796/796), 265.83 KiB | 255.00 KiB/s, done.
+Resolving deltas: 100% (270/270), done.
+Checking connectivity... done.
+Submodule path 'libs/array': checked out '32b074c9ae44ba0a34d6ea8ada65971191e675ee'
+=============================
+Cloning into 'libs/asio'...
+remote: Enumerating objects: 80, done.
+remote: Counting objects: 100% (80/80), done.
+remote: Compressing objects: 100% (45/45), done.
+remote: Total 25192 (delta 30), reused 59 (delta 28), pack-reused 25112
+Receiving objects: 100% (25192/25192), 12.91 MiB | 1.04 MiB/s, done.
+Resolving deltas: 100% (18270/18270), done.
+Checking connectivity... done.
+Submodule path 'libs/asio': checked out '2f38e7ab8706368f6d980158442b313388746fd4'
+=============================
+Cloning into 'libs/assert'...
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 804 (delta 4), reused 14 (delta 3), pack-reused 783
+Receiving objects: 100% (804/804), 138.58 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (410/410), done.
+Checking connectivity... done.
+Submodule path 'libs/assert': checked out '35c31e7778cd5e02cdcdea7bedce4c7f8d767803'
+=============================
+Cloning into 'libs/assign'...
+remote: Enumerating objects: 1348, done.
+remote: Total 1348 (delta 0), reused 0 (delta 0), pack-reused 1348
+Receiving objects: 100% (1348/1348), 418.02 KiB | 311.00 KiB/s, done.
+Resolving deltas: 100% (581/581), done.
+Checking connectivity... done.
+Submodule path 'libs/assign': checked out 'd30e5c2d3796740445e992230eb7e4d7712d219b'
+=============================
+Cloning into 'libs/atomic'...
+remote: Enumerating objects: 466, done.
+remote: Counting objects: 100% (466/466), done.
+remote: Compressing objects: 100% (246/246), done.
+remote: Total 3079 (delta 292), reused 338 (delta 184), pack-reused 2613
+Receiving objects: 100% (3079/3079), 1.20 MiB | 706.00 KiB/s, done.
+Resolving deltas: 100% (1951/1951), done.
+Checking connectivity... done.
+Submodule path 'libs/atomic': checked out '4bb0b6d3b46809cb3de6c57e42c61d2eaf032a90'
+=============================
+Cloning into 'libs/beast'...
+remote: Enumerating objects: 84, done.
+remote: Counting objects: 100% (84/84), done.
+remote: Compressing objects: 100% (40/40), done.
+remote: Total 31141 (delta 37), reused 67 (delta 35), pack-reused 31057
+Receiving objects: 100% (31141/31141), 11.65 MiB | 1.00 MiB/s, done.
+Resolving deltas: 100% (22401/22401), done.
+Checking connectivity... done.
+Submodule path 'libs/beast': checked out '46ac848fa46ce5b81f2bb5b221774d15c0cdd128'
+=============================
+Cloning into 'libs/bimap'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 2151 (delta 1), reused 3 (delta 0), pack-reused 2140
+Receiving objects: 100% (2151/2151), 4.03 MiB | 1004.00 KiB/s, done.
+Resolving deltas: 100% (1477/1477), done.
+Checking connectivity... done.
+Submodule path 'libs/bimap': checked out '05b7049b4dace6e6a2c26862403a0c1fa55bccbd'
+=============================
+Cloning into 'libs/bind'...
+remote: Enumerating objects: 150, done.
+remote: Counting objects: 100% (150/150), done.
+remote: Compressing objects: 100% (101/101), done.
+remote: Total 2080 (delta 83), reused 75 (delta 44), pack-reused 1930
+Receiving objects: 100% (2080/2080), 557.41 KiB | 531.00 KiB/s, done.
+Resolving deltas: 100% (1063/1063), done.
+Checking connectivity... done.
+Submodule path 'libs/bind': checked out '2797f0dc33caaae126a416bf613bd11267ba3353'
+=============================
+Cloning into 'libs/callable_traits'...
+remote: Enumerating objects: 6576, done.
+remote: Total 6576 (delta 0), reused 0 (delta 0), pack-reused 6576
+Receiving objects: 100% (6576/6576), 1.91 MiB | 742.00 KiB/s, done.
+Resolving deltas: 100% (5188/5188), done.
+Checking connectivity... done.
+Submodule path 'libs/callable_traits': checked out '454b8ade9c8356f27fb0b3c6cbbb9bd8b9477af3'
+=============================
+Cloning into 'libs/chrono'...
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 5148 (delta 1), reused 8 (delta 1), pack-reused 5135
+Receiving objects: 100% (5148/5148), 2.42 MiB | 786.00 KiB/s, done.
+Resolving deltas: 100% (2799/2799), done.
+Checking connectivity... done.
+Submodule path 'libs/chrono': checked out 'aa51cbd5121ed29093484f53e5f96e13a9a915b4'
+=============================
+Cloning into 'libs/circular_buffer'...
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 2478 (delta 5), reused 8 (delta 0), pack-reused 2461
+Receiving objects: 100% (2478/2478), 4.42 MiB | 1010.00 KiB/s, done.
+Resolving deltas: 100% (1643/1643), done.
+Checking connectivity... done.
+Submodule path 'libs/circular_buffer': checked out '7808ab19dcc2c801747eec52689c179681f3d125'
+=============================
+Cloning into 'libs/compatibility'...
+remote: Enumerating objects: 254, done.
+remote: Total 254 (delta 0), reused 0 (delta 0), pack-reused 254
+Receiving objects: 100% (254/254), 56.60 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (62/62), done.
+Checking connectivity... done.
+Submodule path 'libs/compatibility': checked out '445fbc1633cbaf49b0c3310db95a642e9c3fe89b'
+
+....
+....
+
+Submodule path 'libs/polygon': checked out '335650e36062db5638f143a958ee6995ada1de3e'
+Cloning into 'libs/pool'...
+remote: Enumerating objects: 1875, done.
+remote: Total 1875 (delta 0), reused 0 (delta 0), pack-reused 1875
+Receiving objects: 100% (1875/1875), 8.78 MiB | 1.02 MiB/s, done.
+Resolving deltas: 100% (1065/1065), done.
+Checking connectivity... done.
+Submodule path 'libs/pool': checked out '8edafbec99cefa00b84b1c95e5b3cbbf9a6a5498'
+
+Cloning into 'libs/predef'...
+remote: Enumerating objects: 199, done.
+remote: Counting objects: 100% (199/199), done.
+remote: Compressing objects: 100% (166/166), done.
+remote: Total 4377 (delta 111), reused 73 (delta 23), pack-reused 4178
+Receiving objects: 100% (4377/4377), 1019.09 KiB | 527.00 KiB/s, done.
+Resolving deltas: 100% (3007/3007), done.
+Checking connectivity... done.
+Submodule path 'libs/predef': checked out 'fe62325d9fe171028a1beb61082a72972a3e93b0'
+
+Cloning into 'libs/preprocessor'...
+remote: Enumerating objects: 56, done.
+remote: Counting objects: 100% (56/56), done.
+remote: Compressing objects: 100% (41/41), done.
+remote: Total 9593 (delta 22), reused 39 (delta 10), pack-reused 9537
+Receiving objects: 100% (9593/9593), 3.40 MiB | 870.00 KiB/s, done.
+Resolving deltas: 100% (5201/5201), done.
+Checking connectivity... done.
+Submodule path 'libs/preprocessor': checked out 'e4fb5f4866f69a917b7eeb522a3257d4625e52c1'
+
+Cloning into 'libs/process'...
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 8000 (delta 0), reused 2 (delta 0), pack-reused 7995
+Receiving objects: 100% (8000/8000), 2.34 MiB | 807.00 KiB/s, done.
+Resolving deltas: 100% (5649/5649), done.
+Checking connectivity... done.
+Submodule path 'libs/process': checked out '0341e08297512cfc3136d1324364f406518b0f11'
+Cloning into 'libs/program_options'...
+remote: Enumerating objects: 2989, done.
+remote: Total 2989 (delta 0), reused 0 (delta 0), pack-reused 2989
+Receiving objects: 100% (2989/2989), 1.81 MiB | 775.00 KiB/s, done.
+Resolving deltas: 100% (1900/1900), done.
+Checking connectivity... done.
+Submodule path 'libs/program_options': checked out 'bc0c90a70f0435ee4ce65b97a68d864a7d627e35'
+Cloning into 'libs/property_map'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 1544 (delta 0), reused 4 (delta 0), pack-reused 1537
+Receiving objects: 100% (1544/1544), 357.36 KiB | 202.00 KiB/s, done.
+Resolving deltas: 100% (742/742), done.
+Checking connectivity... done.
+Submodule path 'libs/property_map': checked out 'df0bbaafad699c7ce1b0f593cdde9b3e3da3b5b1'
+Cloning into 'libs/property_tree'...
+remote: Enumerating objects: 1466, done.
+remote: Total 1466 (delta 0), reused 0 (delta 0), pack-reused 1466
+Receiving objects: 100% (1466/1466), 1.12 MiB | 631.00 KiB/s, done.
+Resolving deltas: 100% (842/842), done.
+Checking connectivity... done.
+Submodule path 'libs/property_tree': checked out 'bdfe275d172ac30bc5e89a6375a5a64dea20b3c0'
+Cloning into 'libs/proto'...
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 4349 (delta 0), reused 0 (delta 0), pack-reused 4348
+Receiving objects: 100% (4349/4349), 1.91 MiB | 746.00 KiB/s, done.
+Resolving deltas: 100% (2119/2119), done.
+Checking connectivity... done.
+Submodule path 'libs/proto': checked out 'c45e6c41322e222802afa035e89b71cead939388'
+Cloning into 'libs/ptr_container'...
+remote: Enumerating objects: 3317, done.
+remote: Total 3317 (delta 0), reused 0 (delta 0), pack-reused 3317
+Receiving objects: 100% (3317/3317), 2.80 MiB | 858.00 KiB/s, done.
+Resolving deltas: 100% (2196/2196), done.
+Checking connectivity... done.
+Submodule path 'libs/ptr_container': checked out 'c7b6a7ee5b41d378c4c95d6f6edb25c98dfffed7'
+Cloning into 'libs/python'...
+remote: Enumerating objects: 29349, done.
+remote: Total 29349 (delta 0), reused 0 (delta 0), pack-reused 29349
+Receiving objects: 100% (29349/29349), 19.72 MiB | 1.00 MiB/s, done.
+Resolving deltas: 100% (18441/18441), done.
+Checking connectivity... done.
+Submodule path 'libs/python': checked out '102acf1d34ff91e67fe9aae401edc6edd68be89e'
+Cloning into 'libs/qvm'...
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 4302 (delta 3), reused 5 (delta 0), pack-reused 4286
+Receiving objects: 100% (4302/4302), 2.71 MiB | 857.00 KiB/s, done.
+Resolving deltas: 100% (3849/3849), done.
+Checking connectivity... done.
+Submodule path 'libs/qvm': checked out 'ffb434f1fad62d2bd2e50d23afbb960ffdab573f'
+Cloning into 'libs/random'...
+remote: Enumerating objects: 5350, done.
+remote: Total 5350 (delta 0), reused 0 (delta 0), pack-reused 5350
+Receiving objects: 100% (5350/5350), 4.13 MiB | 991.00 KiB/s, done.
+Resolving deltas: 100% (3540/3540), done.
+Checking connectivity... done.
+Submodule path 'libs/random': checked out '5d9ba8578ac1d78525488077dafb99b536a399d3'
+Cloning into 'libs/range'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 9119 (delta 2), reused 3 (delta 0), pack-reused 9107
+Receiving objects: 100% (9119/9119), 4.63 MiB | 1.00 MiB/s, done.
+Resolving deltas: 100% (6605/6605), done.
+Checking connectivity... done.
+Submodule path 'libs/range': checked out '77a4dd51242f1ef446acb1a476ae1c760c206b1d'
+Cloning into 'libs/ratio'...
+remote: Enumerating objects: 953, done.
+remote: Total 953 (delta 0), reused 0 (delta 0), pack-reused 953
+Receiving objects: 100% (953/953), 1.36 MiB | 644.00 KiB/s, done.
+Resolving deltas: 100% (597/597), done.
+Checking connectivity... done.
+Submodule path 'libs/ratio': checked out '96888514780dbe8d1729a8248fbafdeda79bcdc4'
+Cloning into 'libs/rational'...
+remote: Enumerating objects: 821, done.
+remote: Total 821 (delta 0), reused 0 (delta 0), pack-reused 821
+Receiving objects: 100% (821/821), 639.79 KiB | 398.00 KiB/s, done.
+Resolving deltas: 100% (327/327), done.
+Checking connectivity... done.
+Submodule path 'libs/rational': checked out '47c1b26964b06a99200769474d58a309267c50f1'
+Cloning into 'libs/regex'...
+remote: Enumerating objects: 41, done.
+remote: Counting objects: 100% (41/41), done.
+remote: Compressing objects: 100% (26/26), done.
+remote: Total 21074 (delta 15), reused 22 (delta 12), pack-reused 21033
+Receiving objects: 100% (21074/21074), 12.53 MiB | 1.00 MiB/s, done.
+Resolving deltas: 100% (12611/12611), done.
+Checking connectivity... done.
+Submodule path 'libs/regex': checked out 'c21b52d87cd368505f77d6b69bb97ad581e4e7eb'
+Cloning into 'libs/safe_numerics'...
+remote: Enumerating objects: 125, done.
+remote: Counting objects: 100% (125/125), done.
+remote: Compressing objects: 100% (76/76), done.
+remote: Total 5399 (delta 64), reused 72 (delta 36), pack-reused 5274
+Receiving objects: 100% (5399/5399), 6.93 MiB | 1.02 MiB/s, done.
+Resolving deltas: 100% (4171/4171), done.
+Checking connectivity... done.
+Submodule path 'libs/safe_numerics': checked out '94cbf677737563c8e7ab55d95ba63052e7b6cc88'
+Cloning into 'libs/scope_exit'...
+remote: Enumerating objects: 918, done.
+remote: Total 918 (delta 0), reused 0 (delta 0), pack-reused 918
+Receiving objects: 100% (918/918), 754.74 KiB | 424.00 KiB/s, done.
+Resolving deltas: 100% (619/619), done.
+Checking connectivity... done.
+Submodule path 'libs/scope_exit': checked out '3a2c1d7da44af2bb4bf47a4dc051998a80d3194f'
+Cloning into 'libs/serialization'...
+remote: Enumerating objects: 468, done.
+remote: Counting objects: 100% (468/468), done.
+remote: Compressing objects: 100% (375/375), done.
+remote: Total 18592 (delta 226), reused 155 (delta 79), pack-reused 18124
+Receiving objects: 100% (18592/18592), 16.20 MiB | 1.02 MiB/s, done.
+Resolving deltas: 100% (10978/10978), done.
+Checking connectivity... done.
+Submodule path 'libs/serialization': checked out '88094d44b6b95598d8ec7d23c0a618a9196df974'
+Cloning into 'libs/signals2'...
+remote: Enumerating objects: 112, done.
+remote: Counting objects: 100% (112/112), done.
+remote: Compressing objects: 100% (78/78), done.
+remote: Total 3869 (delta 44), reused 73 (delta 30), pack-reused 3757
+Receiving objects: 100% (3869/3869), 888.33 KiB | 490.00 KiB/s, done.
+Resolving deltas: 100% (1869/1869), done.
+Checking connectivity... done.
+Submodule path 'libs/signals2': checked out '207b32cbee891d9fb75df19ea64cd6e186bd87ff'
+Cloning into 'libs/smart_ptr'...
+remote: Enumerating objects: 161, done.
+remote: Counting objects: 100% (161/161), done.
+remote: Compressing objects: 100% (123/123), done.
+remote: Total 9044 (delta 68), reused 70 (delta 32), pack-reused 8883
+Receiving objects: 100% (9044/9044), 2.12 MiB | 803.00 KiB/s, done.
+Resolving deltas: 100% (5830/5830), done.
+Checking connectivity... done.
+Submodule path 'libs/smart_ptr': checked out '91cd83e5bf012ea029683315b5c02a8dbf4008db'
+Cloning into 'libs/sort'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 1723 (delta 0), reused 0 (delta 0), pack-reused 1713
+Receiving objects: 100% (1723/1723), 3.23 MiB | 850.00 KiB/s, done.
+Resolving deltas: 100% (1156/1156), done.
+Checking connectivity... done.
+Submodule path 'libs/sort': checked out '9dfadc849696999db43ba71337d67fd38763f072'
+Cloning into 'libs/spirit'...
+remote: Enumerating objects: 132, done.
+remote: Counting objects: 100% (132/132), done.
+remote: Compressing objects: 100% (108/108), done.
+remote: Total 99826 (delta 52), reused 47 (delta 19), pack-reused 99694
+Receiving objects: 100% (99826/99826), 107.05 MiB | 997.00 KiB/s, done.
+Resolving deltas: 100% (75356/75356), done.
+Checking connectivity... done.
+Submodule path 'libs/spirit': checked out 'b0741bdee6edbf5262a6644c99188b85a5633b24'
+Cloning into 'libs/stacktrace'...
+remote: Enumerating objects: 137, done.
+remote: Counting objects: 100% (137/137), done.
+remote: Compressing objects: 100% (115/115), done.
+remote: Total 3412 (delta 61), reused 40 (delta 17), pack-reused 3275
+Receiving objects: 100% (3412/3412), 694.78 KiB | 509.00 KiB/s, done.
+Resolving deltas: 100% (2110/2110), done.
+Checking connectivity... done.
+Submodule path 'libs/stacktrace': checked out '9b5bc54fe3050762bb617d62bb73d842be1e165b'
+Cloning into 'libs/statechart'...
+remote: Enumerating objects: 4064, done.
+remote: Total 4064 (delta 0), reused 0 (delta 0), pack-reused 4064
+Receiving objects: 100% (4064/4064), 8.51 MiB | 1.00 MiB/s, done.
+Resolving deltas: 100% (2680/2680), done.
+Checking connectivity... done.
+Submodule path 'libs/statechart': checked out '798d77087ecc144f36f8f5873dd1e9a4f4926344'
+Cloning into 'libs/static_assert'...
+remote: Enumerating objects: 69, done.
+remote: Counting objects: 100% (69/69), done.
+remote: Compressing objects: 100% (46/46), done.
+remote: Total 713 (delta 36), reused 54 (delta 23), pack-reused 644
+Receiving objects: 100% (713/713), 148.77 KiB | 174.00 KiB/s, done.
+Resolving deltas: 100% (287/287), done.
+Checking connectivity... done.
+Submodule path 'libs/static_assert': checked out 'ba846a309164183757683b64df4b88f2d72cb0ff'
+Cloning into 'libs/system'...
+remote: Enumerating objects: 35, done.
+remote: Counting objects: 100% (35/35), done.
+remote: Compressing objects: 100% (22/22), done.
+remote: Total 2368 (delta 13), reused 26 (delta 9), pack-reused 2333
+Receiving objects: 100% (2368/2368), 482.55 KiB | 271.00 KiB/s, done.
+Resolving deltas: 100% (1205/1205), done.
+Checking connectivity... done.
+Submodule path 'libs/system': checked out '6942dc454bca66787de3fb5c54aeec5c245c47a8'
+Cloning into 'libs/test'...
+remote: Enumerating objects: 32672, done.
+remote: Total 32672 (delta 0), reused 0 (delta 0), pack-reused 32672
+Receiving objects: 100% (32672/32672), 10.66 MiB | 1.01 MiB/s, done.
+Resolving deltas: 100% (21605/21605), done.
+Checking connectivity... done.
+Submodule path 'libs/test': checked out '0415d45344946a239e578eb3dc55cafc8630498d'
+Cloning into 'libs/thread'...
+remote: Enumerating objects: 25140, done.
+remote: Total 25140 (delta 0), reused 0 (delta 0), pack-reused 25140
+Receiving objects: 100% (25140/25140), 8.41 MiB | 1.01 MiB/s, done.
+Resolving deltas: 100% (14109/14109), done.
+Checking connectivity... done.
+Submodule path 'libs/thread': checked out '042ce47e777cf44b11fe6baba02c3531222117f1'
+Cloning into 'libs/throw_exception'...
+remote: Enumerating objects: 159, done.
+remote: Counting objects: 100% (159/159), done.
+remote: Compressing objects: 100% (99/99), done.
+remote: Total 1049 (delta 83), reused 119 (delta 47), pack-reused 890
+Receiving objects: 100% (1049/1049), 147.82 KiB | 287.00 KiB/s, done.
+Resolving deltas: 100% (438/438), done.
+Checking connectivity... done.
+Submodule path 'libs/throw_exception': checked out '3cd085a324c008f04a886409a663c08fc0186e0b'
+Cloning into 'libs/timer'...
+remote: Enumerating objects: 50, done.
+remote: Counting objects: 100% (50/50), done.
+remote: Compressing objects: 100% (37/37), done.
+remote: Total 804 (delta 25), reused 34 (delta 12), pack-reused 754
+Receiving objects: 100% (804/804), 262.52 KiB | 239.00 KiB/s, done.
+Resolving deltas: 100% (342/342), done.
+Checking connectivity... done.
+Submodule path 'libs/timer': checked out '1fc97cb802d4e2686401130f0a3a221f4194c283'
+Cloning into 'libs/tokenizer'...
+remote: Enumerating objects: 625, done.
+remote: Total 625 (delta 0), reused 0 (delta 0), pack-reused 625
+Receiving objects: 100% (625/625), 147.46 KiB | 222.00 KiB/s, done.
+Resolving deltas: 100% (316/316), done.
+Checking connectivity... done.
+Submodule path 'libs/tokenizer': checked out '667a8229bd87f1986a49d844582c396dec408d14'
+Cloning into 'libs/tti'...
+remote: Enumerating objects: 513, done.
+remote: Counting objects: 100% (513/513), done.
+remote: Compressing objects: 100% (178/178), done.
+remote: Total 5507 (delta 361), reused 430 (delta 289), pack-reused 4994
+Receiving objects: 100% (5507/5507), 6.52 MiB | 1022.00 KiB/s, done.
+Resolving deltas: 100% (4173/4173), done.
+Checking connectivity... done.
+Submodule path 'libs/tti': checked out 'd7b8e0ed57162cdebef326386099b57d1467486c'
+Cloning into 'libs/tuple'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 1116 (delta 2), reused 1 (delta 0), pack-reused 1105
+Receiving objects: 100% (1116/1116), 261.09 KiB | 270.00 KiB/s, done.
+Resolving deltas: 100% (398/398), done.
+Checking connectivity... done.
+Submodule path 'libs/tuple': checked out '19f7cfdcdb2a83a1fdb290f57c34bf555db7cd8b'
+Cloning into 'libs/type_erasure'...
+remote: Enumerating objects: 1393, done.
+remote: Total 1393 (delta 0), reused 0 (delta 0), pack-reused 1393
+Receiving objects: 100% (1393/1393), 862.53 KiB | 481.00 KiB/s, done.
+Resolving deltas: 100% (920/920), done.
+Checking connectivity... done.
+Submodule path 'libs/type_erasure': checked out '46a8945bfbc1b691112500b4e07865e9090b1274'
+Cloning into 'libs/type_index'...
+remote: Enumerating objects: 75, done.
+remote: Counting objects: 100% (75/75), done.
+remote: Compressing objects: 100% (66/66), done.
+remote: Total 2742 (delta 25), reused 24 (delta 7), pack-reused 2667
+Receiving objects: 100% (2742/2742), 923.13 KiB | 532.00 KiB/s, done.
+Resolving deltas: 100% (1559/1559), done.
+Checking connectivity... done.
+Submodule path 'libs/type_index': checked out 'f2e395a7f3fc3527b82487e7f728d6cb33328f8a'
+Cloning into 'libs/type_traits'...
+remote: Enumerating objects: 28, done.
+remote: Counting objects: 100% (28/28), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 14329 (delta 14), reused 23 (delta 11), pack-reused 14301
+Receiving objects: 100% (14329/14329), 4.29 MiB | 960.00 KiB/s, done.
+Resolving deltas: 100% (9630/9630), done.
+Checking connectivity... done.
+Submodule path 'libs/type_traits': checked out '7ee9910b2f13611ffb9b7fe95410e7ad763e9a62'
+Cloning into 'libs/typeof'...
+remote: Enumerating objects: 2065, done.
+remote: Total 2065 (delta 0), reused 0 (delta 0), pack-reused 2065
+Receiving objects: 100% (2065/2065), 543.02 KiB | 459.00 KiB/s, done.
+Resolving deltas: 100% (921/921), done.
+Checking connectivity... done.
+Submodule path 'libs/typeof': checked out '067ad1026417e3c198e694b14e93b3154ed1caed'
+Cloning into 'libs/units'...
+remote: Enumerating objects: 8507, done.
+remote: Total 8507 (delta 0), reused 0 (delta 0), pack-reused 8507
+Receiving objects: 100% (8507/8507), 6.04 MiB | 714.00 KiB/s, done.
+Resolving deltas: 100% (6213/6213), done.
+Checking connectivity... done.
+Submodule path 'libs/units': checked out '57389b7374a6f7a4caf87cc44092bb8d0db65ec6'
+Cloning into 'libs/unordered'...
+remote: Enumerating objects: 11002, done.
+remote: Total 11002 (delta 0), reused 0 (delta 0), pack-reused 11002
+Receiving objects: 100% (11002/11002), 6.54 MiB | 1008.00 KiB/s, done.
+Resolving deltas: 100% (7440/7440), done.
+Checking connectivity... done.
+Submodule path 'libs/unordered': checked out '9abce00f240f4d7b38c335c1f86262e7ea16018d'
+Cloning into 'libs/utility'...
+remote: Enumerating objects: 31, done.
+remote: Counting objects: 100% (31/31), done.
+remote: Compressing objects: 100% (22/22), done.
+remote: Total 6757 (delta 12), reused 20 (delta 7), pack-reused 6726
+Receiving objects: 100% (6757/6757), 2.21 MiB | 725.00 KiB/s, done.
+Resolving deltas: 100% (3504/3504), done.
+Checking connectivity... done.
+Submodule path 'libs/utility': checked out '957aeba2e9dfea63ec97f43d79387354769d27c6'
+Cloning into 'libs/uuid'...
+remote: Enumerating objects: 28, done.
+remote: Counting objects: 100% (28/28), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 1315 (delta 8), reused 15 (delta 8), pack-reused 1287
+Receiving objects: 100% (1315/1315), 492.13 KiB | 397.00 KiB/s, done.
+Resolving deltas: 100% (732/732), done.
+Checking connectivity... done.
+Submodule path 'libs/uuid': checked out 'ca0185f9f2f1c8d58af8c54ce24579e1c6ebf348'
+Cloning into 'libs/variant'...
+remote: Enumerating objects: 61, done.
+remote: Counting objects: 100% (61/61), done.
+remote: Compressing objects: 100% (54/54), done.
+remote: Total 4940 (delta 13), reused 15 (delta 5), pack-reused 4879
+Receiving objects: 100% (4940/4940), 1.21 MiB | 670.00 KiB/s, done.
+Resolving deltas: 100% (2633/2633), done.
+Checking connectivity... done.
+Submodule path 'libs/variant': checked out 'bee77d42a87bf87cc1b1a4bc7cf09a7a7ed0f7d4'
+Cloning into 'libs/variant2'...
+remote: Enumerating objects: 180, done.
+remote: Counting objects: 100% (180/180), done.
+remote: Compressing objects: 100% (95/95), done.
+remote: Total 1289 (delta 88), reused 135 (delta 47), pack-reused 1109
+Receiving objects: 100% (1289/1289), 233.56 KiB | 237.00 KiB/s, done.
+Resolving deltas: 100% (712/712), done.
+Checking connectivity... done.
+Submodule path 'libs/variant2': checked out '4b60dee4b6956859032fd78d1b72f9eb6382ec81'
+Cloning into 'libs/vmd'...
+remote: Enumerating objects: 164, done.
+remote: Counting objects: 100% (164/164), done.
+remote: Compressing objects: 100% (111/111), done.
+remote: Total 8624 (delta 93), reused 78 (delta 43), pack-reused 8460
+Receiving objects: 100% (8624/8624), 3.75 MiB | 902.00 KiB/s, done.
+Resolving deltas: 100% (6391/6391), done.
+Checking connectivity... done.
+Submodule path 'libs/vmd': checked out 'd7ad0c5efe4715a89f296bae2f037fa3f68a7215'
+Cloning into 'libs/wave'...
+remote: Enumerating objects: 84, done.
+remote: Counting objects: 100% (84/84), done.
+remote: Compressing objects: 100% (70/70), done.
+remote: Total 12634 (delta 21), reused 34 (delta 8), pack-reused 12550
+Receiving objects: 100% (12634/12634), 22.33 MiB | 867.00 KiB/s, done.
+Resolving deltas: 100% (9646/9646), done.
+Checking connectivity... done.
+Submodule path 'libs/wave': checked out '1bca580098afc7298aa017dda30d469bfbeb8c14'
+Cloning into 'libs/winapi'...
+remote: Enumerating objects: 69, done.
+remote: Counting objects: 100% (69/69), done.
+remote: Compressing objects: 100% (44/44), done.
+remote: Total 2027 (delta 56), reused 32 (delta 23), pack-reused 1958
+Receiving objects: 100% (2027/2027), 515.88 KiB | 345.00 KiB/s, done.
+Resolving deltas: 100% (1171/1171), done.
+Checking connectivity... done.
+Submodule path 'libs/winapi': checked out 'e3ce72664a330c4a13a2632aead015a1c3d5a40b'
+
+Cloning into 'libs/xpressive'...
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 12834 (delta 0), reused 0 (delta 0), pack-reused 12833
+Receiving objects: 100% (12834/12834), 10.35 MiB | 1008.00 KiB/s, done.
+Resolving deltas: 100% (8972/8972), done.
+Checking connectivity... done.
+Submodule path 'libs/xpressive': checked out '4d4bc69f8b05e63c744e6f477df6a364affbc603'
+
+Cloning into 'libs/yap'...
+remote: Enumerating objects: 50, done.
+remote: Counting objects: 100% (50/50), done.
+remote: Compressing objects: 100% (33/33), done.
+remote: Total 5533 (delta 15), reused 34 (delta 9), pack-reused 5483
+Receiving objects: 100% (5533/5533), 2.54 MiB | 836.00 KiB/s, done.
+Resolving deltas: 100% (3974/3974), done.
+Checking connectivity... done.
+Submodule path 'libs/yap': checked out '5ddb52a7d7a2cb971483cdfec771dbc8ea920ab4'
+
+Cloning into 'tools/auto_index'...
+remote: Enumerating objects: 5603, done.
+remote: Total 5603 (delta 0), reused 0 (delta 0), pack-reused 5603
+Receiving objects: 100% (5603/5603), 29.16 MiB | 717.00 KiB/s, done.
+Resolving deltas: 100% (3952/3952), done.
+Checking connectivity... done.
+Submodule path 'tools/auto_index': checked out 'e98a81769364f56b272e510c876df874af514b29'
+
+Cloning into 'tools/bcp'...
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 578 (delta 1), reused 5 (delta 1), pack-reused 569
+Receiving objects: 100% (578/578), 464.11 KiB | 270.00 KiB/s, done.
+Resolving deltas: 100% (329/329), done.
+Checking connectivity... done.
+Submodule path 'tools/bcp': checked out 'a86fdce7885babae3ff625de36aa2dfacf983f8c'
+
+Cloning into 'tools/boost_install'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 1333 (delta 6), reused 14 (delta 5), pack-reused 1314
+Receiving objects: 100% (1333/1333), 1.57 MiB | 749.00 KiB/s, done.
+Resolving deltas: 100% (646/646), done.
+Checking connectivity... done.
+Submodule path 'tools/boost_install': checked out 'a1b5a477470ff9dc2e00f30be4ec4285583b33b6'
+
+Cloning into 'tools/boostbook'...
+remote: Enumerating objects: 3299, done.
+remote: Total 3299 (delta 0), reused 0 (delta 0), pack-reused 3299
+Receiving objects: 100% (3299/3299), 1.17 MiB | 570.00 KiB/s, done.
+Resolving deltas: 100% (1924/1924), done.
+Checking connectivity... done.
+Submodule path 'tools/boostbook': checked out '2f9b23ea4de479518781b59b4f57cd480e4308c0'
+
+Cloning into 'tools/boostdep'...
+remote: Enumerating objects: 43, done.
+remote: Counting objects: 100% (43/43), done.
+remote: Compressing objects: 100% (29/29), done.
+remote: Total 543 (delta 15), reused 32 (delta 9), pack-reused 500
+Receiving objects: 100% (543/543), 152.97 KiB | 239.00 KiB/s, done.
+Resolving deltas: 100% (247/247), done.
+Checking connectivity... done.
+Submodule path 'tools/boostdep': checked out 'c159193fbe1a72d11d8bc8d5dd4edb1225912b3b'
+
+Cloning into 'tools/build'...
+remote: Enumerating objects: 253, done.
+remote: Counting objects: 100% (253/253), done.
+remote: Compressing objects: 100% (207/207), done.
+remote: Total 66290 (delta 81), reused 109 (delta 42), pack-reused 66037
+Receiving objects: 100% (66290/66290), 33.79 MiB | 481.00 KiB/s, done.
+Resolving deltas: 100% (46564/46564), done.
+Checking connectivity... done.
+Submodule path 'tools/build': checked out 'ce275975a6d83e45b90e538e9b7a3230791c7a57'
+
+Cloning into 'tools/check_build'...
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 73 (delta 10), reused 18 (delta 6), pack-reused 50
+Unpacking objects: 100% (73/73), done.
+Checking connectivity... done.
+Submodule path 'tools/check_build': checked out 'dd817b9b18c58308e09cc5a237ef750b60151f1a'
+
+Cloning into 'tools/cmake'...
+remote: Enumerating objects: 93, done.
+remote: Counting objects: 100% (93/93), done.
+remote: Compressing objects: 100% (63/63), done.
+remote: Total 477 (delta 56), reused 67 (delta 30), pack-reused 384
+Receiving objects: 100% (477/477), 74.18 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (303/303), done.
+Checking connectivity... done.
+Submodule path 'tools/cmake': checked out '78329239890b5f5b809358d73872e084f61ccd08'
+
+Cloning into 'tools/docca'...
+remote: Enumerating objects: 75, done.
+remote: Total 75 (delta 0), reused 0 (delta 0), pack-reused 75
+Unpacking objects: 100% (75/75), done.
+Checking connectivity... done.
+Submodule path 'tools/docca': checked out '2a48791b936ac065b102fc3d62366ff4ceb2ac3e'
+
+Cloning into 'tools/inspect'...
+remote: Enumerating objects: 1059, done.
+remote: Total 1059 (delta 0), reused 0 (delta 0), pack-reused 1059
+Receiving objects: 100% (1059/1059), 281.28 KiB | 222.00 KiB/s, done.
+Resolving deltas: 100% (597/597), done.
+Checking connectivity... done.
+Submodule path 'tools/inspect': checked out '7cb1d297c29717b7536d21ddbcfc9d64dad83652'
+
+Cloning into 'tools/litre'...
+remote: Enumerating objects: 89, done.
+remote: Total 89 (delta 0), reused 0 (delta 0), pack-reused 89
+Unpacking objects: 100% (89/89), done.
+Checking connectivity... done.
+Submodule path 'tools/litre': checked out '564d4d8d30b7e03ac5e25d78e14d2c19fa321c83'
+
+Cloning into 'tools/quickbook'...
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 13393 (delta 0), reused 1 (delta 0), pack-reused 13392
+Receiving objects: 100% (13393/13393), 6.69 MiB | 1.01 MiB/s, done.
+Resolving deltas: 100% (9399/9399), done.
+Checking connectivity... done.
+Submodule path 'tools/quickbook': checked out '944f760cc2decfe745540f019cad078a57a27337'
+wruslan@sgi-ub1604-lts-64b:~/apps3$ 
+===========================================================
+ALHAMDULILLAH 3 TIMES.
+===========================================================
+
+
