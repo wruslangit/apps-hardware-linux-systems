@@ -1,0 +1,715 @@
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ date
+Fri 09 Apr 2021 08:05:54 PM +08
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ uname -a
+Linux HPEliteBk8470p-ubstudio-20 5.10.25-rt35 #3 SMP PREEMPT_RT 
+Wed Apr 7 12:33:26 +08 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ lsb_release -a
+LSB Version:	core-11.1.0ubuntu2-noarch:security-11.1.0ubuntu2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.2 LTS
+Release:	20.04
+Codename:	focal
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(1) lscpu - CPU INFO
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which lscpu
+/usr/bin/lscpu
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ lscpu
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Byte Order:                      Little Endian
+Address sizes:                   36 bits physical, 48 bits virtual
+CPU(s):                          4
+On-line CPU(s) list:             0-3
+Thread(s) per core:              2
+Core(s) per socket:              2
+Socket(s):                       1
+NUMA node(s):                    1
+Vendor ID:                       GenuineIntel
+CPU family:                      6
+Model:                           58
+Model name:                      Intel(R) Core(TM) i5-3380M CPU @ 2.90GHz
+Stepping:                        9
+CPU MHz:                         1521.576
+CPU max MHz:                     3600.0000
+CPU min MHz:                     1200.0000
+BogoMIPS:                        5786.62
+L1d cache:                       64 KiB
+L1i cache:                       64 KiB
+L2 cache:                        512 KiB
+L3 cache:                        3 MiB
+NUMA node0 CPU(s):               0-3
+Vulnerability Itlb multihit:     KVM: Mitigation: VMX unsupported
+Vulnerability L1tf:              Mitigation; PTE Inversion
+Vulnerability Mds:               Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Meltdown:          Mitigation; PTI
+Vulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Full generic retpoline, IBPB conditional, IBRS_FW, STIBP conditional, RSB filling
+Vulnerability Srbds:             Vulnerable: No microcode
+Vulnerability Tsx async abort:   Not affected
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtsc p lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl smx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp fsgsbase smep erms xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(2) lshw - LIST HARDWARE
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which lshw
+/usr/bin/lshw
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ sudo lshw -short
+H/W path         Device     Class          Description
+======================================================
+                            system         HP EliteBook 8470p (B2F95EC#UUF)
+/0                          bus            179B
+/0/e                        memory         64KiB BIOS
+/0/0                        processor      Intel(R) Core(TM) i5-3380M CPU @ 2.90GHz
+/0/0/2                      memory         32KiB L1 cache
+/0/0/3                      memory         256KiB L2 cache
+/0/0/4                      memory         3MiB L3 cache
+/0/1                        memory         32KiB L1 cache
+/0/5                        memory         16GiB System Memory
+/0/5/0                      memory         8GiB SODIMM DDR3 Synchronous 1600 MHz (0.6 ns)
+/0/5/1                      memory         8GiB SODIMM DDR3 Synchronous 1600 MHz (0.6 ns)
+/0/100                      bridge         3rd Gen Core processor DRAM Controller
+/0/100/2                    display        3rd Gen Core processor Graphics Controller
+/0/100/14                   bus            7 Series/C210 Series Chipset Family USB xHCI Host Controller
+/0/100/14/0      usb3       bus            xHCI Host Controller
+/0/100/14/0/1               bus            USB 2.0 Hub
+/0/100/14/0/1/4             input          USB OPTICAL MOUSE
+/0/100/14/1      usb4       bus            xHCI Host Controller
+/0/100/16                   communication  7 Series/C216 Chipset Family MEI Controller #1
+/0/100/16.3                 communication  7 Series/C210 Series Chipset Family KT Controller
+/0/100/19        enp0s25    network        82579LM Gigabit Network Connection (Lewisville)
+/0/100/1a                   bus            7 Series/C216 Chipset Family USB Enhanced Host Controller #2
+/0/100/1a/1      usb1       bus            EHCI Host Controller
+/0/100/1a/1/1               bus            Integrated Rate Matching Hub
+/0/100/1a/1/1/1             generic        VFS491
+/0/100/1a/1/1/3             multimedia     HP HD Webcam [Fixed]
+/0/100/1b                   multimedia     7 Series/C216 Chipset Family High Definition Audio Controller
+/0/100/1c                   bridge         7 Series/C216 Chipset Family PCI Express Root Port 1
+/0/100/1c.1                 bridge         7 Series/C210 Series Chipset Family PCI Express Root Port 2
+/0/100/1c.1/0               bus            ASM1042 SuperSpeed USB Host Controller
+/0/100/1c.1/0/0  usb5       bus            xHCI Host Controller
+/0/100/1c.1/0/1  usb6       bus            xHCI Host Controller
+/0/100/1c.2                 bridge         7 Series/C210 Series Chipset Family PCI Express Root Port 3
+/0/100/1c.2/0               bus            IEEE 1394 Host Controller
+/0/100/1c.2/0.1             generic        SD/MMC Host Controller
+/0/100/1c.2/0.2             generic        Standard SD Host Controller
+/0/100/1c.3                 bridge         7 Series/C216 Chipset Family PCI Express Root Port 4
+/0/100/1c.3/0    wlo1       network        Centrino Advanced-N 6205 [Taylor Peak]
+/0/100/1d                   bus            7 Series/C216 Chipset Family USB Enhanced Host Controller #1
+/0/100/1d/1      usb2       bus            EHCI Host Controller
+/0/100/1d/1/1               bus            Integrated Rate Matching Hub
+/0/100/1d/1/1/6             generic        BCM20702A0
+/0/100/1f                   bridge         QM77 Express Chipset LPC Controller
+/0/100/1f.2                 storage        7 Series Chipset Family 6-port SATA Controller [AHCI mode]
+/0/2                        system         PnP device PNP0c02
+/0/3                        generic        PnP device IFX0102
+/0/4                        system         PnP device PNP0c02
+/0/6                        system         PnP device PNP0b00
+/0/7                        communication  PnP device PNP0501
+/0/8                        printer        PnP device PNP0401
+/0/9                        generic        PnP device HPQ8001
+/0/a                        generic        PnP device SYN018e
+/0/b                        system         PnP device PNP0c01
+/0/c             scsi0      storage        
+/0/c/0.0.0       /dev/sda   disk           1024GB KINGSTON SKC6001
+/0/c/0.0.0/1     /dev/sda1  volume         482GiB EXT4 volume
+/0/c/0.0.0/2     /dev/sda2  volume         15GiB Linux swap volume
+/0/c/0.0.0/3     /dev/sda3  volume         433GiB EXT4 volume
+/0/d             scsi1      storage        
+/0/d/0.0.0       /dev/sdb   disk           1TB ST1000LM048-2E71
+/0/d/0.0.0/1     /dev/sdb1  volume         18GiB Linux swap volume
+/0/d/0.0.0/3     /dev/sdb3  volume         912GiB Extended partition
+/0/d/0.0.0/3/5   /dev/sdb5  volume         424GiB EXT4 volume
+/0/d/0.0.0/3/6   /dev/sdb6  volume         488GiB EXT4 volume
+/1                          power          CC06055
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(3) hwinfo - Hardware Information
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which hwinfo
+/usr/sbin/hwinfo
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ hwinfo
+....
+.... <Very long list> ....
+....
+
+===========================================================
+(4) lspci - List PCI devices
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which lspci
+/usr/bin/lspci
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ lspci
+00:00.0 Host bridge: Intel Corporation 3rd Gen Core processor DRAM Controller (rev 09)
+00:02.0 VGA compatible controller: Intel Corporation 3rd Gen Core processor Graphics Controller (rev 09)
+00:14.0 USB controller: Intel Corporation 7 Series/C210 Series Chipset Family USB xHCI Host Controller (rev 04)
+00:16.0 Communication controller: Intel Corporation 7 Series/C216 Chipset Family MEI Controller #1 (rev 04)
+00:16.3 Serial controller: Intel Corporation 7 Series/C210 Series Chipset Family KT Controller (rev 04)
+00:19.0 Ethernet controller: Intel Corporation 82579LM Gigabit Network Connection (Lewisville) (rev 04)
+00:1a.0 USB controller: Intel Corporation 7 Series/C216 Chipset Family USB Enhanced Host Controller #2 (rev 04)
+00:1b.0 Audio device: Intel Corporation 7 Series/C216 Chipset Family High Definition Audio Controller (rev 04)
+00:1c.0 PCI bridge: Intel Corporation 7 Series/C216 Chipset Family PCI Express Root Port 1 (rev c4)
+00:1c.1 PCI bridge: Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 2 (rev c4)
+00:1c.2 PCI bridge: Intel Corporation 7 Series/C210 Series Chipset Family PCI Express Root Port 3 (rev c4)
+00:1c.3 PCI bridge: Intel Corporation 7 Series/C216 Chipset Family PCI Express Root Port 4 (rev c4)
+00:1d.0 USB controller: Intel Corporation 7 Series/C216 Chipset Family USB Enhanced Host Controller #1 (rev 04)
+00:1f.0 ISA bridge: Intel Corporation QM77 Express Chipset LPC Controller (rev 04)
+00:1f.2 SATA controller: Intel Corporation 7 Series Chipset Family 6-port SATA Controller [AHCI mode] (rev 04)
+02:00.0 USB controller: ASMedia Technology Inc. ASM1042 SuperSpeed USB Host Controller
+23:00.0 FireWire (IEEE 1394): JMicron Technology Corp. IEEE 1394 Host Controller (rev 30)
+23:00.1 System peripheral: JMicron Technology Corp. SD/MMC Host Controller (rev 30)
+23:00.2 SD Host controller: JMicron Technology Corp. Standard SD Host Controller (rev 30)
+24:00.0 Network controller: Intel Corporation Centrino Advanced-N 6205 [Taylor Peak] (rev 34)
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(5) lsscsi - List scsi devices
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which lsscsi
+/usr/bin/lsscsi
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ lsscsi
+[0:0:0:0]    disk    ATA      KINGSTON SKC6001 0105  /dev/sda 
+[1:0:0:0]    disk    ATA      ST1000LM048-2E71 SDM1  /dev/sdb 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(6) lsusb - List usb buses and device details
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which lsusb
+/usr/bin/lsusb
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ lsusb
+Bus 002 Device 003: ID 0a5c:21e1 Broadcom Corp. HP Portable SoftSailing
+Bus 002 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 004: ID 1bcf:2888 Sunplus Innovation Technology Inc. HP Universal Camera
+Bus 001 Device 003: ID 138a:003d Validity Sensors, Inc. VFS491
+Bus 001 Device 002: ID 8087:0024 Intel Corp. Integrated Rate Matching Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 003: ID 30fa:0300  
+Bus 003 Device 002: ID 0424:2514 Microchip Technology, Inc. (formerly SMSC) USB 2.0 Hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(7) lsblk - List block devices
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which lsblk
+/usr/bin/lsblk
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0    7:0    0  99.2M  1 loop /snap/core/10958
+loop1    7:1    0  55.5M  1 loop /snap/core18/1988
+loop2    7:2    0  61.6M  1 loop /snap/core20/904
+loop3    7:3    0  99.2M  1 loop /snap/core/10908
+loop4    7:4    0  55.5M  1 loop /snap/core18/1997
+loop5    7:5    0   219M  1 loop /snap/gnome-3-34-1804/66
+loop6    7:6    0 162.9M  1 loop /snap/gnome-3-28-1804/145
+loop7    7:7    0  61.7M  1 loop /snap/core20/975
+loop8    7:8    0  64.8M  1 loop /snap/gtk-common-themes/1514
+loop9    7:9    0  16.7M  1 loop /snap/htop/2185
+loop10   7:10   0 425.7M  1 loop /snap/pycharm-community/233
+loop11   7:11   0 134.4M  1 loop /snap/skype/164
+loop12   7:12   0    51M  1 loop /snap/snap-store/518
+loop13   7:13   0  32.3M  1 loop /snap/snapd/11402
+loop14   7:14   0  32.3M  1 loop /snap/snapd/11588
+loop15   7:15   0 272.2M  1 loop /snap/telegram-desktop/2551
+loop16   7:16   0 240.1M  1 loop /snap/zoom-client/139
+sda      8:0    0 953.9G  0 disk 
+├─sda1   8:1    0 482.5G  0 part 
+├─sda2   8:2    0  15.3G  0 part [SWAP]
+└─sda3   8:3    0 433.7G  0 part /
+sdb      8:16   0 931.5G  0 disk 
+├─sdb1   8:17   0  18.6G  0 part [SWAP]
+├─sdb3   8:19   0     1K  0 part 
+├─sdb5   8:21   0 424.6G  0 part 
+└─sdb6   8:22   0 488.3G  0 part 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(8) df - disk space of file systems
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which df
+/usr/bin/df
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+udev             8097852         0   8097852   0% /dev
+tmpfs            1625548      2040   1623508   1% /run
+/dev/sda3      446605264 121059984 302789288  29% /
+tmpfs            8127724        16   8127708   1% /dev/shm
+tmpfs               5120         4      5116   1% /run/lock
+tmpfs            8127724         0   8127724   0% /sys/fs/cgroup
+/dev/loop0        101632    101632         0 100% /snap/core/10958
+/dev/loop1         56832     56832         0 100% /snap/core18/1988
+/dev/loop2         63232     63232         0 100% /snap/core20/904
+/dev/loop3        101632    101632         0 100% /snap/core/10908
+/dev/loop4         56832     56832         0 100% /snap/core18/1997
+/dev/loop5        224256    224256         0 100% /snap/gnome-3-34-1804/66
+/dev/loop6        166784    166784         0 100% /snap/gnome-3-28-1804/145
+/dev/loop7         63232     63232         0 100% /snap/core20/975
+/dev/loop8         66432     66432         0 100% /snap/gtk-common-themes/1514
+/dev/loop9         17152     17152         0 100% /snap/htop/2185
+/dev/loop10       435968    435968         0 100% /snap/pycharm-community/233
+/dev/loop11       137728    137728         0 100% /snap/skype/164
+/dev/loop12        52352     52352         0 100% /snap/snap-store/518
+/dev/loop13        33152     33152         0 100% /snap/snapd/11402
+/dev/loop14        33152     33152         0 100% /snap/snapd/11588
+/dev/loop15       278784    278784         0 100% /snap/telegram-desktop/2551
+/dev/loop16       245888    245888         0 100% /snap/zoom-client/139
+tmpfs            1625544        28   1625516   1% /run/user/1000
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(9) fdisk - list or modify disk partitions of file systems
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which fdisk
+/usr/sbin/fdisk
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ sudo fdisk -l
+[sudo] password for wruslan: 
+
+Disk /dev/sda: 953.89 GiB, 1024209543168 bytes, 2000409264 sectors
+Disk model: KINGSTON SKC6001
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: dos
+Disk identifier: 0xababbdc7
+
+Device     Boot      Start        End    Sectors   Size Id Type
+/dev/sda1  *          2048 1011927039 1011924992 482.5G 83 Linux
+/dev/sda2       1921511424 1953523711   32012288  15.3G 82 Linux swap / Solaris
+/dev/sda3       1011927040 1921511423  909584384 433.7G 83 Linux
+
+Partition table entries are not in disk order.
+
+
+Disk /dev/sdb: 931.53 GiB, 1000204886016 bytes, 1953525168 sectors
+Disk model: ST1000LM048-2E71
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: dos
+Disk identifier: 0xc2388f86
+
+Device     Boot      Start        End    Sectors   Size Id Type
+/dev/sdb1  *          2048   39063551   39061504  18.6G 82 Linux swap / Solaris
+/dev/sdb3         39065598 1953523711 1914458114 912.9G  5 Extended
+/dev/sdb5       1063065600 1953523711  890458112 424.6G 83 Linux
+/dev/sdb6         39065600 1063065599 1024000000 488.3G 83 Linux
+
+Partition 3 does not start on physical sector boundary.
+Partition table entries are not in disk order.
+
+
+Disk /dev/loop0: 99.15 MiB, 103964672 bytes, 203056 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop1: 55.48 MiB, 58159104 bytes, 113592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop2: 61.65 MiB, 64626688 bytes, 126224 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop3: 99.22 MiB, 104030208 bytes, 203184 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop4: 55.46 MiB, 58142720 bytes, 113560 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop5: 218.102 MiB, 229629952 bytes, 448496 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop6: 162.89 MiB, 170778624 bytes, 333552 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop7: 61.74 MiB, 64720896 bytes, 126408 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop8: 64.79 MiB, 67915776 bytes, 132648 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop9: 16.65 MiB, 17444864 bytes, 34072 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop10: 425.67 MiB, 446328832 bytes, 871736 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop11: 134.39 MiB, 140906496 bytes, 275208 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop12: 51.4 MiB, 53522432 bytes, 104536 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop13: 32.28 MiB, 33841152 bytes, 66096 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop14: 32.28 MiB, 33841152 bytes, 66096 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop15: 272.23 MiB, 285446144 bytes, 557512 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop16: 240.9 MiB, 251752448 bytes, 491704 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(10) mount/umount
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which mount
+/usr/bin/mount
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which umount
+/usr/bin/umount
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ mount | column -t
+sysfs                                             on  /sys                             type  sysfs            (rw,nosuid,nodev,noexec,relatime)
+proc                                              on  /proc                            type  proc             (rw,nosuid,nodev,noexec,relatime)
+udev                                              on  /dev                             type  devtmpfs         (rw,nosuid,noexec,relatime,size=8097852k,nr_inodes=2024463,mode=755)
+devpts                                            on  /dev/pts                         type  devpts           (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs                                             on  /run                             type  tmpfs            (rw,nosuid,nodev,noexec,relatime,size=1625548k,mode=755)
+/dev/sda3                                         on  /                                type  ext4             (rw,relatime,errors=remount-ro)
+securityfs                                        on  /sys/kernel/security             type  securityfs       (rw,nosuid,nodev,noexec,relatime)
+tmpfs                                             on  /dev/shm                         type  tmpfs            (rw,nosuid,nodev)
+tmpfs                                             on  /run/lock                        type  tmpfs            (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs                                             on  /sys/fs/cgroup                   type  tmpfs            (ro,nosuid,nodev,noexec,mode=755)
+cgroup2                                           on  /sys/fs/cgroup/unified           type  cgroup2          (rw,nosuid,nodev,noexec,relatime,nsdelegate)
+cgroup                                            on  /sys/fs/cgroup/systemd           type  cgroup           (rw,nosuid,nodev,noexec,relatime,xattr,name=systemd)
+pstore                                            on  /sys/fs/pstore                   type  pstore           (rw,nosuid,nodev,noexec,relatime)
+none                                              on  /sys/fs/bpf                      type  bpf              (rw,nosuid,nodev,noexec,relatime,mode=700)
+cgroup                                            on  /sys/fs/cgroup/cpu,cpuacct       type  cgroup           (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup                                            on  /sys/fs/cgroup/perf_event        type  cgroup           (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup                                            on  /sys/fs/cgroup/hugetlb           type  cgroup           (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup                                            on  /sys/fs/cgroup/net_cls,net_prio  type  cgroup           (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup                                            on  /sys/fs/cgroup/rdma              type  cgroup           (rw,nosuid,nodev,noexec,relatime,rdma)
+cgroup                                            on  /sys/fs/cgroup/freezer           type  cgroup           (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup                                            on  /sys/fs/cgroup/pids              type  cgroup           (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup                                            on  /sys/fs/cgroup/devices           type  cgroup           (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup                                            on  /sys/fs/cgroup/memory            type  cgroup           (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup                                            on  /sys/fs/cgroup/blkio             type  cgroup           (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup                                            on  /sys/fs/cgroup/cpuset            type  cgroup           (rw,nosuid,nodev,noexec,relatime,cpuset)
+systemd-1                                         on  /proc/sys/fs/binfmt_misc         type  autofs           (rw,relatime,fd=28,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=955)
+mqueue                                            on  /dev/mqueue                      type  mqueue           (rw,nosuid,nodev,noexec,relatime)
+hugetlbfs                                         on  /dev/hugepages                   type  hugetlbfs        (rw,relatime,pagesize=2M)
+debugfs                                           on  /sys/kernel/debug                type  debugfs          (rw,nosuid,nodev,noexec,relatime)
+tracefs                                           on  /sys/kernel/tracing              type  tracefs          (rw,nosuid,nodev,noexec,relatime)
+fusectl                                           on  /sys/fs/fuse/connections         type  fusectl          (rw,nosuid,nodev,noexec,relatime)
+configfs                                          on  /sys/kernel/config               type  configfs         (rw,nosuid,nodev,noexec,relatime)
+/var/lib/snapd/snaps/core_10958.snap              on  /snap/core/10958                 type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core18_1988.snap             on  /snap/core18/1988                type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core20_904.snap              on  /snap/core20/904                 type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core_10908.snap              on  /snap/core/10908                 type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core18_1997.snap             on  /snap/core18/1997                type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-34-1804_66.snap      on  /snap/gnome-3-34-1804/66         type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-28-1804_145.snap     on  /snap/gnome-3-28-1804/145        type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core20_975.snap              on  /snap/core20/975                 type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gtk-common-themes_1514.snap  on  /snap/gtk-common-themes/1514     type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/htop_2185.snap               on  /snap/htop/2185                  type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/pycharm-community_233.snap   on  /snap/pycharm-community/233      type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/skype_164.snap               on  /snap/skype/164                  type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/snap-store_518.snap          on  /snap/snap-store/518             type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/snapd_11402.snap             on  /snap/snapd/11402                type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/snapd_11588.snap             on  /snap/snapd/11588                type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/telegram-desktop_2551.snap   on  /snap/telegram-desktop/2551      type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/zoom-client_139.snap         on  /snap/zoom-client/139            type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+binfmt_misc                                       on  /proc/sys/fs/binfmt_misc         type  binfmt_misc      (rw,nosuid,nodev,noexec,relatime)
+tmpfs                                             on  /run/user/1000                   type  tmpfs            (rw,nosuid,nodev,relatime,size=1625544k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse                                        on  /run/user/1000/gvfs              type  fuse.gvfsd-fuse  (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(11) Free memory
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which free
+/usr/bin/free
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ free
+              total        used        free      shared  buff/cache   available
+Mem:       16255448     2145304    10855968      337352     3254176    13592008
+Swap:      35536888           0    35536888
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(12) Process memory info - virtual files in the /proc directory
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ cat /proc/meminfo
+MemTotal:       16255448 kB
+MemFree:        10862684 kB
+MemAvailable:   13598876 kB
+Buffers:          613376 kB
+Cached:          2000408 kB
+SwapCached:            0 kB
+Active:          1268104 kB
+Inactive:        3000500 kB
+Active(anon):       6356 kB
+Inactive(anon):  1969312 kB
+Active(file):    1261748 kB
+Inactive(file):  1031188 kB
+Unevictable:      280056 kB
+Mlocked:              32 kB
+SwapTotal:      35536888 kB
+SwapFree:       35536888 kB
+Dirty:                68 kB
+Writeback:             0 kB
+AnonPages:       1934972 kB
+Mapped:           596316 kB
+Shmem:            320852 kB
+KReclaimable:     624044 kB
+Slab:             718072 kB
+SReclaimable:     624044 kB
+SUnreclaim:        94028 kB
+KernelStack:       13888 kB
+PageTables:        27788 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    43664612 kB
+Committed_AS:    7130280 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       39084 kB
+VmallocChunk:          0 kB
+Percpu:             5952 kB
+HardwareCorrupted:     0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      296836 kB
+DirectMap2M:    16340992 kB
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(13) Process CPU info - virtual files in the /proc directory
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i5-3380M CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0x21
+cpu MHz		: 1493.548
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl smx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp fsgsbase smep erms xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds
+bogomips	: 5786.62
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i5-3380M CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0x21
+cpu MHz		: 1646.782
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl smx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp fsgsbase smep erms xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds
+bogomips	: 5786.62
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i5-3380M CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0x21
+cpu MHz		: 1535.360
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl smx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp fsgsbase smep erms xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds
+bogomips	: 5786.62
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 58
+model name	: Intel(R) Core(TM) i5-3380M CPU @ 2.90GHz
+stepping	: 9
+microcode	: 0x21
+cpu MHz		: 1568.883
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl smx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb pti ssbd ibrs ibpb stibp fsgsbase smep erms xsaveopt dtherm ida arat pln pts md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds
+bogomips	: 5786.62
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(14) hdparm - Hard Disk parameters
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which hdparm
+/usr/sbin/hdparm
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ sudo hdparm -i /dev/sda
+
+/dev/sda:
+
+ Model=KINGSTON SKC6001024G, FwRev=S4500105, SerialNo=50026B7783DFE523
+ Config={ Fixed }
+ RawCHS=16383/16/63, TrkSize=0, SectSize=0, ECCbytes=0
+ BuffType=unknown, BuffSize=unknown, MaxMultSect=1, MultSect=off
+ (maybe): CurCHS=16383/16/63, CurSects=16514064, LBA=yes, LBAsects=2000409264
+ IORDY=on/off, tPIO={min:120,w/IORDY:120}, tDMA={min:120,rec:120}
+ PIO modes:  pio0 pio3 pio4 
+ DMA modes:  mdma0 mdma1 mdma2 
+ UDMA modes: udma0 udma1 udma2 udma3 udma4 udma5 *udma6 
+ AdvancedPM=yes: unknown setting WriteCache=enabled
+ Drive conforms to: unknown:  ATA/ATAPI-4,5,6,7
+
+ * signifies the current active mode
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ sudo hdparm -i /dev/sdb
+
+/dev/sdb:
+
+ Model=ST1000LM048-2E7172, FwRev=SDM1, SerialNo=ZDE0DA0X
+ Config={ HardSect NotMFM HdSw>15uSec Fixed DTR>10Mbs RotSpdTol>.5% }
+ RawCHS=16383/16/63, TrkSize=0, SectSize=0, ECCbytes=0
+ BuffType=unknown, BuffSize=unknown, MaxMultSect=16, MultSect=16
+ CurCHS=16383/16/63, CurSects=16514064, LBA=yes, LBAsects=1953525168
+ IORDY=on/off, tPIO={min:120,w/IORDY:120}, tDMA={min:120,rec:120}
+ PIO modes:  pio0 pio1 pio2 pio3 pio4 
+ DMA modes:  mdma0 mdma1 mdma2 
+ UDMA modes: udma0 udma1 udma2 udma3 udma4 udma5 *udma6 
+ AdvancedPM=yes: unknown setting WriteCache=enabled
+ Drive conforms to: Reserved:  ATA/ATAPI-4,5,6,7
+
+ * signifies the current active mode
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+

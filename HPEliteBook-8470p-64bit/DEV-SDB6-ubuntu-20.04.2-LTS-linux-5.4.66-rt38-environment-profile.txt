@@ -1,0 +1,1006 @@
+
+===========================================================
+HPEliteBook-8470p-64 bit (Operating Systems)
+===========================================================
+/dev/sda1  * Linux  Ubuntu   18.04.5 LTS linux-4.19.148-rt64   <=== THIS ONE
+/dev/sda3    Linux  UbStudio 20.04.2 LTS linux-5.10.25-rt35
+/dev/sdb5    Linux  Ubuntu   16.04.7 LTS linux-4.4.208-rt191 
+/dev/sdb6    Linux  Ubuntu   20.04.2 LTS linux-5.4.66-rt38
+
+===========================================================
+(1) COMPUTING SYSTEM ENVIRONMENT
+===========================================================
+
+... TO DO ...
+
+
+===========================================================
+(2) GCC COMPILER
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which gcc
+/usr/bin/gcc
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gcc --version
+gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v 
+--with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' 
+--with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs 
+--enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 
+--prefix=/usr 
+--with-gcc-major-version-only 
+--program-suffix=-9 
+--program-prefix=x86_64-linux-gnu- 
+--enable-shared 
+--enable-linker-build-id 
+--libexecdir=/usr/lib 
+--without-included-gettext 
+--enable-threads=posix 
+--libdir=/usr/lib 
+--enable-nls 
+--enable-clocale=gnu 
+--enable-libstdcxx-debug 
+--enable-libstdcxx-time=yes 
+--with-default-libstdcxx-abi=new 
+--enable-gnu-unique-object 
+--disable-vtable-verify 
+--enable-plugin 
+--enable-default-pie 
+--with-system-zlib 
+--with-target-system-zlib=auto 
+--enable-objc-gc=auto 
+--enable-multiarch 
+--disable-werror 
+--with-arch-32=i686 
+--with-abi=m64 
+--with-multilib-list=m32,m64,mx32 
+--enable-multilib 
+--with-tune=generic 
+--enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr,hsa 
+--without-cuda-driver 
+--enable-checking=release 
+--build=x86_64-linux-gnu 
+--host=x86_64-linux-gnu 
+--target=x86_64-linux-gnu
+Thread model: posix
+gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which g++
+/usr/bin/g++
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ g++ --version
+g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which gfortran
+/usr/bin/gfortran
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gfortran --version
+GNU Fortran (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(3) BOOST C++ LIBRARY
+===========================================================
+## SETTINGS FOR  BOOST C++ LIBRARY CONFIGURATION
+export LD_LIBRARY_PATH=/home/wruslan/opt/boost_1_74_0/stage/lib
+export CPLUS_INCLUDE_PATH=/home/wruslan/opt/boost_1_74_0 
+
+## HARD COPIED FILES TO HIGH LEVEL SYSTEM SEARCH PATH
+LIBRARY PATH ===> ls -al /usr/lib   | grep libboost
+INCLUDE PATH ===> ls -al /usr/include/boost  
+
+/usr/include/boost
+/usr/include/boost/accumulators
+/usr/include/boost/algorithm
+/usr/include/boost/align
+/usr/include/boost/align.hpp
+/usr/include/boost/aligned_storage.hpp
+/usr/include/boost/any.hpp
+/usr/include/boost/archive
+/usr/include/boost/array.hpp
+/usr/include/boost/asio
+/usr/include/boost/asio.hpp
+
+===========================================================
+(4) GNAT ADA COMPILER (GNATMAKE, GNATBIND, GNATLINK)
+=========================================================== 
+## SETTINGS FOR GNAT ADA
+export PATH=/home/wruslan/opt/GNAT/2020/bin:$PATH
+export PATH=/home/wruslan/opt/GNAT/2020/libexec/gcc/x86_64-pc-linux-gnu/9.3.1:$PATH
+export PATH=/home/wruslan/opt/GNAT/2020/libexec/spark/libexec/gcc/x86_64-pc-linux-gnu/9.3.1:$PATH
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which gnatmake
+/home/wruslan/opt/GNAT/2020/bin/gnatmake
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gnatmake --version
+GNATMAKE Community 2020 (20200818-93)
+Copyright (C) 1995-2020, Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which gnatbind
+/home/wruslan/opt/GNAT/2020/bin/gnatbind
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gnatbind --version
+GNATBIND Community 2020 (20200818-93)
+Copyright (C) 1992-2020, Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which gnatlink
+/home/wruslan/opt/GNAT/2020/bin/gnatlink
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gnatlink --version
+GNATLINK Community 2020 (20200818-93)
+Copyright (C) 1996-2020, Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which gprbuild
+/home/wruslan/opt/GNAT/2020/bin/gprbuild
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gprbuild --version
+GPRBUILD Community 2020 (20200818) (x86_64-pc-linux-gnu)
+Copyright (C) 2004-2020, AdaCore
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al /home/wruslan/opt/GNAT/2020/libexec/gcc/x86_64-pc-linux-gnu/
+total 12
+drwxr-xr-x 3 wruslan wruslan 4096 Mar 29 06:22 .
+drwxr-xr-x 3 wruslan wruslan 4096 Mar 29 06:22 ..
+drwxr-xr-x 4 wruslan wruslan 4096 Mar 29 06:22 9.3.1
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al /home/wruslan/opt/GNAT/2020/libexec/spark/libexec/gcc/x86_64-pc-linux-gnu/
+total 12
+drwxr-xr-x 3 wruslan wruslan 4096 Mar 29 06:23 .
+drwxr-xr-x 3 wruslan wruslan 4096 Mar 29 06:23 ..
+drwxr-xr-x 2 wruslan wruslan 4096 Mar 29 06:23 9.3.1
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(5) JAVA COMPILER AND ENVIRONMENT
+=========================================================== 
+## JAVA JDK SETTINGS
+export PATH=/usr/lib/jvm/jdk-16/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/jdk-16
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which java
+/usr/lib/jvm/jdk-16/bin/java
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ java -version
+java version "16" 2021-03-16
+Java(TM) SE Runtime Environment (build 16+36-2231)
+Java HotSpot(TM) 64-Bit Server VM (build 16+36-2231, mixed mode, sharing)
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which javac
+/usr/lib/jvm/jdk-16/bin/javac
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ javac -version
+javac 16
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which javap
+/usr/lib/jvm/jdk-16/bin/javap
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ javap -version
+16
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which javadoc
+/usr/lib/jvm/jdk-16/bin/javadoc
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(6.1) PYTHON3 (DEFAULT)
+=========================================================== 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ python
+Python 3.8.5 (default, Jan 27 2021, 15:41:15) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> help()
+
+Welcome to Python 3.8's help utility!
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at https://docs.python.org/3.8/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, symbols, or topics, type
+"modules", "keywords", "symbols", or "topics".  Each module also comes
+with a one-line summary of what it does; to list the modules whose name
+or summary contain a given string such as "spam", type "modules spam".
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+CommandNotFound     blueman             isympy              rdflib
+Cython              boost               itertools           re
+DistUpgrade         breathe             jack                readline
+Gnuplot             bs4                 janitor             regex
+HweSupportStatus    builtins            jedi                reportlab
+IPython             bz2                 jinja2              reprlib
+LanguageSelector    cProfile            joblib              requests
+NvidiaDetector      cachetools          jp2                 requests_oauthlib
+Onboard             caffe2              json                requests_unixsocket
+PIL                 cairo               jwt                 resource
+PyGnuplot           calendar            keras               rlcompleter
+PyPDF2              catfish             keras_preprocessing rmagic
+PyQt5               catfish_lib         keyring             roman
+Quirks              certifi             keyword             routes
+SPARQLWrapper       cffi                kiwisolver          rply
+UbuntuDrivers       cgi                 language_support_pkgs rsa
+UbuntuSystemService cgitb               launchpadlib        runpy
+UpdateManager       chardet             lib2to3             scanext
+__future__          chm                 libfuturize         sched
+_abc                chunk               liblo               scipy
+_ast                click               libpasteurize       seaborn
+_asyncio            cmath               libraw              secrets
+_bisect             cmd                 libvirt             secretstorage
+_blake2             code                libvirt_lxc         select
+_blueman            codecs              libvirt_qemu        selectors
+_bootlocale         codeop              libvirtaio          setuptools
+_bz2                collections         libvirtmod          setuptools_scm
+_cffi_backend       colorama            libvirtmod_lxc      shelve
+_codecs             coloredlogs         libvirtmod_qemu     shlex
+_codecs_cn          colorsys            lightdm_gtk_greeter_settings shutil
+_codecs_hk          colour              linecache           signal
+_codecs_iso2022     compileall          locale              simplejson
+_codecs_jp          concurrent          logging             sip
+_codecs_kr          configparser        lsb_release         sipconfig
+_codecs_tw          contextlib          lxml                sipconfig_d8
+_collections        contextvars         lzma                sipconfig_nd8
+_collections_abc    copy                macaroonbakery      sipdistutils
+_compat_pickle      copyreg             macholib            site
+_compression        cpuinfo             mailbox             sitecustomize
+_contextvars        crypt               mailcap             six
+_crypt              cryptography        markdown            skimage
+_csv                css_parser          markupsafe          sklearn
+_ctypes             cssselect           marshal             smtpd
+_ctypes_test        cssutils            math                smtplib
+_curses             csv                 matplotlib          sndhdr
+_curses_panel       ctypes              mechanize           socket
+_datetime           cups                mimetypes           socketserver
+_dbm                cupsext             mmap                softwareproperties
+_dbus_bindings      cupshelpers         modulefinder        sortedcontainers
+_dbus_glib_bindings curses              mpl_toolkits        soupsieve
+_decimal            cv2                 mpmath              sphinx
+_dummy_thread       cycler              msgpack             spwd
+_elementtree        cython              mugshot             sqlite3
+_functools          cythonmagic         mugshot_lib         sqlparse
+_gdbm               dataclasses         multiprocessing     sre_compile
+_gv                 datetime            nacl                sre_constants
+_hashlib            dateutil            netifaces           sre_parse
+_heapq              dbm                 netrc               ssl
+_imp                dbus                networkx            stat
+_io                 deb822              nis                 statistics
+_jack               debconf             nntplib             storemagic
+_json               debian              nose                string
+_locale             debian_bundle       notify2             stringprep
+_lsprof             decimal             ntpath              struct
+_lzma               decorator           nturl2path          subprocess
+_markupbase         defer               numbers             sunau
+_md5                difflib             numpy               symbol
+_multibytecodec     dis                 numpysane           sympy
+_multiprocessing    distro              numpysane_pywrap    sympyprinting
+_opcode             distro_info         oauthlib            symtable
+_openshot           distutils           objgraph            sys
+_operator           django              ocrmypdf            sysconfig
+_osx_support        django_extensions   ogr                 syslog
+_pickle             dns                 olefile             systemd
+_posixshmem         docs                opcode              tabnanny
+_posixsubprocess    doctest             openshot            talloc
+_py_abc             docutils            operator            tarfile
+_pydecimal          dot2tex             opt_einsum          telnetlib
+_pyio               dot_parser          optparse            tempfile
+_queue              doxypypy            ordlookup           tenacity
+_random             dummy_threading     os                  tensorboard
+_remote_module_non_sriptable easy_install        osgeo               tensorboard_plugin_wit
+_sha1               easygui             osr                 tensorflow
+_sha256             easywebdav          ossaudiodev         tensorflow_estimator
+_sha3               elftools            packaging           termcolor
+_sha512             email               pandas              termios
+_signal             encodings           parser              tesserocr
+_sitebuiltins       encutils            parso               test
+_socket             entrypoints         past                tests
+_sqlite3            enum                pasta               textwrap
+_sre                errno               pathlib             this
+_ssl                faulthandler        pbr                 threading
+_stat               fcntl               pcardext            threadpoolctl
+_statistics         feedparser          pdb                 tifffile
+_string             filecmp             pdfarranger         time
+_strptime           fileinput           pdfminer            timeit
+_struct             flatbuffers         pefile              tkinter
+_symtable           fnmatch             peutils             token
+_sysconfigdata__linux_x86_64-linux-gnu formatter           pexpect             tokenize
+_sysconfigdata__x86_64-linux-gnu fractions           pickle              torch
+_sysconfigdata_d_x86_64-linux-gnu ftplib              pickleshare         torchvision
+_testbuffer         funcparserlib       pickletools         tornado
+_testcapi           functools           pikepdf             tqdm
+_testimportmultiple future              pip                 trace
+_testinternalcapi   gast                pipes               traceback
+_testmultiphase     gc                  pkg_resources       tracemalloc
+_thread             gdal                pkgutil             traitlets
+_threading_local    gdalconst           platform            tty
+_tkinter            gdalnumeric         plistlib            turtle
+_tracemalloc        genericpath         pluggy              types
+_uuid               getopt              ply                 typing
+_warnings           getpass             poplib              typing_extensions
+_weakref            gettext             popplerqt5          uaclient
+_weakrefset         gi                  posix               ufw
+_xxsubinterpreters  glob                posixpath           unicodedata
+_xxtestfuzz         gnupg               pprint              unittest
+_yaml               gnuplotlib          problem_report      uno
+abc                 google_auth_oauthlib profile             unohelper
+absl                gphoto2             prompt_toolkit      urllib
+aifc                graphviz            pstats              urllib3
+alabaster           grp                 psutil              uu
+altgraph            grpc                pty                 uuid
+antigravity         gv                  ptyprocess          venv
+appdirs             gzip                pwd                 wadllib
+apport              h5py                py_compile          warnings
+apport_python_hook  hashlib             pyasn1              wave
+apsw                heapq               pyasn1_modules      wcwidth
+apt                 hmac                pycallgraph         weakref
+apt_inst            hpmudext            pyclbr              webbrowser
+apt_pkg             html                pycparser           webencodings
+aptdaemon           html2text           pydoc               webob
+aptsources          html5_parser        pydoc_data          werkzeug
+argparse            html5lib            pydot               wheel
+array               http                pydot_ng            wrapt
+arrow               httplib2            pydotplus           wsgiref
+ast                 humanfriendly       pyexpat             xdg
+astor               hy                  pygments            xdot
+astunparse          idna                pygraphviz          xdrlib
+asynchat            ifaddr              pygtkcompat         xkit
+asyncio             imageio             pylab               xml
+asyncore            imagesize           pymacaroons         xmlrpc
+atexit              imaplib             pymediainfo         xxlimited
+audioop             img2pdf             pyparsing           xxsubtype
+autoreload          imghdr              pyrfc3339           yaml
+babel               imp                 pytz                zeroconf
+backcall            importlib           pywt                zipapp
+base64              imutils             pyximport           zipfile
+bdb                 inspect             queue               zipimport
+binascii            io                  quopri              zlib
+binhex              ipaddress           random              zmq
+bisect              ipython_genutils    raphodo             
+blinker             isodate             rawkit              
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose name or summary contain the string "spam".
+
+help> 
+[1]+  Stopped                 python
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(6.2) PYTHON2
+=========================================================== 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ python2
+Python 2.7.18 (default, Mar  8 2021, 13:02:45) 
+[GCC 9.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+BaseHTTPServer      antigravity         htmllib             sets
+Bastion             anydbm              httplib             sgmllib
+CDROM               argparse            ihooks              sha
+CGIHTTPServer       array               imaplib             shelve
+Canvas              ast                 imghdr              shlex
+ConfigParser        asynchat            imp                 shutil
+Cookie              asyncore            importlib           signal
+DLFCN               atexit              imputil             site
+Dialog              audiodev            inspect             sitecustomize
+DocXMLRPCServer     audioop             io                  six
+FileDialog          backports           itertools           smtpd
+FixTk               base64              json                smtplib
+HTMLParser          bdb                 keyword             sndhdr
+IN                  binascii            lib2to3             socket
+MimeWriter          binhex              linecache           soupsieve
+Queue               bisect              linuxaudiodev       spwd
+ScrolledText        bs4                 locale              sqlite3
+SimpleDialog        bsddb               logging             sre
+SimpleHTTPServer    bz2                 lsb_release         sre_compile
+SimpleXMLRPCServer  cPickle             lxml                sre_constants
+SocketServer        cProfile            macpath             sre_parse
+StringIO            cStringIO           macurl2path         ssl
+TYPES               calendar            mailbox             stat
+Tix                 cgi                 mailcap             statvfs
+Tkconstants         cgitb               markupbase          string
+Tkdnd               chardet             marshal             stringold
+Tkinter             chunk               math                stringprep
+UserDict            cmath               md5                 strop
+UserList            cmd                 mhlib               struct
+UserString          code                mimetools           subprocess
+_LWPCookieJar       codecs              mimetypes           sunau
+_MozillaCookieJar   codeop              mimify              sunaudio
+__builtin__         collections         mmap                symbol
+__future__          colorsys            modulefinder        symtable
+_abcoll             commands            multifile           sys
+_ast                compileall          multiprocessing     sysconfig
+_bisect             compiler            mutex               syslog
+_bsddb              contextlib          netrc               tabnanny
+_codecs             cookielib           new                 tarfile
+_codecs_cn          copy                nis                 telnetlib
+_codecs_hk          copy_reg            nntplib             tempfile
+_codecs_iso2022     crypt               ntpath              termios
+_codecs_jp          csv                 nturl2path          test
+_codecs_kr          ctypes              numbers             textwrap
+_codecs_tw          curses              numpy               this
+_collections        datetime            opcode              thread
+_csv                dateutil            operator            threading
+_ctypes             dbhash              optparse            time
+_ctypes_test        dbm                 os                  timeit
+_curses             dbus                os2emxpath          tkColorChooser
+_curses_panel       decimal             ossaudiodev         tkCommonDialog
+_dbus_bindings      difflib             parser              tkFileDialog
+_dbus_glib_bindings dircache            pdb                 tkFont
+_elementtree        dis                 pickle              tkMessageBox
+_functools          distutils           pickletools         tkSimpleDialog
+_hashlib            doctest             pipes               toaiff
+_heapq              dumbdbm             pkg_resources       token
+_hotshot            dummy_thread        pkgutil             tokenize
+_io                 dummy_threading     platform            trace
+_json               email               plistlib            traceback
+_locale             encodings           popen2              ttk
+_lsprof             ensurepip           poplib              tty
+_md5                errno               posix               turtle
+_multibytecodec     exceptions          posixfile           types
+_multiprocessing    fcntl               posixpath           unicodedata
+_osx_support        filecmp             pprint              unittest
+_pyio               fileinput           profile             urllib
+_random             fnmatch             pstats              urllib2
+_sha                formatter           pty                 urlparse
+_sha256             fpformat            pwd                 user
+_sha512             fractions           py_compile          uu
+_socket             ftplib              pyclbr              uuid
+_sqlite3            functools           pydoc               warnings
+_sre                future_builtins     pydoc_data          wave
+_ssl                gc                  pyexpat             weakref
+_strptime           genericpath         pygtkcompat         webbrowser
+_struct             getopt              quopri              webencodings
+_symtable           getpass             random              whichdb
+_sysconfigdata      gettext             re                  wsgiref
+_sysconfigdata_d    gi                  readline            xdrlib
+_sysconfigdata_nd   glob                repr                xml
+_testcapi           grp                 resource            xmllib
+_threading_local    gzip                rexec               xmlrpclib
+_tkinter            hashlib             rfc822              xxsubtype
+_warnings           heapq               rlcompleter         zipfile
+_weakref            hmac                robotparser         zipimport
+_weakrefset         hotshot             runpy               zlib
+abc                 html5lib            sched               
+aifc                htmlentitydefs      select              
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose descriptions contain the word "spam".
+
+help> 
+[2]+  Stopped                 python2
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(7) PERL
+=========================================================== 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which perl
+/usr/bin/perl
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ perl -v
+
+This is perl 5, version 30, subversion 0 (v5.30.0) built for x86_64-linux-gnu-thread-multi
+(with 50 registered patches, see perl -V for more detail)
+
+Copyright 1987-2019, Larry Wall
+
+Perl may be copied only under the terms of either the Artistic License or the
+GNU General Public License, which may be found in the Perl 5 source kit.
+
+Complete documentation for Perl, including FAQ lists, should be found on
+this system using "man perl" or "perldoc perl".  If you have access to the
+Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(8) PHP
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which php
+/usr/bin/php
+ 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ php -v
+PHP 7.4.3 (cli) (built: Oct  6 2020 15:47:56) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+    with Zend OPcache v7.4.3, Copyright (c), by Zend Technologies
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(9) JULIA 1.6.0 ON TERMINAL
+=========================================================== 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which julia
+/usr/bin/julia
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ julia
+
+Bismillah 3 times WRY.
+Starting julia1.6 in gnome-terminal shell ...
+Current workspace directory:  /home/wruslan/opt/wks-julia1.6
+To exit julia1.6 type <Ctrl-D>
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.6.0 (2021-03-24)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> 
+<Ctrl-D>
+Alhamdulillah 3 times WRY. Exited julia1.6 successfully.
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(10) JULIA 1.5.4 ON ATOM IDE
+=========================================================== 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al opt/JuliaPro-1.5.4-1/
+total 136
+drwx------  6 wruslan wruslan   4096 Mar 31 18:36 .
+drwxrwxr-x 17 wruslan wruslan   4096 Apr  4 14:41 ..
+drwx------  8 wruslan wruslan   4096 Mar 18 23:21 Julia
+drwx------  3 wruslan wruslan   4096 Mar 18 23:21 JuliaPro
+drwx------  6 wruslan wruslan   4096 Mar 18 23:21 JuliaPro-Juno-1.5.4-1
+-rwx--x--x  1 wruslan wruslan   2114 Mar 18 23:21 Launch_JuliaPro
+-rw-------  1 wruslan wruslan 105974 Mar 18 23:21 license.pdf
+-rw-rw-r--  1 wruslan wruslan    690 Mar 31 18:39 postinstall_results
+drwx------  2 wruslan wruslan   4096 Mar 18 23:21 Scripts
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ opt/JuliaPro-1.5.4-1/Launch_JuliaPro
+Press Enter to start Julia. 
+Starting Julia...
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.5.4 (2021-03-11)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia>
+<Ctrl-D>
+
+Julia has exited.
+Press Enter to start a new session.
+
+===========================================================
+(11) LinuxCNC Versions
+===========================================================
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al /usr/bin | grep linuxcnc
+lrwxrwxrwx  1 root   root          44 Apr  6 01:38 linuxcnc2.8 -> /home/wruslan/opt/linuxcnc/linuxcnc-start.sh
+lrwxrwxrwx  1 root   root          48 Apr  6 01:37 linuxcnc2.9 -> /home/wruslan/opt/linuxcnc-new/linuxcnc-start.sh
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(11.1) LinuxCNC-2.9.0-pre
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gedit /home/wruslan/opt/linuxcnc-new/linuxcnc-start.sh
+wruslan@HPEliteBk8470p-ubstudio-20:~$ cat /home/wruslan/opt/linuxcnc-new/linuxcnc-start.sh
+#! /bin/bash
+
+## File: linuxcnc-start.sh
+## Date: Thu 08 Apr 2021 02:19:04 PM +08
+echo
+echo
+echo
+echo "Bismillah 3 times WRY. Starting linuxcnc2.9.0-pre ..."
+echo
+echo "Choose axis_mm for machine configuration..."
+cd /home/wruslan/opt/linuxcnc-new
+. scripts/rip-environment
+linuxcnc
+cd ~
+echo "Alhamdulillah 3 times WRY. Exited linuxcnc2.9.0-pre successfully."
+echo
+
+## Create a system softlink (shortcut)
+## $ sudo ln -sf /home/wruslan/opt/linuxcnc-new/linuxcnc-start.sh /usr/bin/linuxcnc2.9
+## $ linuxcnc2.9
+
+## TO RUN IN A SEPARATE SHELL TERMINAL
+## $ gnome-terminal --window-with-profile=linuxcnc2.9 -- "linuxcnc2.9"
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(11.2) LinuxCNC-2.8.0
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gedit /home/wruslan/opt/linuxcnc/linuxcnc-start.sh
+wruslan@HPEliteBk8470p-ubstudio-20:~$ cat /home/wruslan/opt/linuxcnc/linuxcnc-start.sh
+#! /bin/bash
+
+## File: linuxcnc-start.sh
+## Date: Thu 08 Apr 2021 02:19:04 PM +08
+
+echo
+echo
+echo
+echo "Bismillah 3 times WRY. Starting linuxcnc2.8 ..."
+echo
+echo "Choose axis_mm for machine configuration..."
+cd /home/wruslan/opt/linuxcnc
+. scripts/rip-environment
+linuxcnc
+cd ~
+echo "Alhamdulillah 3 times WRY. Exited linuxcnc2.8 successfully."
+echo
+
+## Create a system softlink (shortcut)
+## $ sudo ln -sf /home/wruslan/opt/linuxcnc/linuxcnc-start.sh /usr/bin/linuxcnc2.8
+## $ linuxcnc2.8
+
+## TO RUN IN A SEPARATE SHELL TERMINAL
+## $ gnome-terminal --window-with-profile=linuxcnc2.8 -- "linuxcnc2.8"
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(12) OCTAVE 6.2.0 AND OCTAVE 5.2.0
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al opt/apps/octave-6.2.0/
+total 28
+drwxrwxr-x  7 wruslan wruslan 4096 Mar 31 05:32 .
+drwx------ 10 wruslan wruslan 4096 Apr  3 22:10 ..
+drwxrwxr-x  2 wruslan wruslan 4096 Mar 31 05:32 bin
+drwxrwxr-x  3 wruslan wruslan 4096 Mar 31 05:32 include
+drwxrwxr-x  4 wruslan wruslan 4096 Mar 31 05:32 lib
+drwxrwxr-x  3 wruslan wruslan 4096 Mar 31 05:32 libexec
+drwxrwxr-x  8 wruslan wruslan 4096 Mar 31 05:32 share
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al opt/apps/octave-6.2.0/bin/
+total 7032
+drwxrwxr-x 2 wruslan wruslan    4096 Mar 31 05:32 .
+drwxrwxr-x 7 wruslan wruslan    4096 Mar 31 05:32 ..
+lrwxrwxrwx 1 wruslan wruslan      15 Mar 31 05:32 mkoctfile -> mkoctfile-6.2.0
+-rwxr-xr-x 1 wruslan wruslan 5699616 Mar 22 16:09 mkoctfile-6.2.0
+lrwxrwxrwx 1 wruslan wruslan      12 Mar 31 05:32 octave -> octave-6.2.0
+-rwxr-xr-x 1 wruslan wruslan  279456 Mar 22 16:09 octave-6.2.0
+lrwxrwxrwx 1 wruslan wruslan      16 Mar 31 05:32 octave-cli -> octave-cli-6.2.0
+-rwxr-xr-x 1 wruslan wruslan  170000 Mar 22 16:09 octave-cli-6.2.0
+lrwxrwxrwx 1 wruslan wruslan      19 Mar 31 05:32 octave-config -> octave-config-6.2.0
+-rwxr-xr-x 1 wruslan wruslan 1033176 Mar 22 16:09 octave-config-6.2.0
+wruslan@HPEliteBk8470p-ubstudio-20:~$
+ 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ opt/apps/octave-6.2.0/bin/octave --gui
+GNU Octave, version 6.2.0
+Copyright (C) 2021 The Octave Project Developers.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  For details, type 'warranty'.
+
+Octave was configured for "x86_64-pc-linux-gnu".
+
+Additional information about Octave is available at https://www.octave.org.
+
+Please contribute if you find this software useful.
+For more information, visit https://www.octave.org/get-involved.html
+
+Read https://www.octave.org/bugs.html to learn how to submit bug reports.
+For information about changes from previous versions, type 'news'.
+
+>>
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al opt/apps/octave-5.2.0/
+total 28
+drwxrwxr-x  7 wruslan wruslan 4096 Mar 31 05:32 .
+drwx------ 10 wruslan wruslan 4096 Apr  3 22:10 ..
+drwxrwxr-x  2 wruslan wruslan 4096 Mar 31 11:41 bin
+drwxrwxr-x  3 wruslan wruslan 4096 Mar 31 05:32 include
+drwxrwxr-x  4 wruslan wruslan 4096 Mar 31 05:32 lib
+drwxrwxr-x  3 wruslan wruslan 4096 Mar 31 05:31 libexec
+drwxrwxr-x  8 wruslan wruslan 4096 Mar 31 05:31 share
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al opt/apps/octave-5.2.0/bin/
+total 6928
+drwxrwxr-x 2 wruslan wruslan    4096 Mar 31 11:41 .
+drwxrwxr-x 7 wruslan wruslan    4096 Mar 31 05:32 ..
+lrwxrwxrwx 1 wruslan wruslan      15 Mar 31 05:31 mkoctfile -> mkoctfile-5.2.0
+-rwxr-xr-x 1 wruslan wruslan 5600448 Mar 22 15:58 mkoctfile-5.2.0
+lrwxrwxrwx 1 wruslan wruslan      12 Mar 31 05:31 octave -> octave-5.2.0
+-rwxr-xr-x 1 wruslan wruslan  277120 Mar 22 15:58 octave-5.2.0
+lrwxrwxrwx 1 wruslan wruslan      16 Mar 31 05:31 octave-cli -> octave-cli-5.2.0
+-rwxr-xr-x 1 wruslan wruslan  163624 Mar 22 15:58 octave-cli-5.2.0
+lrwxrwxrwx 1 wruslan wruslan      19 Mar 31 05:31 octave-config -> octave-config-5.2.0
+-rwxr-xr-x 1 wruslan wruslan 1032808 Mar 22 15:58 octave-config-5.2.0
+-rw-rw-r-- 1 wruslan wruslan      11 Mar 31 11:41 octave-workspace
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ opt/apps/octave-5.2.0/bin/octave --gui
+GNU Octave, version 5.2.0
+Copyright (C) 2020 John W. Eaton and others.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  For details, type 'warranty'.
+
+Octave was configured for "x86_64-pc-linux-gnu".
+
+Additional information about Octave is available at https://www.octave.org.
+
+Please contribute if you find this software useful.
+For more information, visit https://www.octave.org/get-involved.html
+
+Read https://www.octave.org/bugs.html to learn how to submit bug reports.
+For information about changes from previous versions, type 'news'.
+
+>>
+
+===========================================================
+(13) SCILAB 6.1.0 ANS SCILAB 5.5.2
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al opt/apps/scilab-6.1.0/
+total 132
+drwxrwxr-x  7 wruslan wruslan  4096 Mar 31 05:32 .
+drwx------ 10 wruslan wruslan  4096 Apr  3 22:10 ..
+-rw-r--r--  1 wruslan wruslan  7591 Feb 25  2020 ACKNOWLEDGEMENTS
+drwxrwxr-x  2 wruslan wruslan  4096 Mar 31 05:32 bin
+-rw-r--r--  1 wruslan wruslan 45781 Feb 25  2020 CHANGES.md
+-rw-r--r--  1 wruslan wruslan 41249 Feb 25  2020 COPYING
+drwxrwxr-x  3 wruslan wruslan  4096 Mar 31 05:32 include
+drwxrwxr-x  5 wruslan wruslan  4096 Mar 31 05:32 lib
+-rw-r--r--  1 wruslan wruslan  1452 Feb 25  2020 README.md
+drwxrwxr-x  8 wruslan wruslan  4096 Mar 31 05:32 share
+drwxrwxr-x  4 wruslan wruslan  4096 Mar 31 05:32 thirdparty
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al opt/apps/scilab-6.1.0/bin/
+total 4544
+drwxrwxr-x 2 wruslan wruslan    4096 Mar 31 05:32 .
+drwxrwxr-x 7 wruslan wruslan    4096 Mar 31 05:32 ..
+-rwxr-xr-x 1 wruslan wruslan 1713591 Feb 25  2020 modelicac
+-rwxr-xr-x 1 wruslan wruslan 2057719 Feb 25  2020 modelicat
+-rwxr-xr-x 1 wruslan wruslan   44563 Feb 25  2020 scilab
+lrwxrwxrwx 1 wruslan wruslan       6 Mar 31 05:32 scilab-adv-cli -> scilab
+-rwxr-xr-x 1 wruslan wruslan   24741 Feb 25  2020 scilab-bin
+lrwxrwxrwx 1 wruslan wruslan       6 Mar 31 05:32 scilab-cli -> scilab
+-rwxr-xr-x 1 wruslan wruslan   20725 Feb 25  2020 scilab-cli-bin
+-rwxr-xr-x 1 wruslan wruslan   44563 Feb 25  2020 scinotes
+-rwxr-xr-x 1 wruslan wruslan   44563 Feb 25  2020 xcos
+-rwxr-xr-x 1 wruslan wruslan  675942 Feb 25  2020 XML2Modelica
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ opt/apps/scilab-6.1.0/bin/scilab
+
+Scilab 6.1.0 console
+Startup execution:
+  loading initial environment
+
+START GUI Builder 4.2.1 for Scilab 6.1
+	Load macros
+	Load help
+	Type "guibuilder" to start the GUI
+
+-->
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al opt/apps/scilab-5.5.2/
+total 760
+drwxrwxr-x  7 wruslan wruslan   4096 Mar 31 05:31 .
+drwx------ 10 wruslan wruslan   4096 Apr  3 22:10 ..
+-rw-r--r--  1 wruslan wruslan   7652 Mar 31  2015 ACKNOWLEDGEMENTS
+drwxrwxr-x  2 wruslan wruslan   4096 Mar 31 05:31 bin
+drwxrwxr-x  3 wruslan wruslan   4096 Mar 31 05:31 include
+drwxrwxr-x  5 wruslan wruslan   4096 Mar 31 05:31 lib
+-rw-r--r--  1 wruslan wruslan    143 Mar 31  2015 license.txt
+-rw-r--r--  1 wruslan wruslan   1984 Mar 31  2015 README_Unix
+drwxrwxr-x  8 wruslan wruslan   4096 Mar 31 05:31 share
+drwxrwxr-x  4 wruslan wruslan   4096 Mar 31 05:31 thirdparty
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al opt/apps/scilab-5.5.2/bin/
+total 4152
+drwxrwxr-x 2 wruslan wruslan    4096 Mar 31 05:31 .
+drwxrwxr-x 7 wruslan wruslan    4096 Mar 31 05:31 ..
+-rwxr-xr-x 1 wruslan wruslan  107175 Mar 31  2015 intersci
+-rwxr-xr-x 1 wruslan wruslan 1510638 Mar 31  2015 modelicac
+-rwxr-xr-x 1 wruslan wruslan 1789584 Mar 31  2015 modelicat
+-rwxr-xr-x 1 wruslan wruslan   40678 Mar 31  2015 scilab
+lrwxrwxrwx 1 wruslan wruslan       6 Mar 31 05:31 scilab-adv-cli -> scilab
+-rwxr-xr-x 1 wruslan wruslan   46040 Mar 31  2015 scilab-bin
+lrwxrwxrwx 1 wruslan wruslan       6 Mar 31 05:31 scilab-cli -> scilab
+-rwxr-xr-x 1 wruslan wruslan   45320 Mar 31  2015 scilab-cli-bin
+-rwxr-xr-x 1 wruslan wruslan   40678 Mar 31  2015 scinotes
+-rwxr-xr-x 1 wruslan wruslan   40678 Mar 31  2015 xcos
+-rwxr-xr-x 1 wruslan wruslan  608208 Mar 31  2015 XML2Modelica
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ opt/apps/scilab-5.5.2/bin/scilab
+
+Scilab 5.5.2 console
+Startup execution:
+  loading initial environment
+ 
+-->
+
+===========================================================
+(14) GNUPLOT
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which gnuplot
+/usr/bin/gnuplot
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gnuplot --version
+gnuplot 5.2 patchlevel 8
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ gnuplot
+
+	G N U P L O T
+	Version 5.2 patchlevel 8    last modified 2019-12-01 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2019
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'qt'
+gnuplot> 
+gnuplot> plot (sin(x)/x)
+qt5ct: using qt5ct plugin
+Gtk-Message: 09:19:35.647: Failed to load module "canberra-gtk-module"
+
+gnuplot> ^D
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(15) ATOM GRAPHVIZ DOT EDITOR
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which atom
+/usr/bin/atom
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ ls -al /usr/bin/atom
+-rwxr-xr-x 1 root root 5181 Mar  9 01:56 /usr/bin/atom
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ atom --version
+Atom    : 1.55.0
+Electron: 6.1.12
+Chrome  : 76.0.3809.146
+Node    : 12.4.0
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+(16) DIA, XDOT AND DOT GRAPHVIZ
+===========================================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which dia
+/usr/bin/dia
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ dia --version
+Gtk-Message: 09:46:33.379: Failed to load module "canberra-gtk-module"
+Dia version 0.97+git, compiled 01:04:47 Feb 14 2020
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which xdot
+/usr/bin/xdot
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ xdot --version
+usage: xdot [-h] [-f FILTER] [-n] [-g GEOMETRY] [file]
+xdot: error: unrecognized arguments: --version
+
+======================================= 
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which dot
+/usr/bin/dot
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ dot -V
+dot - graphviz version 2.43.0 (0)
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which xclip
+/usr/bin/xclip
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ xclip --version
+xclip: --version: No such file or directory
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ xclip --help
+xclip: --help: No such file or directory
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+=======================================
+wruslan@HPEliteBk8470p-ubstudio-20:~$ which dia2code
+/usr/bin/dia2code
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ dia2code --version
+I/O warning : failed to load external entity "--version"
+That file does not exist or is not a Dia diagram
+
+wruslan@HPEliteBk8470p-ubstudio-20:~$ dia2code --help
+dia2code version 0.8.3, Copyright (C) 2000-2001 Javier O'Hara
+Dia2Code comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it
+under certain conditions; read the COPYING file for details.
+
+Usage: dia2code [-h|--help] [-d <dir>] [-nc] [-cl <classlist>]
+       [-t (ada|c|cpp|csharp|idl|java|php|php5|python|ruby|shp|sql)] [-v]
+       [-l <license file>] [-ini <initialization file>]<diagramfile>
+
+    -h --help            Print this help and exit
+    -t <target>          Selects the output language. <target> can be
+                         one of: ada,c,cpp,idl,java,php,php5,python,ruby,shp,sql or csharp. 
+                         Default is C++
+    -d <dir>             Output generated files to <dir>, default is "." 
+    -l <license>         License file to prepend to generated files.
+    -nc                  Do not overwrite files that already exist
+    -cl <classlist>      Generate code only for the classes specified in
+                         the comma-separated <classlist>. 
+                         E.g: Base,Derived.
+    -v                   Invert the class list selection.  When used 
+                         without -cl prevents any file from being created
+    -ext <extension>     Use <extension> as the file extension.
+                         Here are the defaults:
+                         ada:"ads", c:"h", cpp:"h", idl:"idl",
+                         java:"java", php:"php", python:"py", csharp:"cs".
+                         Not applicable to shp, sql.
+    -bext <extension>    Use <extension> as the body (implementation) file
+                         extension. Currently only applies only to ada.
+                         Here are the defaults:
+                         ada:"adb"
+    -ini <file>          Can be used instead of command-line parameters
+    <diagramfile>        The Dia file that holds the diagram to be read
+
+    Note: parameters can be specified in any order.
+wruslan@HPEliteBk8470p-ubstudio-20:~$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================

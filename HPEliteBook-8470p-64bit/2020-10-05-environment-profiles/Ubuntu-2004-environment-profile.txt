@@ -1,0 +1,371 @@
+
+===========================================================
+(1) OPERATING SYSTEM AND LINUX KERNEL
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ date
+Fri 23 Oct 2020 11:48:37 AM +08
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ uname -a
+Linux HPEliteBook8470p-Ub2004-rt38 5.4.66-rt38 #1 SMP PREEMPT_RT Sat Sep 26 16:51:59 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ lsb_release -a
+LSB Version:	core-11.1.0ubuntu2-noarch:security-11.1.0ubuntu2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.1 LTS
+Release:	20.04
+Codename:	focal
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+===========================================================
+(2) GCC COMPILER
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which gcc
+/usr/local/bin/gcc
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ gcc --version
+gcc (GCC) 9.3.1 20200430 (for GNAT Community 2020 20200818)
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which g++
+/usr/local/bin/g++
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ g++ --version
+g++ (GCC) 9.3.1 20200430 (for GNAT Community 2020 20200818)
+
+===========================================================
+(3) BOOST C++ LIBRARY
+===========================================================
+## SETTINGS FOR  BOOST C++ LIBRARY CONFIGURATION
+export LD_LIBRARY_PATH=/home/wruslan/opt/boost_1_74_0/stage/lib
+export CPLUS_INCLUDE_PATH=/home/wruslan/opt/boost_1_74_0 
+
+## HARD COPIED FILES TO HIGH LEVEL SYSTEM SEARCH PATH
+LIBRARY PATH ===> ls -al /usr/lib   | grep libboost
+INCLUDE PATH ===> ls -al /usr/include/boost  
+
+===========================================================
+(4) GNAT ADA COMPILER (GNATMAKE, GNATBIND, GNATLINK)
+=========================================================== 
+## SETTINGS FOR GNAT ADA
+export PATH=/home/wruslan/opt/GNAT/2020/bin:$PATH
+export PATH=/home/wruslan/opt/GNAT/2020/libexec/gcc/x86_64-pc-linux-gnu/9.3.1:$PATH
+export PATH=/home/wruslan/opt/GNAT/2020/libexec/spark/libexec/gcc/x86_64-pc-linux-gnu/9.3.1$PATH
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which gnatmake
+/usr/local/bin/gnatmake
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ gnatmake --version
+GNATMAKE Community 2020 (20200818-93)
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which gnatbind
+/home/wruslan/opt/GNAT/2020/bin/gnatbind
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ gnatbind --version
+GNATBIND Community 2020 (20200818-93)
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which gnatlink
+/home/wruslan/opt/GNAT/2020/bin/gnatlink
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ gnatlink --version
+GNATLINK Community 2020 (20200818-93)
+
+===========================================================
+(5) JAVA COMPILER AND ENVIRONMENT
+=========================================================== 
+## SETTINGS FOR JAVA
+export JAVA_HOME=/usr/lib/jvm/jdk-13.0.2
+export PATH=/usr/lib/jvm/jdk-13.0.2/bin:$PATH
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which java
+/usr/bin/java
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ java -version
+java version "13.0.2" 2020-01-14
+Java(TM) SE Runtime Environment (build 13.0.2+8)
+Java HotSpot(TM) 64-Bit Server VM (build 13.0.2+8, mixed mode, sharing)
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which javac
+/usr/bin/javac
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ javac -version
+javac 13.0.2
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which javap
+/usr/bin/javap
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ javap -version
+13.0.2
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which javadoc
+/usr/bin/javadoc
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ javadoc --version
+javadoc 13.0.2
+
+===========================================================
+(6) PYTHON2 AND PYTHON3
+=========================================================== 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ python
+Python 2.7.18 (default, Aug  4 2020, 11:16:42) 
+[GCC 9.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import os
+>>> import sys
+>>> import time
+>>> import dateutil
+>>> 
+>>> import numpy
+>>> import scipy
+>>> import matplotlib
+>>> 
+>>> import thread
+>>> import multiprocessing
+>>> 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+=======================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ python3
+Python 3.8.5 (default, Jul 28 2020, 12:59:40) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import os
+>>> import sys
+>>> import time
+>>> import dateutil
+>>> 
+>>> import numpy
+>>> import scipy
+>>> import matplotlib
+>>> 
+>>> import threading
+>>> import multiprocessing
+>>> 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+===========================================================
+(7) PERL
+=========================================================== 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ perl -v
+
+This is perl 5, version 30, subversion 0 (v5.30.0) built for x86_64-linux-gnu-thread-multi
+(with 46 registered patches, see perl -V for more detail)
+
+Copyright 1987-2019, Larry Wall
+
+===========================================================
+(8) PHP
+=========================================================== 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ php -v
+PHP 7.4.3 (cli) (built: Oct  6 2020 15:47:56) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+    with Zend OPcache v7.4.3, Copyright (c), by Zend Technologies
+
+===========================================================
+(9) JULIA ON TERMINAL
+=========================================================== 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which julia
+/usr/local/bin/julia
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.5.1 (2020-08-25)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+===========================================================
+(10) ATOM WITH JULIA (Atom ver 1.36.0 x86)
+=========================================================== 
+Press Enter to start Julia. 
+ Activating environment at `~/.julia/environments/JuliaPro_v1.5.1-1/Project.toml`
+Starting Julia...
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.5.1 (2020-08-25)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> 2 + 6
+8
+
+julia> 
+
+Julia has exited.
+Press Enter to start a new session.
+
+===========================================================
+(11) LINUXCNC
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/linuxcnc-dev$ . scripts/rip-environment
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/linuxcnc-dev$ linuxcnc
+LINUXCNC - 2.9.0~pre0
+Machine configuration directory is '/home/wruslan/linuxcnc-dev/configs/sim/axis'
+Machine configuration file is 'axis.ini'
+Starting LinuxCNC...
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/core_sim.hal
+Note: Using POSIX realtime
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/sim_spindle_encoder.hal
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/axis_manualtoolchange.hal
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/simulated_home.hal
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/check_xyz_constraints.hal
+note: MAXV     max: 5.000 units/sec 300.000 units/min
+note: LJOG     max: 5.000 units/sec 300.000 units/min
+note: LJOG default: 0.250 units/sec 15.000 units/min
+note: jog_order='XYZ'
+note: jog_invert=set([])
+task: main loop took 0.036714 seconds
+task: main loop took 0.031607 seconds
+task: main loop took 0.018338 seconds
+Shutting down and cleaning up LinuxCNC...
+task: 45943 cycles, min=0.000047, max=0.036714, avg=0.001066, 3 latency excursions (> 10x expected cycle time of 0.001000s)
+Note: Using POSIX realtime
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/linuxcnc-dev$ 
+
+===========================================================
+(12) SCILAB, OCTAVE, GNUPLOT, DOTEDITOR
+===========================================================
+
+SCILAB 6.1.0 WITH XCOS
+=======================================
+## MUST RUN AS MENU SHORTCUTS
+SCILAB 6.1.0 EXECUTABLE OK: /home/wruslan/opt/scilab-6.1.0/bin/scilab
+
+OCTAVE 5.2.0 FROM FLATPAK
+=======================================
+/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/octave --file-forwarding org.octave.Octave --gui @@ %f @@
+
+GNUPLOT 5.2 patch 8
+=======================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which gnuplot
+/usr/bin/gnuplot
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ gnuplot
+
+	G N U P L O T
+	Version 5.2 patchlevel 8    last modified 2019-12-01 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2019
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'qt'
+gnuplot> 
+gnuplot> plot (sin(x)/x)
+gnuplot>
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+DIA
+=======================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which dia
+/usr/bin/dia
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ dia --version
+Gtk-Message: 12:42:43.346: Failed to load module "pk-gtk-module"
+Dia version 0.97+git, compiled 01:04:47 Feb 14 2020
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ dia
+Gtk-Message: 12:42:57.107: Failed to load module "pk-gtk-module"
+Canvas size change...
+Canvas size change...
+Canvas size change...
+Canvas size change...
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+XDOT
+======================================= 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which xdot
+/usr/bin/xdot
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ xdot -h
+usage: xdot [-h] [-f FILTER] [-n] [-g GEOMETRY] [file]
+
+xdot.py is an interactive viewer for graphs written in Graphviz's dot language.
+
+positional arguments:
+  file                  input file to be viewed
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FILTER, --filter FILTER
+                        graphviz filter: dot, neato, twopi, circo, or fdp [default: dot]
+  -n, --no-filter       assume input is already filtered into xdot format (use e.g. dot -Txdot)
+  -g GEOMETRY, --geometry GEOMETRY
+                        default window size in form WxH
+
+Shortcuts:
+  Up, Down, Left, Right     scroll
+  PageUp, +, =              zoom in
+  PageDown, -               zoom out
+  R                         reload dot file
+  F                         find
+  Q                         quit
+  P                         print
+  Escape                    halt animation
+  Ctrl-drag                 zoom in/out
+  Shift-drag                zooms an area
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+DOTEDITOR (FIXED - CAN CREATE MENU ICON)
+=======================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ sudo ln -sf /home/wruslan/opt/DotEditor/doteditor.sh /usr/local/bin/doteditor
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ sudo apt-get install python-ply python-wxtools
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ sudo updatedb
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ doteditor
+... <GUI opens> ...
+(DotEditor.py:13039): Gtk-CRITICAL **: 12:59:03.529: gtk_widget_get_realized: assertion 'GTK_IS_WIDGET (widget)' failed
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+DIA2CODE
+======================================= 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ which dia2code
+/usr/local/bin/dia2code
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ dia2code --help
+dia2code version 0.8.4, Copyright (C) 2000-2001 Javier O'Hara
+Dia2Code comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it
+under certain conditions; read the COPYING file for details.
+
+Usage: dia2code [-h|--help] [-d <dir>] [-nc] [-cl <classlist>]
+       [-t (ada|c|cpp|csharp|idl|java|php|php5|python|ruby|shp|sql)] [-v]
+       [-l <license file>] [-ini <initialization file>]<diagramfile>
+
+    -h --help            Print this help and exit
+    -t <target>          Selects the output language. <target> can be
+                         one of: ada,c,cpp,idl,java,php,php5,python,ruby,shp,sql or csharp. 
+                         Default is C++
+    -d <dir>             Output generated files to <dir>, default is "." 
+    --buildtree          Convert package names to a directory tree. off by default 
+    -l <license>         License file to prepend to generated files.
+    -nc                  Do not overwrite files that already exist
+    -cl <classlist>      Generate code only for the classes specified in
+                         the comma-separated <classlist>. 
+                         E.g: Base,Derived.
+    -v                   Invert the class list selection.  When used 
+                         without -cl prevents any file from being created
+    -ext <extension>     Use <extension> as the file extension.
+                         Here are the defaults:
+                         ada:"ads", c:"h", cpp:"h", idl:"idl",
+                         java:"java", php:"php", python:"py", csharp:"cs".
+                         Not applicable to shp, sql.
+    -bext <extension>    Use <extension> as the body (implementation) file
+                         extension. Currently only applies only to ada.
+                         Here are the defaults:
+                         ada:"adb"
+    -sqlx <optionlist>   Use the following comma-separated <optionlist> to control
+                         special options in the creation of the SQL schema. Currently the 
+                         only option is "fkidx" which creates an index for each FK defined.
+                         The default is no options.
+    -ini <file>          Can be used instead of command-line parameters
+    --debug <level>     Show debugging messages of this level
+    <diagramfile>        The Dia file that holds the diagram to be read
+
+    Note: parameters can be specified in any order.
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+

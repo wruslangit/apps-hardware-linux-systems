@@ -1,0 +1,588 @@
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ date
+Sun Oct 25 14:04:19 +08 2020
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ uname -a
+Linux HP-EliteBk6930p-Ub1804-32b 4.19.106-rt46 #2 SMP Tue Apr 7 01:16:31 +08 2020 i686 i686 i686 GNU/Linux
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ lsb_release -a
+LSB Version:	core-9.20170808ubuntu1-noarch:security-9.20170808ubuntu1-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.5 LTS
+Release:	18.04
+Codename:	bionic
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(2) GCC COMPILER ENVIRONMENT
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ gcc --version
+gcc (Ubuntu 8.4.0-1ubuntu1~18.04) 8.4.0
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ g++ --version
+g++ (Ubuntu 8.4.0-1ubuntu1~18.04) 8.4.0
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-linux-gnu/8/lto-wrapper
+Target: i686-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 8.4.0-1ubuntu1~18.04' --with-bugurl=file:///usr/share/doc/gcc-8/README.Bugs 
+
+--enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ 
+
+--prefix=/usr --with-gcc-major-version-only --program-suffix=-8 --program-prefix=i686-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-targets=all --enable-multiarch --disable-werror --with-arch-32=i686 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=i686-linux-gnu
+Thread model: posix
+gcc version 8.4.0 (Ubuntu 8.4.0-1ubuntu1~18.04) 
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(3) GNAT ADA ENVIRONMENT
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ gnatmake --version
+GNATMAKE 8.4.0
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ gnatbind --version
+GNATBIND 8.4.0
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ gnatlink --version
+GNATLINK 8.4.0
+
+===========================================================
+(4) JAVA ENVIRONMENT
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ java -version
+openjdk version "11.0.8" 2020-07-14
+OpenJDK Runtime Environment (build 11.0.8+10-post-Ubuntu-0ubuntu118.04.1)
+OpenJDK Server VM (build 11.0.8+10-post-Ubuntu-0ubuntu118.04.1, mixed mode, sharing)
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ javac -version
+javac 11.0.8
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ javap -version
+11.0.8
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ javadoc --version
+javadoc 11.0.8
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(5) PYTHON2 AND PYTHON3
+===========================================================
+ wruslan@HP-EliteBk6930p-Ub1804-32b:~$ python
+Python 2.7.17 (default, Sep 30 2020, 13:38:04) 
+[GCC 7.5.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import os
+>>> import sys
+>>> import time
+>>> import dateutil
+>>> 
+>>> import numpy
+>>> import scipy
+>>> import matplotlib
+>>> 
+>>> import thread
+>>> import multiprocessing
+>>> 
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+=======================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ python3
+Python 3.6.9 (default, Oct  8 2020, 12:12:24) 
+[GCC 8.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import os
+>>> import sys
+>>> import time
+>>> import dateutil
+>>> 
+>>> import numpy
+>>> import scipy
+>>> import matplotlib
+>>> 
+>>> import threading
+>>> import multiprocessing
+>>> 
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(6) PERL
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ perl -v
+
+This is perl 5, version 26, subversion 1 (v5.26.1) built for i686-linux-gnu-thread-multi-64int
+(with 67 registered patches, see perl -V for more detail)
+
+Copyright 1987-2017, Larry Wall
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(7) PHP
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ php -v
+PHP 7.2.24-0ubuntu0.18.04.7 (cli) (built: Oct  7 2020 15:24:25) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.2.24-0ubuntu0.18.04.7, Copyright (c) 1999-2018, by Zend Technologies
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(8) JULIA 
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ sudo snap install julia --classic
+[sudo] password for wruslan: 
+2020-10-25T14:24:10+08:00 INFO Waiting for automatic snapd restart...
+julia 1.0.4 from The Julia Language (julialang✓) installed
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.0.4 (2019-05-16)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> 
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(9) OCTAVE
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ which octave
+/usr/bin/octave
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ octave --version
+GNU Octave, version 4.2.2
+Copyright (C) 2018 John W. Eaton and others.
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(10) GNUPLOT 
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ which gnuplot
+/usr/local/bin/gnuplot
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ gnuplot
+
+	G N U P L O T
+	Version 5.2 patchlevel 2    last modified 2017-11-01 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2017
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'wxt'
+gnuplot> 
+gnuplot> plot (sin(x)/x)
+gnuplot> ^D
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(11) DOT, XDOT, XCLIP, DOTEDITOR, DIA, DIA2CODE 
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ which dot
+/usr/bin/dot
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ dot -V
+dot - graphviz version 2.40.1 (20161225.0304)
+
+=======================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ which xdot
+/usr/bin/xdot
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ xdot -h
+usage: xdot [-h] [-f FILTER] [-n] [-g GEOMETRY] [file]
+
+xdot.py is an interactive viewer for graphs written in Graphviz's dot language.
+
+positional arguments:
+  file                  input file to be viewed
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FILTER, --filter FILTER
+                        graphviz filter: dot, neato, twopi, circo, or fdp
+                        [default: dot]
+  -n, --no-filter       assume input is already filtered into xdot format (use
+                        e.g. dot -Txdot)
+  -g GEOMETRY, --geometry GEOMETRY
+                        default window size in form WxH
+
+Shortcuts:
+  Up, Down, Left, Right     scroll
+  PageUp, +, =              zoom in
+  PageDown, -               zoom out
+  R                         reload dot file
+  F                         find
+  Q                         quit
+  P                         print
+  Escape                    halt animation
+  Ctrl-drag                 zoom in/out
+  Shift-drag                zooms an area
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+=======================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ which xclip
+/usr/bin/xclip
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ xclip -h
+Usage: xclip [OPTION] [FILE]...
+Access an X server selection for reading or writing.
+
+  -i, -in          read text into X selection from standard input or files
+                   (default)
+  -o, -out         prints the selection to standard out (generally for
+                   piping to a file or program)
+  -l, -loops       number of selection requests to wait for before exiting
+  -d, -display     X display to connect to (eg localhost:0")
+  -h, -help        usage information
+      -selection   selection to access ("primary", "secondary", "clipboard" or "buffer-cut")
+      -noutf8      don't treat text as utf-8, use old unicode
+      -target      use the given target atom
+      -version     version information
+      -silent      errors only, run in background (default)
+      -quiet       run in foreground, show what's happening
+      -verbose     running commentary
+
+Report bugs to <astrand@lysator.liu.se>
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+=======================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ which dia
+/usr/bin/dia
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ dia --version
+Dia version 0.97+git, compiled 13:15:39 Feb 14 2018
+
+======================================= 
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ which dia2code
+/usr/local/bin/dia2code
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ dia2code --help
+dia2code version 0.8.4, Copyright (C) 2000-2001 Javier O'Hara
+Dia2Code comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it
+under certain conditions; read the COPYING file for details.
+
+Usage: dia2code [-h|--help] [-d <dir>] [-nc] [-cl <classlist>]
+       [-t (ada|c|cpp|csharp|idl|java|php|php5|python|ruby|shp|sql)] [-v]
+       [-l <license file>] [-ini <initialization file>]<diagramfile>
+
+    -h --help            Print this help and exit
+    -t <target>          Selects the output language. <target> can be
+                         one of: ada,c,cpp,idl,java,php,php5,python,ruby,shp,sql or csharp. 
+                         Default is C++
+    -d <dir>             Output generated files to <dir>, default is "." 
+    --buildtree          Convert package names to a directory tree. off by default 
+    -l <license>         License file to prepend to generated files.
+    -nc                  Do not overwrite files that already exist
+    -cl <classlist>      Generate code only for the classes specified in
+                         the comma-separated <classlist>. 
+                         E.g: Base,Derived.
+    -v                   Invert the class list selection.  When used 
+                         without -cl prevents any file from being created
+    -ext <extension>     Use <extension> as the file extension.
+                         Here are the defaults:
+                         ada:"ads", c:"h", cpp:"h", idl:"idl",
+                         java:"java", php:"php", python:"py", csharp:"cs".
+                         Not applicable to shp, sql.
+    -bext <extension>    Use <extension> as the body (implementation) file
+                         extension. Currently only applies only to ada.
+                         Here are the defaults:
+                         ada:"adb"
+    -sqlx <optionlist>   Use the following comma-separated <optionlist> to control
+                         special options in the creation of the SQL schema. Currently the 
+                         only option is "fkidx" which creates an index for each FK defined.
+                         The default is no options.
+    -ini <file>          Can be used instead of command-line parameters
+    --debug <level>     Show debugging messages of this level
+    <diagramfile>        The Dia file that holds the diagram to be read
+
+    Note: parameters can be specified in any order.
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+=======================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ sudo ln -sf /home/wruslan/opt/DotEditor/doteditor.sh /usr/local/bin/doteditor
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ which doteditor
+/usr/local/bin/doteditor
+ 
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ doteditor
+... <GUI opens> ...
+
+===========================================================
+(12) LINUX PREEMPT-RT KERNEL
+===========================================================
+
+SUMMARY OF STEPS (Run as root)
+===========================================================
+(1) Download sources into /usr/src directory
+LINUX KERNEL SOURCE:    103413276 Feb 24  2020 linux-4.19.106.tar.xz
+LINUX PREEMPT-PATCH:    166964    Apr 04  2020 patch-4.19.106-rt46.patch.xz
+
+(2) Uncompress linux kernel in /usr/src
+/usr/src# tar -xf linux-4.19.106.tar.xz
+
+(3) Set softlink for linux kernel
+/usr/src# ln -sf /usr/src/linux-4.19.106  linux
+/usr/src# cd linux
+
+(4) Patch the libnux kernel with preempt-rt source
+/usr/src/linux# xzcat ../patch-4.19.106-rt46.patch.xz | patch -p1
+
+(5) Configure preempt-rt kernel
+/usr/src/linux# make menuconfig
+
+(5.1) Select "automatic append version" to new kernel
+General Setup -->
+(*) Automatically append version information to the version string
+
+(5.2) Select feature "Fully Preemptible Kernel (RT)"
+Processor type and features ---> [Enter]
+Preemption Model (Voluntary Kernel Preemption (Desktop)) [Enter]
+Fully Preemptible Kernel (RT) [Enter] #Select
+
+(5.3) Do not select feature "Check for stack overflows"
+Kernel hacking --> [Enter]
+Memory Debugging [Enter]
+Check for stack overflows #Already deselected - do not select
+
+(5.4) Exit "make menuconfig" graphical menu
+[Esc][Esc]
+[Right Arrow]
+<Exit> [Enter] to save ".config" file
+
+(6) Compile  
+/usr/src/linux# make -j4
+... <AT LEAST 1 HOUR> ...
+
+(7) To make mosules smaller, instead of running "make modules_install", run
+/usr/src/linux# su -c 'make INSTALL_MOD_STRIP=1 modules_install -j4 && make install -j4'
+
+UNTIL COMPLETION. DONE.
+
+RESULT PREEMPT-RT KERNEL: 
+
+===========================================================
+root@HP-EliteBk6930p-Ub1804-32b:/usr/src/linux# make -j2
+....
+....
+  LD [M]  sound/soundcore.ko
+  LD [M]  sound/synth/emux/snd-emux-synth.ko
+  LD [M]  sound/synth/snd-util-mem.ko
+  LD [M]  sound/usb/6fire/snd-usb-6fire.ko
+  LD [M]  sound/usb/bcd2000/snd-bcd2000.ko
+  LD [M]  sound/usb/caiaq/snd-usb-caiaq.ko
+  LD [M]  sound/usb/hiface/snd-usb-hiface.ko
+  LD [M]  sound/usb/line6/snd-usb-line6.ko
+  LD [M]  sound/usb/line6/snd-usb-pod.ko
+  LD [M]  sound/usb/line6/snd-usb-podhd.ko
+  LD [M]  sound/usb/line6/snd-usb-toneport.ko
+  LD [M]  sound/usb/line6/snd-usb-variax.ko
+  LD [M]  sound/usb/misc/snd-ua101.ko
+  LD [M]  sound/usb/snd-usb-audio.ko
+  LD [M]  sound/usb/snd-usbmidi-lib.ko
+  LD [M]  sound/usb/usx2y/snd-usb-us122l.ko
+  LD [M]  sound/usb/usx2y/snd-usb-usx2y.ko
+  LD [M]  sound/x86/snd-hdmi-lpe-audio.ko
+  LD [M]  virt/lib/irqbypass.ko
+root@HP-EliteBk6930p-Ub1804-32b:/usr/src/linux# 
+
+===========================================================
+root@HP-EliteBk6930p-Ub1804-32b:/usr/src/linux# su -c 'make INSTALL_MOD_STRIP=1 modules_install -j2 && make install -j2'
+....
+....
+  INSTALL sound/usb/snd-usb-audio.ko
+  INSTALL sound/usb/snd-usbmidi-lib.ko
+  INSTALL sound/usb/usx2y/snd-usb-us122l.ko
+  INSTALL sound/usb/usx2y/snd-usb-usx2y.ko
+  INSTALL sound/x86/snd-hdmi-lpe-audio.ko
+  INSTALL virt/lib/irqbypass.ko
+  DEPMOD  4.19.106-rt46
+sh ./arch/x86/boot/install.sh 4.19.106-rt46 arch/x86/boot/bzImage \
+	System.map "/boot"
+run-parts: executing /etc/kernel/postinst.d/apt-auto-removal 4.19.106-rt46 /boot/vmlinuz-4.19.106-rt46
+run-parts: executing /etc/kernel/postinst.d/initramfs-tools 4.19.106-rt46 /boot/vmlinuz-4.19.106-rt46
+update-initramfs: Generating /boot/initrd.img-4.19.106-rt46
+W: initramfs-tools configuration sets RESUME=UUID=6f75cb78-ab85-46ba-bf5d-ec9236859d7f
+W: but no matching swap device is available.
+run-parts: executing /etc/kernel/postinst.d/pm-utils 4.19.106-rt46 /boot/vmlinuz-4.19.106-rt46
+run-parts: executing /etc/kernel/postinst.d/unattended-upgrades 4.19.106-rt46 /boot/vmlinuz-4.19.106-rt46
+run-parts: executing /etc/kernel/postinst.d/update-notifier 4.19.106-rt46 /boot/vmlinuz-4.19.106-rt46
+run-parts: executing /etc/kernel/postinst.d/zz-update-grub 4.19.106-rt46 /boot/vmlinuz-4.19.106-rt46
+Sourcing file `/etc/default/grub'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-4.19.106-rt46
+Found initrd image: /boot/initrd.img-4.19.106-rt46
+Found linux image: /boot/vmlinuz-4.19.106-rt46.old
+Found initrd image: /boot/initrd.img-4.19.106-rt46
+Found linux image: /boot/vmlinuz-4.15.0-122-generic
+Found initrd image: /boot/initrd.img-4.15.0-122-generic
+Found linux image: /boot/vmlinuz-4.15.0-121-generic
+Found initrd image: /boot/initrd.img-4.15.0-121-generic
+Found memtest86+ image: /boot/memtest86+.elf
+Found memtest86+ image: /boot/memtest86+.bin
+Found Windows 7 on /dev/sda1
+Found Ubuntu 10.04.4 LTS (10.04) on /dev/sda6
+Found Debian GNU/Linux 7 (wheezy) on /dev/sda8
+done
+root@HP-EliteBk6930p-Ub1804-32b:/usr/src/linux# 
+
+RESULT PREEMPT-RT KERNEL: 
+
+===========================================================
+root@HP-EliteBk6930p-Ub1804-32b:/boot# ls -al
+total 137860
+drwxr-xr-x  3 root root     4096 Oct 25 21:01 .
+drwxr-xr-x 27 root root     4096 Oct 25 13:26 ..
+-rw-r--r--  1 root root   219086 Oct  5 22:32 config-4.15.0-121-generic
+-rw-r--r--  1 root root   219097 Oct 15 20:39 config-4.15.0-122-generic
+-rw-r--r--  1 root root   208607 Oct 25 20:43 config-4.19.106-rt46 <=== NEW
+drwxr-xr-x  5 root root    12288 Oct 25 20:56 grub
+-rw-r--r--  1 root root 36429303 Oct 18 01:20 initrd.img-4.15.0-121-generic
+-rw-r--r--  1 root root 36429671 Oct 25 13:28 initrd.img-4.15.0-122-generic
+-rw-r--r--  1 root root 35288256 Oct 25 20:44 initrd.img-4.19.106-rt46 <=== NEW
+-rw-r--r--  1 root root   182704 Jan 28  2016 memtest86+.bin
+-rw-r--r--  1 root root   184380 Jan 28  2016 memtest86+.elf
+-rw-r--r--  1 root root   184840 Jan 28  2016 memtest86+_multiboot.bin
+-rw-------  1 root root  3187412 Oct  5 22:32 System.map-4.15.0-121-generic
+-rw-------  1 root root  3187412 Oct 15 20:39 System.map-4.15.0-122-generic
+-rw-r--r--  1 root root  3015090 Oct 25 20:43 System.map-4.19.106-rt46 <=== NEW
+-rw-------  1 root root  7628608 Oct  5 22:32 vmlinuz-4.15.0-121-generic
+-rw-------  1 root root  7628608 Oct 15 20:39 vmlinuz-4.15.0-122-generic
+-rw-r--r--  1 root root  7110048 Oct 25 20:43 vmlinuz-4.19.106-rt46 <=== NEW
+root@HP-EliteBk6930p-Ub1804-32b:/boot# 
+
+root@HP-EliteBk6930p-Ub1804-32b:/boot# updatedb
+root@HP-EliteBk6930p-Ub1804-32b:/boot# ldconfig
+root@HP-EliteBk6930p-Ub1804-32b:/boot# depmod -a
+root@HP-EliteBk6930p-Ub1804-32b:/boot# 
+
+===========================================================
+root@HP-EliteBk6930p-Ub1804-32b:/boot# date
+Sun Oct 25 21:07:51 +08 2020
+
+root@HP-EliteBk6930p-Ub1804-32b:/boot# uname -a
+Linux HP-EliteBk6930p-Ub1804-32b 4.19.106 
+#2 SMP Tue Apr 7 01:16:31 +08 2020 i686 i686 i686 GNU/Linux
+
+root@HP-EliteBk6930p-Ub1804-32b:/boot# lsb_release -a
+LSB Version:	core-9.20170808ubuntu1-noarch:security-9.20170808ubuntu1-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.5 LTS
+Release:	18.04
+Codename:	bionic
+root@HP-EliteBk6930p-Ub1804-32b:/boot# init 6
+
+REBOOT....
+AFTER REBOOT
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ date
+Sun Oct 25 21:15:14 +08 2020
+
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ uname -a
+Linux HP-EliteBk6930p-Ub1804-32b 4.19.106-rt46 
+#3 SMP PREEMPT RT Sun Oct 25 19:38:01 +08 2020 i686 i686 i686 GNU/Linux
+ 
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ lsb_release -a
+LSB Version:	core-9.20170808ubuntu1-noarch:security-9.20170808ubuntu1-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.5 LTS
+Release:	18.04
+Codename:	bionic
+wruslan@HP-EliteBk6930p-Ub1804-32b:~$ 
+
+===========================================================
+(13) LINUXCNC SUMMARY INSTALLATION
+===========================================================
+cd ~
+git clone git://github.com/linuxcnc/linuxcnc.git linuxcnc-dev
+git checkout stable
+cd linuxcnc-dev/src
+./autogen.sh
+./configure --with-realtime=uspace
+./configure --with-realtime=uspace --enable-non-distributable=yes
+
+make
+sudo make setuid
+
+You now need to run 'sudo make setuid' in order to run in place with access to hardware.
+wruslan@HP-EliteBk6930p-Ub1804-32b:~/linuxcnc-dev/src$ sudo make setuid
+[sudo] password for wruslan: 
+chown root ../bin/rtapi_app
+chmod 4750 ../bin/rtapi_app
+chown root ../bin/linuxcnc_module_helper
+chmod 4750 ../bin/linuxcnc_module_helper
+wruslan@HP-EliteBk6930p-Ub1804-32b:~/linuxcnc-dev/src$ 
+wruslan@HP-EliteBk6930p-Ub1804-32b:~/linuxcnc-dev/src$ cd ..
+
+===========================================================
+wruslan@HP-EliteBk6930p-Ub1804-32b:~/linuxcnc-dev$ . scripts/rip-environment
+wruslan@HP-EliteBk6930p-Ub1804-32b:~/linuxcnc-dev$ linuxcnc
+LINUXCNC - 2.9.0~pre0
+Machine configuration directory is '/home/wruslan/linuxcnc-dev/configs/sim/axis'
+Machine configuration file is 'axis.ini'
+Starting LinuxCNC...
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/core_sim.hal
+Note: Using POSIX realtime
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/sim_spindle_encoder.hal
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/axis_manualtoolchange.hal
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/simulated_home.hal
+Found file(lib): /home/wruslan/linuxcnc-dev/lib/hallib/check_xyz_constraints.hal
+link (updating variable file): No such file or directory
+No option 'tto_g11' in section: 'DEFAULT'
+No option 'show_program' in section: 'DEFAULT'
+No option 'show_rapids' in section: 'DEFAULT'
+No option 'program_alpha' in section: 'DEFAULT'
+No option 'show_live_plot' in section: 'DEFAULT'
+No option 'show_tool' in section: 'DEFAULT'
+No option 'show_extents' in section: 'DEFAULT'
+No option 'show_offsets' in section: 'DEFAULT'
+No option 'grid_size' in section: 'DEFAULT'
+No option 'show_machine_limits' in section: 'DEFAULT'
+No option 'show_machine_speed' in section: 'DEFAULT'
+No option 'show_distance_to_go' in section: 'DEFAULT'
+No option 'dro_large_font' in section: 'DEFAULT'
+No option 'block_delete' in section: 'DEFAULT'
+No option 'optional_stop' in section: 'DEFAULT'
+note: MAXV     max: 5.000 units/sec 300.000 units/min
+note: LJOG     max: 5.000 units/sec 300.000 units/min
+note: LJOG default: 0.250 units/sec 15.000 units/min
+note: jog_order='XYZ'
+note: jog_invert=set([])
+task: main loop took 0.011842 seconds
+task: main loop took 0.048799 seconds
+task: main loop took 0.028770 seconds
+task: main loop took 0.011306 seconds
+task: main loop took 0.016387 seconds
+task: main loop took 0.168201 seconds
+task: main loop took 0.110727 seconds
+task: main loop took 0.013908 seconds
+task: main loop took 0.012525 seconds
+task: main loop took 0.019652 seconds
+Unexpected realtime delay on task 0 with period 1000000
+This Message will only display once per session.
+Run the Latency Test and resolve before continuing.
+Unexpected realtime delay on task 0 with period 1000000
+This Message will only display once per session.
+Run the Latency Test and resolve before continuing.
+Shutting down and cleaning up LinuxCNC...
+task: 133104 cycles, min=0.000065, max=0.279995, avg=0.001482, 492 latency excursions (> 10x expected cycle time of 0.001000s)
+Note: Using POSIX realtime
+wruslan@HP-EliteBk6930p-Ub1804-32b:~/linuxcnc-dev$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+

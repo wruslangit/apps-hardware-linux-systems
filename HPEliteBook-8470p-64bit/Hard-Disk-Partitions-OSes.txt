@@ -1,0 +1,49 @@
+
+Date: Thu 08 Apr 2021 05:23:39 PM +08
+
+===========================================================
+HPEliteBook-8470p-64 bit (Operating Systems)
+===========================================================
+/dev/sda1  * Linux  Ubuntu   18.04.5 LTS linux-4.19.148-rt64
+/dev/sda3    Linux  UbStudio 20.04.2 LTS linux-5.10.25-rt35
+/dev/sdb5    Linux  Ubuntu   16.04.7 LTS linux-4.4.208-rt191 
+/dev/sdb6    Linux  Ubuntu   20.04.2 LTS linux-5.4.66-rt38
+
+===========================================================
+HARD DISK 1 (SOLID STATE DISK) 1 TB
+===========================================================
+Disk /dev/sda: 953.89 GiB, 1024209543168 bytes, 2000409264 sectors
+Disk model: KINGSTON SKC6001
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: dos
+Disk identifier: 0xababbdc7
+
+Device     Boot      Start        End    Sectors   Size Id Type
+/dev/sda1  *          2048 1011927039 1011924992 482.5G 83 Linux  Ubuntu 18.04.5 LTS  linux-4.19.148-rt64
+/dev/sda2       1921511424 1953523711   32012288  15.3G 82 Linux swap / Solaris
+/dev/sda3       1011927040 1921511423  909584384 433.7G 83 Linux  UbStudio 20.04.2 LTS linux-5.10.25-rt35
+
+Partition table entries are not in disk order.
+
+===========================================================
+HARD DISK 2 (SEAGATE BARRACUDA) 1 TB
+===========================================================
+Disk /dev/sdb: 931.53 GiB, 1000204886016 bytes, 1953525168 sectors
+Disk model: ST1000LM048-2E71
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: dos
+Disk identifier: 0xc2388f86
+
+Device     Boot      Start        End    Sectors   Size Id Type
+/dev/sdb1  *          2048   39063551   39061504  18.6G 82 Linux swap / Solaris
+/dev/sdb3         39065598 1953523711 1914458114 912.9G  5 Extended
+/dev/sdb5       1063065600 1953523711  890458112 424.6G 83 Linux  Ubuntu 16.04.7 LTS linux-4.4.208-rt191 
+/dev/sdb6         39065600 1063065599 1024000000 488.3G 83 Linux  Ubuntu 20.04.2 LTS linux-5.4.66-rt38
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================

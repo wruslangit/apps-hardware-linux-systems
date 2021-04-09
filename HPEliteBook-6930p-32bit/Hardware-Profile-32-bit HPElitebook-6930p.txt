@@ -1,0 +1,531 @@
+
+
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ date
+Fri Apr  9 16:28:31 +08 2021
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ uname -a
+Linux HPEliteBook6930p-ubstudio-18 4.15.0-140-lowlatency #144-Ubuntu SMP PREEMPT
+Fri Mar 19 15:05:27 UTC 2021 i686 i686 i686 GNU/Linux
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ lsb_release -a
+LSB Version: core-9.20170808ubuntu1-noarch:printing-9.20170808ubuntu1-noarch:security-9.20170808ubuntu1-noarch
+Distributor ID: Ubuntu
+Description: Ubuntu 18.04.5 LTS
+Release: 18.04
+Codename: bionic
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(1) lscpu - CPU INFO
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which lscpu
+/usr/bin/lscpu
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ lscpu
+Architecture:        i686
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              2
+On-line CPU(s) list: 0,1
+Thread(s) per core:  1
+Core(s) per socket:  2
+Socket(s):           1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               23
+Model name:          Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz
+Stepping:            10
+CPU MHz:             2393.953
+CPU max MHz:         2401.0000
+CPU min MHz:         800.0000
+BogoMIPS:            4787.90
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            3072K
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca
+cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm
+constant_tsc arch_perfmon pebs bts cpuid aperfmperf pni dtes64 monitor ds_cpl
+vmx smx est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm pti tpr_shadow vnmi
+flexpriority dtherm ida
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(2) lshw - LIST HARDWARE
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which lshw
+/usr/bin/lshw
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ sudo lshw -short
+[sudo] password for wruslan:
+H/W path         Device     Class          Description
+======================================================
+                            system         HP EliteBook 6930p (NL360PA#UUF)
+/0                          bus            30DB
+/0/a                        memory         64KiB BIOS
+/0/0                        processor      Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz
+/0/0/1                      memory         3MiB L2 cache
+/0/0/3                      memory         32KiB L1 cache
+/0/0/0.1                    processor      Logical CPU
+/0/0/0.2                    processor      Logical CPU
+/0/2                        memory         32KiB L1 cache
+/0/4                        memory         4GiB System Memory
+/0/4/0                      memory         2GiB SODIMM DDR2 Synchronous 667 MHz (1.5 ns)
+/0/4/1                      memory         2GiB SODIMM DDR2 Synchronous 667 MHz (1.5 ns)
+/0/100                      bridge         Mobile 4 Series Chipset Memory Controller Hub
+/0/100/2                    display        Mobile 4 Series Chipset Integrated Graphics Controller
+/0/100/2.1                  display        Mobile 4 Series Chipset Integrated Graphics Controller
+/0/100/3                    communication  Mobile 4 Series Chipset MEI Controller
+/0/100/3.2                  storage        Mobile 4 Series Chipset PT IDER Controller
+/0/100/3.3                  communication  Mobile 4 Series Chipset AMT SOL Redirection
+/0/100/19        enp0s25    network        82567LM Gigabit Network Connection
+/0/100/1a                   bus            82801I (ICH9 Family) USB UHCI Controller #4
+/0/100/1a/1      usb3       bus            UHCI Host Controller
+/0/100/1a/1/1               communication  HP Integrated Module
+/0/100/1a.1                 bus            82801I (ICH9 Family) USB UHCI Controller #5
+/0/100/1a.1/1    usb4       bus            UHCI Host Controller
+/0/100/1a.1/1/1             generic        Fingerprint Sensor
+/0/100/1a.1/1/2             bus            CY7C65640 USB-2.0 "TetraHub"
+/0/100/1a.2                 bus            82801I (ICH9 Family) USB UHCI Controller #6
+/0/100/1a.2/1    usb5       bus            UHCI Host Controller
+/0/100/1a.7                 bus            82801I (ICH9 Family) USB2 EHCI Controller #2
+/0/100/1a.7/1    usb1       bus            EHCI Host Controller
+/0/100/1a.7/1/5             multimedia     CKA7216
+/0/100/1a.7/1/6             bus            CY7C65640 USB-2.0 "TetraHub"
+/0/100/1b                   multimedia     82801I (ICH9 Family) HD Audio Controller
+/0/100/1c                   bridge         82801I (ICH9 Family) PCI Express Port 1
+/0/100/1c.1                 bridge         82801I (ICH9 Family) PCI Express Port 2
+/0/100/1c.1/0    wls1       network        Ultimate N WiFi Link 5300
+/0/100/1c.2                 bridge         82801I (ICH9 Family) PCI Express Port 3
+/0/100/1c.2/0               bus            ASM1042 SuperSpeed USB Host Controller
+/0/100/1c.2/0/0  usb9       bus            xHCI Host Controller
+/0/100/1c.2/0/1  usb10      bus            xHCI Host Controller
+/0/100/1c.4                 bridge         82801I (ICH9 Family) PCI Express Port 5
+/0/100/1d                   bus            82801I (ICH9 Family) USB UHCI Controller #1
+/0/100/1d/1      usb6       bus            UHCI Host Controller
+/0/100/1d.1                 bus            82801I (ICH9 Family) USB UHCI Controller #2
+/0/100/1d.1/1    usb7       bus            UHCI Host Controller
+/0/100/1d.2                 bus            82801I (ICH9 Family) USB UHCI Controller #3
+/0/100/1d.2/1    usb8       bus            UHCI Host Controller
+/0/100/1d.2/1/2             input          USB Optical Mouse
+/0/100/1d.7                 bus            82801I (ICH9 Family) USB2 EHCI Controller #1
+/0/100/1d.7/1    usb2       bus            EHCI Host Controller
+/0/100/1e                   bridge         82801 Mobile PCI Bridge
+/0/100/1e/9                 bus            R5C832 IEEE 1394 Controller
+/0/100/1e/9.1               generic        R5C822 SD/SDIO/MMC/MS/MSPro Host Adapter
+/0/100/1e/9.2               bridge         RL5c476 II
+/0/100/1f                   bridge         ICH9M-E LPC Interface Controller
+/0/100/1f.2                 storage        82801IBM/IEM (ICH9M/ICH9M-E) 4 port SATA Controller [AHCI mode]
+/0/1             scsi0      storage        
+/0/1/0.0.0       /dev/sda   disk           512GB KINGSTON SKC6005
+/0/1/0.0.0/1     /dev/sda1  volume         456GiB EXT4 volume
+/0/1/0.0.0/2     /dev/sda2  volume         9539MiB Linux swap volume
+/0/3             scsi1      storage        
+/0/3/0.0.0       /dev/sdb   disk           500GB WDC WD5000LPVX-0
+/0/3/0.0.0/1     /dev/sdb1  volume         456GiB EXT4 volume
+/0/3/0.0.0/2     /dev/sdb2  volume         9536MiB Linux swap volume
+/1                          power          TD06047
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(3) hwinfo - Hardware Information
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which hwinfo
+/usr/sbin/hwinfo
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ hwinfo
+....
+.... <Very long list> ....
+....
+
+===========================================================
+(4) lspci - List PCI devices
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which lspci
+/usr/bin/lspci
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ lspci
+00:00.0 Host bridge: Intel Corporation Mobile 4 Series Chipset Memory Controller Hub (rev 07)
+00:02.0 VGA compatible controller: Intel Corporation Mobile 4 Series Chipset Integrated Graphics Controller (rev 07)
+00:02.1 Display controller: Intel Corporation Mobile 4 Series Chipset Integrated Graphics Controller (rev 07)
+00:03.0 Communication controller: Intel Corporation Mobile 4 Series Chipset MEI Controller (rev 07)
+00:03.2 IDE interface: Intel Corporation Mobile 4 Series Chipset PT IDER Controller (rev 07)
+00:03.3 Serial controller: Intel Corporation Mobile 4 Series Chipset AMT SOL Redirection (rev 07)
+00:19.0 Ethernet controller: Intel Corporation 82567LM Gigabit Network Connection (rev 03)
+00:1a.0 USB controller: Intel Corporation 82801I (ICH9 Family) USB UHCI Controller #4 (rev 03)
+00:1a.1 USB controller: Intel Corporation 82801I (ICH9 Family) USB UHCI Controller #5 (rev 03)
+00:1a.2 USB controller: Intel Corporation 82801I (ICH9 Family) USB UHCI Controller #6 (rev 03)
+00:1a.7 USB controller: Intel Corporation 82801I (ICH9 Family) USB2 EHCI Controller #2 (rev 03)
+00:1b.0 Audio device: Intel Corporation 82801I (ICH9 Family) HD Audio Controller (rev 03)
+00:1c.0 PCI bridge: Intel Corporation 82801I (ICH9 Family) PCI Express Port 1 (rev 03)
+00:1c.1 PCI bridge: Intel Corporation 82801I (ICH9 Family) PCI Express Port 2 (rev 03)
+00:1c.2 PCI bridge: Intel Corporation 82801I (ICH9 Family) PCI Express Port 3 (rev 03)
+00:1c.4 PCI bridge: Intel Corporation 82801I (ICH9 Family) PCI Express Port 5 (rev 03)
+00:1d.0 USB controller: Intel Corporation 82801I (ICH9 Family) USB UHCI Controller #1 (rev 03)
+00:1d.1 USB controller: Intel Corporation 82801I (ICH9 Family) USB UHCI Controller #2 (rev 03)
+00:1d.2 USB controller: Intel Corporation 82801I (ICH9 Family) USB UHCI Controller #3 (rev 03)
+00:1d.7 USB controller: Intel Corporation 82801I (ICH9 Family) USB2 EHCI Controller #1 (rev 03)
+00:1e.0 PCI bridge: Intel Corporation 82801 Mobile PCI Bridge (rev 93)
+00:1f.0 ISA bridge: Intel Corporation ICH9M-E LPC Interface Controller (rev 03)
+00:1f.2 SATA controller: Intel Corporation 82801IBM/IEM (ICH9M/ICH9M-E) 4 port SATA Controller [AHCI mode] (rev 03)
+02:00.0 Network controller: Intel Corporation Ultimate N WiFi Link 5300
+03:00.0 USB controller: ASMedia Technology Inc. ASM1042 SuperSpeed USB Host Controller
+85:09.0 FireWire (IEEE 1394): Ricoh Co Ltd R5C832 IEEE 1394 Controller (rev 06)
+85:09.1 SD Host controller: Ricoh Co Ltd R5C822 SD/SDIO/MMC/MS/MSPro Host Adapter (rev 25)
+85:09.2 CardBus bridge: Ricoh Co Ltd RL5c476 II (rev bb)
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(5) lsscsi - List scsi devices
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which lsscsi
+/usr/bin/lsscsi
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ lsscsi
+[0:0:0:0]    disk    ATA      KINGSTON SKC6005 0102  /dev/sda
+[1:0:0:0]    disk    ATA      WDC WD5000LPVX-0 1A01  /dev/sdb
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(6) lsusb - List usb buses and device details
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which lsusb
+/usr/bin/lsusb
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ lsusb
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 008 Device 002: ID 046d:c077 Logitech, Inc. M105 Optical Mouse
+Bus 008 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 007 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 009 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 010 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 010: ID 04b4:6560 Cypress Semiconductor Corp. CY7C65640 USB-2.0 "TetraHub"
+Bus 001 Device 005: ID 04f2:b053 Chicony Electronics Co., Ltd
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 022: ID 04b4:6560 Cypress Semiconductor Corp. CY7C65640 USB-2.0 "TetraHub"
+Bus 004 Device 002: ID 08ff:2810 AuthenTec, Inc. AES2810
+Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 002: ID 03f0:171d Hewlett-Packard Bluetooth 2.0 Interface [Broadcom BCM2045]
+Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(7) lsblk - List block devices
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which lsblk
+/bin/lsblk
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0    7:0    0  94.2M  1 loop /snap/core/10911
+loop1    7:1    0 174.6M  1 loop /snap/skype/113
+sda      8:0    0   477G  0 disk
+├─sda1   8:1    0 456.5G  0 part /
+└─sda2   8:2    0   9.3G  0 part [SWAP]
+sdb      8:16   0 465.8G  0 disk
+├─sdb1   8:17   0 456.5G  0 part /media/wruslan/ub16.04-32b
+└─sdb2   8:18   0   9.3G  0 part [SWAP]
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(8) df - disk space of file systems
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which df
+/bin/df
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+udev             1933104        0   1933104   0% /dev
+tmpfs             390324     1844    388480   1% /run
+/dev/sda1      470056264 34288872 411820128   8% /
+tmpfs            1951612        0   1951612   0% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+tmpfs            1951612        0   1951612   0% /sys/fs/cgroup
+/dev/loop0         96512    96512         0 100% /snap/core/10911
+/dev/loop1        178816   178816         0 100% /snap/skype/113
+tmpfs             390320      108    390212   1% /run/user/1000
+/dev/sdb1      470977904 23073768 423956772   6% /media/wruslan/ub16.04-32b
+tmpfs             390320        0    390320   0% /run/user/0
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(9) fdisk - list or modify disk partitions of file systems
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which fdisk
+/sbin/fdisk
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ sudo fdisk -l
+[sudo] password for wruslan:
+Disk /dev/loop0: 94.2 MiB, 98820096 bytes, 193008 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop1: 174.6 MiB, 183042048 bytes, 357504 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sda: 477 GiB, 512110190592 bytes, 1000215216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: dos
+Disk identifier: 0x00019a6f
+
+Device     Boot     Start       End   Sectors   Size Id Type
+/dev/sda1  *         2048 957237247 957235200 456.5G 83 Linux
+/dev/sda2       957237248 976773119  19535872   9.3G 82 Linux swap / Solaris
+
+
+Disk /dev/sdb: 465.8 GiB, 500107862016 bytes, 976773168 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: dos
+Disk identifier: 0xc4f46363
+
+Device     Boot     Start       End   Sectors   Size Id Type
+/dev/sdb1            2048 957241343 957239296 456.5G 83 Linux
+/dev/sdb2       957241344 976771071  19529728   9.3G 82 Linux swap / Solaris
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(10) mount/umount
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which mount
+/bin/mount
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which umount
+/bin/umount
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$ mount | column -t
+sysfs                                 on  /sys                             type  sysfs            (rw,nosuid,nodev,noexec,relatime)
+proc                                  on  /proc                            type  proc             (rw,nosuid,nodev,noexec,relatime)
+udev                                  on  /dev                             type  devtmpfs         (rw,nosuid,relatime,size=1933104k,nr_inodes=186609,mode=755)
+devpts                                on  /dev/pts                         type  devpts           (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs                                 on  /run                             type  tmpfs            (rw,nosuid,noexec,relatime,size=390324k,mode=755)
+/dev/sda1                             on  /                                type  ext4             (rw,relatime,errors=remount-ro,data=ordered)
+securityfs                            on  /sys/kernel/security             type  securityfs       (rw,nosuid,nodev,noexec,relatime)
+tmpfs                                 on  /dev/shm                         type  tmpfs            (rw,nosuid,nodev)
+tmpfs                                 on  /run/lock                        type  tmpfs            (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs                                 on  /sys/fs/cgroup                   type  tmpfs            (ro,nosuid,nodev,noexec,mode=755)
+cgroup                                on  /sys/fs/cgroup/unified           type  cgroup2          (rw,nosuid,nodev,noexec,relatime,nsdelegate)
+cgroup                                on  /sys/fs/cgroup/systemd           type  cgroup           (rw,nosuid,nodev,noexec,relatime,xattr,name=systemd)
+pstore                                on  /sys/fs/pstore                   type  pstore           (rw,nosuid,nodev,noexec,relatime)
+cgroup                                on  /sys/fs/cgroup/freezer           type  cgroup           (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup                                on  /sys/fs/cgroup/cpuset            type  cgroup           (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup                                on  /sys/fs/cgroup/net_cls,net_prio  type  cgroup           (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup                                on  /sys/fs/cgroup/hugetlb           type  cgroup           (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup                                on  /sys/fs/cgroup/cpu,cpuacct       type  cgroup           (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup                                on  /sys/fs/cgroup/perf_event        type  cgroup           (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup                                on  /sys/fs/cgroup/rdma              type  cgroup           (rw,nosuid,nodev,noexec,relatime,rdma)
+cgroup                                on  /sys/fs/cgroup/blkio             type  cgroup           (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup                                on  /sys/fs/cgroup/memory            type  cgroup           (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup                                on  /sys/fs/cgroup/pids              type  cgroup           (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup                                on  /sys/fs/cgroup/devices           type  cgroup           (rw,nosuid,nodev,noexec,relatime,devices)
+debugfs                               on  /sys/kernel/debug                type  debugfs          (rw,relatime)
+hugetlbfs                             on  /dev/hugepages                   type  hugetlbfs        (rw,relatime,pagesize=2M)
+mqueue                                on  /dev/mqueue                      type  mqueue           (rw,relatime)
+systemd-1                             on  /proc/sys/fs/binfmt_misc         type  autofs           (rw,relatime,fd=41,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=13482)
+configfs                              on  /sys/kernel/config               type  configfs         (rw,relatime)
+fusectl                               on  /sys/fs/fuse/connections         type  fusectl          (rw,relatime)
+/var/lib/snapd/snaps/core_10911.snap  on  /snap/core/10911                 type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/skype_113.snap   on  /snap/skype/113                  type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+binfmt_misc                           on  /proc/sys/fs/binfmt_misc         type  binfmt_misc      (rw,relatime)
+tmpfs                                 on  /run/user/1000                   type  tmpfs            (rw,nosuid,nodev,relatime,size=390320k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse                            on  /run/user/1000/gvfs              type  fuse.gvfsd-fuse  (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+/dev/sdb1                             on  /media/wruslan/ub16.04-32b       type  ext4             (rw,nosuid,nodev,relatime,data=ordered,uhelper=udisks2)
+tmpfs                                 on  /run/user/0                      type  tmpfs            (rw,nosuid,nodev,relatime,size=390320k,mode=700)
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(11) Free memory
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which free
+/usr/bin/free
+wruslan@HPEliteBook6930p-ubstudio-18:~$ free
+              total        used        free      shared  buff/cache   available
+Mem:        3903228     1218076      245188      136100     2439964     2175724
+Swap:      19532792         568    19532224
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(12) Process memory info - virtual files in the /proc directory
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which meminfo
+wruslan@HPEliteBook6930p-ubstudio-18:~$ cat /proc/meminfo
+MemTotal:        3903228 kB
+MemFree:          240812 kB
+MemAvailable:    2171608 kB
+Buffers:           30308 kB
+Cached:          2324556 kB
+SwapCached:            0 kB
+Active:          1235748 kB
+Inactive:        2254672 kB
+Active(anon):     832076 kB
+Inactive(anon):   438060 kB
+Active(file):     403672 kB
+Inactive(file):  1816612 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+HighTotal:       3119776 kB
+HighFree:          70156 kB
+LowTotal:         783452 kB
+LowFree:          170656 kB
+SwapTotal:      19532792 kB
+SwapFree:       19532224 kB
+Dirty:                12 kB
+Writeback:             0 kB
+AnonPages:       1135508 kB
+Mapped:           177608 kB
+Shmem:            134580 kB
+Slab:             111000 kB
+SReclaimable:      83816 kB
+SUnreclaim:        27184 kB
+KernelStack:        5664 kB
+PageTables:        16112 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    21484404 kB
+Committed_AS:    5294612 kB
+VmallocTotal:     122880 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       73720 kB
+DirectMap2M:      833536 kB
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(13) Process CPU info - virtual files in the /proc directory
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which cpuinfo
+wruslan@HPEliteBook6930p-ubstudio-18:~$ cat /proc/cpuinfo
+processor : 0
+vendor_id : GenuineIntel
+cpu family : 6
+model : 23
+model name : Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz
+stepping : 10
+microcode : 0xa0b
+cpu MHz : 1578.119
+cache size : 3072 KB
+physical id : 0
+siblings : 2
+core id : 0
+cpu cores : 2
+apicid : 0
+initial apicid : 0
+fdiv_bug : no
+f00f_bug : no
+coma_bug : no
+fpu : yes
+fpu_exception : yes
+cpuid level : 13
+wp : yes
+flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts cpuid aperfmperf pni dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm pti tpr_shadow vnmi flexpriority dtherm ida
+bugs : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips : 4787.90
+clflush size : 64
+cache_alignment : 64
+address sizes : 36 bits physical, 48 bits virtual
+power management:
+
+processor : 1
+vendor_id : GenuineIntel
+cpu family : 6
+model : 23
+model name : Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz
+stepping : 10
+microcode : 0xa0b
+cpu MHz : 1574.289
+cache size : 3072 KB
+physical id : 0
+siblings : 2
+core id : 1
+cpu cores : 2
+apicid : 1
+initial apicid : 1
+fdiv_bug : no
+f00f_bug : no
+coma_bug : no
+fpu : yes
+fpu_exception : yes
+cpuid level : 13
+wp : yes
+flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts cpuid aperfmperf pni dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm pti tpr_shadow vnmi flexpriority dtherm ida
+bugs : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips : 4787.90
+clflush size : 64
+cache_alignment : 64
+address sizes : 36 bits physical, 48 bits virtual
+power management:
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+(14) hdparm - Hard Disk parameters
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ which hdparm
+/sbin/hdparm
+
+=======================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ sudo hdparm -i /dev/sda
+
+/dev/sda:
+
+ Model=KINGSTON SKC600512G, FwRev=S4200102, SerialNo=50026B7783AD5560
+ Config={ Fixed }
+ RawCHS=16383/16/63, TrkSize=0, SectSize=0, ECCbytes=0
+ BuffType=unknown, BuffSize=unknown, MaxMultSect=1, MultSect=off
+ (maybe): CurCHS=16383/16/63, CurSects=16514064, LBA=yes, LBAsects=1000215216
+ IORDY=on/off, tPIO={min:120,w/IORDY:120}, tDMA={min:120,rec:120}
+ PIO modes:  pio0 pio3 pio4
+ DMA modes:  mdma0 mdma1 mdma2
+ UDMA modes: udma0 udma1 udma2 udma3 udma4 udma5 *udma6
+ AdvancedPM=yes: unknown setting WriteCache=enabled
+ Drive conforms to: unknown:  ATA/ATAPI-4,5,6,7
+
+ * signifies the current active mode
+
+=======================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ sudo hdparm -i /dev/sdb
+
+/dev/sdb:
+
+ Model=WDC WD5000LPVX-00V0TT0, FwRev=01.01A01, SerialNo=WD-WXU1E83FTNK3
+ Config={ HardSect NotMFM HdSw>15uSec SpinMotCtl Fixed DTR>5Mbs FmtGapReq }
+ RawCHS=16383/16/63, TrkSize=0, SectSize=0, ECCbytes=0
+ BuffType=unknown, BuffSize=8192kB, MaxMultSect=16, MultSect=off
+ CurCHS=16383/16/63, CurSects=16514064, LBA=yes, LBAsects=976773168
+ IORDY=on/off, tPIO={min:120,w/IORDY:120}, tDMA={min:120,rec:120}
+ PIO modes:  pio0 pio3 pio4
+ DMA modes:  mdma0 mdma1 mdma2
+ UDMA modes: udma0 udma1 udma2 udma3 udma4 udma5 *udma6
+ AdvancedPM=yes: unknown setting WriteCache=enabled
+ Drive conforms to: Unspecified:  ATA/ATAPI-1,2,3,4,5,6,7
+
+ * signifies the current active mode
+
+wruslan@HPEliteBook6930p-ubstudio-18:~$
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+wruslan@HPEliteBook6930p-ubstudio-18:~$ sudo apt install hwinfo lsscsi smartmontools gsmartcontrol smart-notifier
+Reading package lists... Done
