@@ -1,0 +1,857 @@
+wruslan@PurpleWks-ubsrt35-5:~$ date
+Tue 13 Apr 2021 06:50:41 AM +08
+
+wruslan@PurpleWks-ubsrt35-5:~$ uname -a
+Linux PurpleWks-ubsrt35-5.10.25 5.10.25-rt35 #3 SMP PREEMPT_RT 
+Wed Apr 7 12:33:26 +08 2021 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@PurpleWks-ubsrt35-5:~$ lsb_release -a
+LSB Version:	core-11.1.0ubuntu2-noarch:security-11.1.0ubuntu2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.2 LTS
+Release:	20.04
+Codename:	focal
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(1) lscpu - CPU INFO
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which lscpu
+/usr/bin/lscpu
+
+wruslan@PurpleWks-ubsrt35-5:~$ lscpu
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Byte Order:                      Little Endian
+Address sizes:                   38 bits physical, 48 bits virtual
+CPU(s):                          8
+On-line CPU(s) list:             0-7
+Thread(s) per core:              1
+Core(s) per socket:              4
+Socket(s):                       2
+NUMA node(s):                    1
+Vendor ID:                       GenuineIntel
+CPU family:                      6
+Model:                           23
+Model name:                      Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+Stepping:                        10
+CPU MHz:                         2833.477
+BogoMIPS:                        5666.84
+L1d cache:                       256 KiB
+L1i cache:                       256 KiB
+L2 cache:                        24 MiB
+NUMA node0 CPU(s):               0-7
+Vulnerability Itlb multihit:     KVM: Mitigation: VMX unsupported
+Vulnerability L1tf:              Mitigation; PTE Inversion
+Vulnerability Mds:               Vulnerable: Clear CPU buffers attempted, no microcode; SMT disabled
+Vulnerability Meltdown:          Mitigation; PTI
+Vulnerability Spec store bypass: Vulnerable
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Full generic retpoline, STIBP disabled, RSB filling
+Vulnerability Srbds:             Not affected
+Vulnerability Tsx async abort:   Not affected
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes
+                                 64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm pti dtherm
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(2) lshw - LIST HARDWARE
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which lshw
+/usr/bin/lshw
+
+wruslan@PurpleWks-ubsrt35-5:~$ sudo lshw -short
+[sudo] password for wruslan: 
+H/W path         Device      Class          Description
+=======================================================
+                             system         X7DWA
+/0                           bus            X7DWA
+/0/0                         memory         114KiB BIOS
+/0/4                         processor      Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+/0/4/6                       memory         16KiB L1 cache
+/0/4/7                       memory         12MiB L2 cache
+/0/5                         processor      Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+/0/5/8                       memory         16KiB L1 cache
+/0/5/9                       memory         12MiB L2 cache
+/0/1b                        memory         8GiB System Memory
+/0/1b/0                      memory         2GiB DIMM DDR2 FB-DIMM Synchronous 667 MHz (1.5 ns)
+/0/1b/1                      memory         2GiB DIMM DDR2 FB-DIMM Synchronous 667 MHz (1.5 ns)
+/0/1b/2                      memory         2GiB DIMM DDR2 FB-DIMM Synchronous 667 MHz (1.5 ns)
+/0/1b/3                      memory         2GiB DIMM DDR2 FB-DIMM Synchronous 667 MHz (1.5 ns)
+/0/1b/4                      memory         DIMM DDR2 FB-DIMM Synchronous 667 MHz (1.5 ns) [empty]
+/0/1b/5                      memory         DIMM DDR2 FB-DIMM Synchronous 667 MHz (1.5 ns) [empty]
+/0/1b/6                      memory         DIMM DDR2 FB-DIMM Synchronous 667 MHz (1.5 ns) [empty]
+/0/1b/7                      memory         DIMM DDR2 FB-DIMM Synchronous 667 MHz (1.5 ns) [empty]
+/0/100                       bridge         5400 Chipset Memory Controller Hub
+/0/100/1                     bridge         5400 Chipset PCI Express Port 1
+/0/100/5                     bridge         5400 Chipset PCI Express Port 5
+/0/100/5/0                   display        GK208B [GeForce GT 710]
+/0/100/5/0.1                 multimedia     GK208 HDMI/DP Audio Controller
+/0/100/9                     bridge         5400 Chipset PCI Express Port 9
+/0/100/9/0                   bridge         6311ESB/6321ESB PCI Express Upstream Port
+/0/100/9/0/0     /dev/fb0    bridge         6311ESB/6321ESB PCI Express Downstream Port E1
+/0/100/9/0.3                 bridge         6311ESB/6321ESB PCI Express to PCI-X Bridge
+/0/100/f                     generic        5400 Chipset QuickData Technology Device
+/0/100/1b                    multimedia     631xESB/632xESB High Definition Audio Controller
+/0/100/1c                    bridge         631xESB/632xESB/3100 Chipset PCI Express Root Port 1
+/0/100/1c/0      enp7s0f0    network        82575EB Gigabit Network Connection
+/0/100/1c/0.1    enp7s0f1    network        82575EB Gigabit Network Connection
+/0/100/1d                    bus            631xESB/632xESB/3100 Chipset UHCI USB Controller #1
+/0/100/1d/1      usb2        bus            UHCI Host Controller
+/0/100/1d.1                  bus            631xESB/632xESB/3100 Chipset UHCI USB Controller #2
+/0/100/1d.1/1    usb3        bus            UHCI Host Controller
+/0/100/1d.2                  bus            631xESB/632xESB/3100 Chipset UHCI USB Controller #3
+/0/100/1d.2/1    usb4        bus            UHCI Host Controller
+/0/100/1d.2/1/1              input          USB Keyboard
+/0/100/1d.2/1/2              input          USB Optical Mouse
+/0/100/1d.3                  bus            631xESB/632xESB/3100 Chipset UHCI USB Controller #4
+/0/100/1d.3/1    usb5        bus            UHCI Host Controller
+/0/100/1d.7                  bus            631xESB/632xESB/3100 Chipset EHCI USB2 Controller
+/0/100/1d.7/1    usb1        bus            EHCI Host Controller
+/0/100/1e                    bridge         82801 PCI Bridge
+/0/100/1e/4                  communication  PCI 1 port parallel adapter
+/0/100/1e/8                  bus            TSB43AB22A IEEE-1394a-2000 Controller (PHY/Link) [iOHCI-Lynx]
+/0/100/1f                    bridge         631xESB/632xESB/3100 Chipset LPC Interface Controller
+/0/100/1f.1                  storage        631xESB/632xESB IDE Controller
+/0/100/1f.2                  storage        631xESB/632xESB/3100 Chipset SATA IDE Controller
+/0/100/1f.3                  bus            631xESB/632xESB/3100 Chipset SMBus Controller
+/0/101                       bridge         5400 Chipset FSB Registers
+/0/102                       bridge         5400 Chipset FSB Registers
+/0/103                       bridge         5400 Chipset FSB Registers
+/0/104                       bridge         5400 Chipset FSB Registers
+/0/105                       bridge         5400 Chipset FSB Registers
+/0/106                       bridge         5400 Chipset CE/SF Registers
+/0/107                       bridge         5400 Chipset FBD Registers
+/0/108                       bridge         5400 Chipset FBD Registers
+/0/109                       bridge         5400 Chipset FBD Registers
+/0/10a                       bridge         5400 Chipset FBD Registers
+/0/1                         system         PnP device PNP0c02
+/0/2                         system         PnP device PNP0b00
+/0/3                         input          PnP device PNP0303
+/0/6                         input          PnP device PNP0f13
+/0/7                         communication  PnP device PNP0501
+/0/8                         storage        PnP device PNP0700
+/0/9                         printer        PnP device PNP0401
+/0/a             scsi0       storage        
+/0/a/0.0.0       /dev/cdrom  disk           DVD-RW  DVR-116D
+/0/b             scsi2       storage        
+/0/b/0.0.0       /dev/sda    disk           1TB WDC WD10EZEX-22M
+/0/b/0.0.0/1     /dev/sda1   volume         18GiB Linux swap volume
+/0/b/0.0.0/3     /dev/sda3   volume         912GiB Extended partition
+/0/b/0.0.0/3/5   /dev/sda5   volume         424GiB EXT4 volume
+/0/b/0.0.0/3/6   /dev/sda6   volume         488GiB EXT4 volume
+/0/c             scsi3       storage        
+/0/c/0.0.0       /dev/sdb    disk           1TB WDC WD10EZEX-60W
+/0/c/0.0.0/1     /dev/sdb1   volume         482GiB EXT4 volume
+/0/c/0.0.0/2     /dev/sdb2   volume         15GiB Linux swap volume
+/0/c/0.0.0/3     /dev/sdb3   volume         433GiB EXT4 volume
+/1                           system         
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(3) hwinfo - Hardware Information
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which hwinfo
+/usr/sbin/hwinfo
+
+wruslan@PurpleWks-ubsrt35-5:~$  hwinfo
+....
+.... <Very long list> ....
+....
+
+===========================================================
+(4) lspci - List PCI devices
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which lspci
+/usr/bin/lspci
+
+wruslan@PurpleWks-ubsrt35-5:~$ lspci
+00:00.0 Host bridge: Intel Corporation 5400 Chipset Memory Controller Hub (rev 20)
+00:01.0 PCI bridge: Intel Corporation 5400 Chipset PCI Express Port 1 (rev 20)
+00:05.0 PCI bridge: Intel Corporation 5400 Chipset PCI Express Port 5 (rev 20)
+00:09.0 PCI bridge: Intel Corporation 5400 Chipset PCI Express Port 9 (rev 20)
+00:0f.0 System peripheral: Intel Corporation 5400 Chipset QuickData Technology Device (rev 20)
+00:10.0 Host bridge: Intel Corporation 5400 Chipset FSB Registers (rev 20)
+00:10.1 Host bridge: Intel Corporation 5400 Chipset FSB Registers (rev 20)
+00:10.2 Host bridge: Intel Corporation 5400 Chipset FSB Registers (rev 20)
+00:10.3 Host bridge: Intel Corporation 5400 Chipset FSB Registers (rev 20)
+00:10.4 Host bridge: Intel Corporation 5400 Chipset FSB Registers (rev 20)
+00:11.0 Host bridge: Intel Corporation 5400 Chipset CE/SF Registers (rev 20)
+00:15.0 Host bridge: Intel Corporation 5400 Chipset FBD Registers (rev 20)
+00:15.1 Host bridge: Intel Corporation 5400 Chipset FBD Registers (rev 20)
+00:16.0 Host bridge: Intel Corporation 5400 Chipset FBD Registers (rev 20)
+00:16.1 Host bridge: Intel Corporation 5400 Chipset FBD Registers (rev 20)
+00:1b.0 Audio device: Intel Corporation 631xESB/632xESB High Definition Audio Controller (rev 09)
+00:1c.0 PCI bridge: Intel Corporation 631xESB/632xESB/3100 Chipset PCI Express Root Port 1 (rev 09)
+00:1d.0 USB controller: Intel Corporation 631xESB/632xESB/3100 Chipset UHCI USB Controller #1 (rev 09)
+00:1d.1 USB controller: Intel Corporation 631xESB/632xESB/3100 Chipset UHCI USB Controller #2 (rev 09)
+00:1d.2 USB controller: Intel Corporation 631xESB/632xESB/3100 Chipset UHCI USB Controller #3 (rev 09)
+00:1d.3 USB controller: Intel Corporation 631xESB/632xESB/3100 Chipset UHCI USB Controller #4 (rev 09)
+00:1d.7 USB controller: Intel Corporation 631xESB/632xESB/3100 Chipset EHCI USB2 Controller (rev 09)
+00:1e.0 PCI bridge: Intel Corporation 82801 PCI Bridge (rev d9)
+00:1f.0 ISA bridge: Intel Corporation 631xESB/632xESB/3100 Chipset LPC Interface Controller (rev 09)
+00:1f.1 IDE interface: Intel Corporation 631xESB/632xESB IDE Controller (rev 09)
+00:1f.2 IDE interface: Intel Corporation 631xESB/632xESB/3100 Chipset SATA IDE Controller (rev 09)
+00:1f.3 SMBus: Intel Corporation 631xESB/632xESB/3100 Chipset SMBus Controller (rev 09)
+02:00.0 VGA compatible controller: NVIDIA Corporation GK208B [GeForce GT 710] (rev a1)
+02:00.1 Audio device: NVIDIA Corporation GK208 HDMI/DP Audio Controller (rev a1)
+03:00.0 PCI bridge: Intel Corporation 6311ESB/6321ESB PCI Express Upstream Port (rev 01)
+03:00.3 PCI bridge: Intel Corporation 6311ESB/6321ESB PCI Express to PCI-X Bridge (rev 01)
+04:00.0 PCI bridge: Intel Corporation 6311ESB/6321ESB PCI Express Downstream Port E1 (rev 01)
+07:00.0 Ethernet controller: Intel Corporation 82575EB Gigabit Network Connection (rev 02)
+07:00.1 Ethernet controller: Intel Corporation 82575EB Gigabit Network Connection (rev 02)
+08:04.0 Communication controller: MosChip Semiconductor Technology Ltd. PCI 1 port parallel adapter (rev 01)
+08:08.0 FireWire (IEEE 1394): Texas Instruments TSB43AB22A IEEE-1394a-2000 Controller (PHY/Link) [iOHCI-Lynx]
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(5) lsscsi - List scsi devices
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which lsscsi
+/usr/bin/lsscsi
+
+wruslan@PurpleWks-ubsrt35-5:~$ lsscsi
+[0:0:0:0]    cd/dvd  PIONEER  DVD-RW  DVR-116D 1.06  /dev/sr0 
+[2:0:0:0]    disk    ATA      WDC WD10EZEX-22M 1A01  /dev/sda 
+[3:0:0:0]    disk    ATA      WDC WD10EZEX-60W 1A01  /dev/sdb 
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(6) lsusb - List usb buses and device details
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which lsusb
+/usr/bin/lsusb
+
+wruslan@PurpleWks-ubsrt35-5:~$ lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 004 Device 003: ID 046d:c077 Logitech, Inc. M105 Optical Mouse
+Bus 004 Device 002: ID 040b:2000 Weltrend Semiconductor wired Keyboard [Dynex DX-WRK1401]
+Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+Bus 002 Device 002: ID 041e:4052 Creative Technology, Ltd Live! Cam Vista IM
+Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(7) lsblk - List block devices
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which lsblk
+/usr/bin/lsblk
+
+wruslan@PurpleWks-ubsrt35-5:~$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+fd0      2:0    1     4K  0 disk 
+loop0    7:0    0  99.2M  1 loop /snap/core/10958
+loop1    7:1    0  99.2M  1 loop /snap/core/10908
+loop2    7:2    0  55.5M  1 loop /snap/core18/1988
+loop3    7:3    0  55.5M  1 loop /snap/core18/1997
+loop4    7:4    0  61.6M  1 loop /snap/core20/904
+loop5    7:5    0  61.7M  1 loop /snap/core20/975
+loop6    7:6    0 162.9M  1 loop /snap/gnome-3-28-1804/145
+loop7    7:7    0   219M  1 loop /snap/gnome-3-34-1804/66
+loop8    7:8    0  64.8M  1 loop /snap/gtk-common-themes/1514
+loop9    7:9    0  16.7M  1 loop /snap/htop/2185
+loop10   7:10   0 425.7M  1 loop /snap/pycharm-community/233
+loop11   7:11   0 408.8M  1 loop /snap/pycharm-community/236
+loop12   7:12   0    51M  1 loop /snap/snap-store/518
+loop13   7:13   0 134.4M  1 loop /snap/skype/164
+loop14   7:14   0  32.3M  1 loop /snap/snapd/11402
+loop15   7:15   0  32.3M  1 loop /snap/snapd/11588
+loop16   7:16   0 272.2M  1 loop /snap/telegram-desktop/2551
+loop17   7:17   0 240.1M  1 loop /snap/zoom-client/139
+sda      8:0    0 931.5G  0 disk 
+├─sda1   8:1    0  18.6G  0 part [SWAP]
+├─sda3   8:3    0     1K  0 part 
+├─sda5   8:5    0 424.6G  0 part 
+└─sda6   8:6    0 488.3G  0 part 
+sdb      8:16   0 931.5G  0 disk 
+├─sdb1   8:17   0 482.5G  0 part 
+├─sdb2   8:18   0  15.3G  0 part [SWAP]
+└─sdb3   8:19   0 433.7G  0 part /
+sr0     11:0    1  1024M  0 rom  
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(8) df - disk space of file systems
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which df
+/usr/bin/df
+
+wruslan@PurpleWks-ubsrt35-5:~$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+udev             4044396         0   4044396   0% /dev
+tmpfs             814856      1916    812940   1% /run
+/dev/sdb3      446605264 124762604 299086668  30% /
+tmpfs            4074268        16   4074252   1% /dev/shm
+tmpfs               5120         4      5116   1% /run/lock
+tmpfs            4074268         0   4074268   0% /sys/fs/cgroup
+/dev/loop0        101632    101632         0 100% /snap/core/10958
+/dev/loop1        101632    101632         0 100% /snap/core/10908
+/dev/loop2         56832     56832         0 100% /snap/core18/1988
+/dev/loop3         56832     56832         0 100% /snap/core18/1997
+/dev/loop4         63232     63232         0 100% /snap/core20/904
+/dev/loop5         63232     63232         0 100% /snap/core20/975
+/dev/loop6        166784    166784         0 100% /snap/gnome-3-28-1804/145
+/dev/loop7        224256    224256         0 100% /snap/gnome-3-34-1804/66
+/dev/loop8         66432     66432         0 100% /snap/gtk-common-themes/1514
+/dev/loop9         17152     17152         0 100% /snap/htop/2185
+/dev/loop10       435968    435968         0 100% /snap/pycharm-community/233
+/dev/loop11       418560    418560         0 100% /snap/pycharm-community/236
+/dev/loop12        52352     52352         0 100% /snap/snap-store/518
+/dev/loop13       137728    137728         0 100% /snap/skype/164
+/dev/loop14        33152     33152         0 100% /snap/snapd/11402
+/dev/loop16       278784    278784         0 100% /snap/telegram-desktop/2551
+/dev/loop15        33152     33152         0 100% /snap/snapd/11588
+/dev/loop17       245888    245888         0 100% /snap/zoom-client/139
+tmpfs             814852        20    814832   1% /run/user/1000
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(9) fdisk - list or modify disk partitions of file systems
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which fdisk
+/usr/sbin/fdisk
+
+wruslan@PurpleWks-ubsrt35-5:~$ sudo fdisk -l
+Disk /dev/loop0: 99.15 MiB, 103964672 bytes, 203056 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop1: 99.22 MiB, 104030208 bytes, 203184 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop2: 55.48 MiB, 58159104 bytes, 113592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop3: 55.46 MiB, 58142720 bytes, 113560 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop4: 61.65 MiB, 64626688 bytes, 126224 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop5: 61.74 MiB, 64720896 bytes, 126408 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop6: 162.89 MiB, 170778624 bytes, 333552 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop7: 218.102 MiB, 229629952 bytes, 448496 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sda: 931.53 GiB, 1000204886016 bytes, 1953525168 sectors
+Disk model: WDC WD10EZEX-22M
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: dos
+Disk identifier: 0xc2388f86
+
+Device     Boot      Start        End    Sectors   Size Id Type
+/dev/sda1  *          2048   39063551   39061504  18.6G 82 Linux swap / Solaris
+/dev/sda3         39065598 1953523711 1914458114 912.9G  5 Extended
+/dev/sda5       1063065600 1953523711  890458112 424.6G 83 Linux
+/dev/sda6         39065600 1063065599 1024000000 488.3G 83 Linux
+
+Partition 3 does not start on physical sector boundary.
+Partition table entries are not in disk order.
+
+
+Disk /dev/sdb: 931.53 GiB, 1000204886016 bytes, 1953525168 sectors
+Disk model: WDC WD10EZEX-60W
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: dos
+Disk identifier: 0xababbdc7
+
+Device     Boot      Start        End    Sectors   Size Id Type
+/dev/sdb1  *          2048 1011927039 1011924992 482.5G 83 Linux
+/dev/sdb2       1921511424 1953523711   32012288  15.3G 82 Linux swap / Solaris
+/dev/sdb3       1011927040 1921511423  909584384 433.7G 83 Linux
+
+Partition table entries are not in disk order.
+
+
+Disk /dev/loop8: 64.79 MiB, 67915776 bytes, 132648 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop9: 16.65 MiB, 17444864 bytes, 34072 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop10: 425.67 MiB, 446328832 bytes, 871736 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop11: 408.75 MiB, 428589056 bytes, 837088 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop12: 51.4 MiB, 53522432 bytes, 104536 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop13: 134.39 MiB, 140906496 bytes, 275208 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop14: 32.28 MiB, 33841152 bytes, 66096 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop15: 32.28 MiB, 33841152 bytes, 66096 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop16: 272.23 MiB, 285446144 bytes, 557512 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/loop17: 240.9 MiB, 251752448 bytes, 491704 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(10) mount/umount
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which mount
+/usr/bin/mount
+wruslan@PurpleWks-ubsrt35-5:~$ which umount
+/usr/bin/umount
+
+wruslan@PurpleWks-ubsrt35-5:~$ mount | column -t
+sysfs                                             on  /sys                             type  sysfs            (rw,nosuid,nodev,noexec,relatime)
+proc                                              on  /proc                            type  proc             (rw,nosuid,nodev,noexec,relatime)
+udev                                              on  /dev                             type  devtmpfs         (rw,nosuid,noexec,relatime,size=4044396k,nr_inodes=1011099,mode=755)
+devpts                                            on  /dev/pts                         type  devpts           (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs                                             on  /run                             type  tmpfs            (rw,nosuid,nodev,noexec,relatime,size=814856k,mode=755)
+/dev/sdb3                                         on  /                                type  ext4             (rw,relatime,errors=remount-ro)
+securityfs                                        on  /sys/kernel/security             type  securityfs       (rw,nosuid,nodev,noexec,relatime)
+tmpfs                                             on  /dev/shm                         type  tmpfs            (rw,nosuid,nodev)
+tmpfs                                             on  /run/lock                        type  tmpfs            (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs                                             on  /sys/fs/cgroup                   type  tmpfs            (ro,nosuid,nodev,noexec,mode=755)
+cgroup2                                           on  /sys/fs/cgroup/unified           type  cgroup2          (rw,nosuid,nodev,noexec,relatime,nsdelegate)
+cgroup                                            on  /sys/fs/cgroup/systemd           type  cgroup           (rw,nosuid,nodev,noexec,relatime,xattr,name=systemd)
+pstore                                            on  /sys/fs/pstore                   type  pstore           (rw,nosuid,nodev,noexec,relatime)
+none                                              on  /sys/fs/bpf                      type  bpf              (rw,nosuid,nodev,noexec,relatime,mode=700)
+cgroup                                            on  /sys/fs/cgroup/memory            type  cgroup           (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup                                            on  /sys/fs/cgroup/blkio             type  cgroup           (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup                                            on  /sys/fs/cgroup/devices           type  cgroup           (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup                                            on  /sys/fs/cgroup/net_cls,net_prio  type  cgroup           (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup                                            on  /sys/fs/cgroup/hugetlb           type  cgroup           (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup                                            on  /sys/fs/cgroup/perf_event        type  cgroup           (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup                                            on  /sys/fs/cgroup/freezer           type  cgroup           (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup                                            on  /sys/fs/cgroup/cpu,cpuacct       type  cgroup           (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup                                            on  /sys/fs/cgroup/pids              type  cgroup           (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup                                            on  /sys/fs/cgroup/rdma              type  cgroup           (rw,nosuid,nodev,noexec,relatime,rdma)
+cgroup                                            on  /sys/fs/cgroup/cpuset            type  cgroup           (rw,nosuid,nodev,noexec,relatime,cpuset)
+systemd-1                                         on  /proc/sys/fs/binfmt_misc         type  autofs           (rw,relatime,fd=28,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=16484)
+debugfs                                           on  /sys/kernel/debug                type  debugfs          (rw,nosuid,nodev,noexec,relatime)
+tracefs                                           on  /sys/kernel/tracing              type  tracefs          (rw,nosuid,nodev,noexec,relatime)
+hugetlbfs                                         on  /dev/hugepages                   type  hugetlbfs        (rw,relatime,pagesize=2M)
+mqueue                                            on  /dev/mqueue                      type  mqueue           (rw,nosuid,nodev,noexec,relatime)
+fusectl                                           on  /sys/fs/fuse/connections         type  fusectl          (rw,nosuid,nodev,noexec,relatime)
+configfs                                          on  /sys/kernel/config               type  configfs         (rw,nosuid,nodev,noexec,relatime)
+/var/lib/snapd/snaps/core_10958.snap              on  /snap/core/10958                 type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core_10908.snap              on  /snap/core/10908                 type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core18_1988.snap             on  /snap/core18/1988                type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core18_1997.snap             on  /snap/core18/1997                type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core20_904.snap              on  /snap/core20/904                 type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/core20_975.snap              on  /snap/core20/975                 type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-28-1804_145.snap     on  /snap/gnome-3-28-1804/145        type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-34-1804_66.snap      on  /snap/gnome-3-34-1804/66         type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/gtk-common-themes_1514.snap  on  /snap/gtk-common-themes/1514     type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/htop_2185.snap               on  /snap/htop/2185                  type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/pycharm-community_233.snap   on  /snap/pycharm-community/233      type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/pycharm-community_236.snap   on  /snap/pycharm-community/236      type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/snap-store_518.snap          on  /snap/snap-store/518             type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/skype_164.snap               on  /snap/skype/164                  type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/snapd_11402.snap             on  /snap/snapd/11402                type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/telegram-desktop_2551.snap   on  /snap/telegram-desktop/2551      type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/snapd_11588.snap             on  /snap/snapd/11588                type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+/var/lib/snapd/snaps/zoom-client_139.snap         on  /snap/zoom-client/139            type  squashfs         (ro,nodev,relatime,x-gdu.hide)
+binfmt_misc                                       on  /proc/sys/fs/binfmt_misc         type  binfmt_misc      (rw,nosuid,nodev,noexec,relatime)
+tmpfs                                             on  /run/user/1000                   type  tmpfs            (rw,nosuid,nodev,relatime,size=814852k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse                                        on  /run/user/1000/gvfs              type  fuse.gvfsd-fuse  (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(11) Free memory
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which free
+/usr/bin/free
+
+wruslan@PurpleWks-ubsrt35-5:~$ free
+              total        used        free      shared  buff/cache   available
+Mem:        8148540     1628844     4952268       74548     1567428     6344108
+Swap:      35536888           0    35536888
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(12) Process memory info - virtual files in the /proc directory
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ cat /proc/meminfo
+MemTotal:        8148540 kB
+MemFree:         4948724 kB
+MemAvailable:    6340664 kB
+Buffers:          121072 kB
+Cached:          1348264 kB
+SwapCached:            0 kB
+Active:           409580 kB
+Inactive:        2473916 kB
+Active(anon):       5840 kB
+Inactive(anon):  1482872 kB
+Active(file):     403740 kB
+Inactive(file):   991044 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
+SwapTotal:      35536888 kB
+SwapFree:       35536888 kB
+Dirty:               372 kB
+Writeback:             0 kB
+AnonPages:       1414288 kB
+Mapped:           507068 kB
+Shmem:             74548 kB
+KReclaimable:      98200 kB
+Slab:             180032 kB
+SReclaimable:      98200 kB
+SUnreclaim:        81832 kB
+KernelStack:       13840 kB
+PageTables:        24008 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    39611156 kB
+Committed_AS:    5891756 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       34832 kB
+VmallocChunk:          0 kB
+Percpu:             5728 kB
+HardwareCorrupted:     0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      252864 kB
+DirectMap2M:     8134656 kB
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(13) Process CPU info - virtual files in the /proc directory
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+stepping	: 10
+microcode	: 0xa0b
+cpu MHz		: 2833.468
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm pti dtherm
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5666.84
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 38 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+stepping	: 10
+microcode	: 0xa0b
+cpu MHz		: 2844.986
+cache size	: 6144 KB
+physical id	: 1
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm pti dtherm
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5666.89
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 38 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+stepping	: 10
+microcode	: 0xa0b
+cpu MHz		: 2833.442
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm pti dtherm
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5666.84
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 38 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+stepping	: 10
+microcode	: 0xa0b
+cpu MHz		: 2833.523
+cache size	: 6144 KB
+physical id	: 1
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm pti dtherm
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5666.89
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 38 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+stepping	: 10
+microcode	: 0xa0b
+cpu MHz		: 2841.070
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm pti dtherm
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5666.84
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 38 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+stepping	: 10
+microcode	: 0xa0b
+cpu MHz		: 2836.378
+cache size	: 6144 KB
+physical id	: 1
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm pti dtherm
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5666.89
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 38 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+stepping	: 10
+microcode	: 0xa0b
+cpu MHz		: 2835.622
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm pti dtherm
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5666.84
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 38 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Xeon(R) CPU           E5440  @ 2.83GHz
+stepping	: 10
+microcode	: 0xa0b
+cpu MHz		: 2833.844
+cache size	: 6144 KB
+physical id	: 1
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 7
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ht tm pbe syscall nx lm constant_tsc arch_perfmon pebs bts rep_good nopl cpuid aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm dca sse4_1 xsave lahf_lm pti dtherm
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
+bogomips	: 5666.89
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 38 bits physical, 48 bits virtual
+power management:
+
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+(14) hdparm - Hard Disk parameters
+===========================================================
+wruslan@PurpleWks-ubsrt35-5:~$ which hdparm
+/usr/sbin/hdparm
+
+wruslan@PurpleWks-ubsrt35-5:~$ sudo hdparm -i /dev/sda
+
+/dev/sda:
+
+ Model=WDC WD10EZEX-22MFCA0, FwRev=01.01A01, SerialNo=WD-WCC6Y6KPJ3JK
+ Config={ HardSect NotMFM HdSw>15uSec SpinMotCtl Fixed DTR>5Mbs FmtGapReq }
+ RawCHS=16383/16/63, TrkSize=0, SectSize=0, ECCbytes=0
+ BuffType=unknown, BuffSize=unknown, MaxMultSect=16, MultSect=16
+ (maybe): CurCHS=16383/16/63, CurSects=16514064, LBA=yes, LBAsects=1953525168
+ IORDY=on/off, tPIO={min:120,w/IORDY:120}, tDMA={min:120,rec:120}
+ PIO modes:  pio0 pio3 pio4 
+ DMA modes:  mdma0 mdma1 mdma2 
+ UDMA modes: udma0 udma1 udma2 udma3 udma4 udma5 *udma6 
+ AdvancedPM=no WriteCache=enabled
+ Drive conforms to: Reserved:  ATA/ATAPI-1,2,3,4,5,6,7
+
+ * signifies the current active mode
+
+wruslan@PurpleWks-ubsrt35-5:~$ sudo hdparm -i /dev/sdb
+
+/dev/sdb:
+
+ Model=WDC WD10EZEX-60WN4A0, FwRev=01.01A01, SerialNo=WD-WCC6Y5NRPS7C
+ Config={ HardSect NotMFM HdSw>15uSec SpinMotCtl Fixed DTR>5Mbs FmtGapReq }
+ RawCHS=16383/16/63, TrkSize=0, SectSize=0, ECCbytes=0
+ BuffType=unknown, BuffSize=unknown, MaxMultSect=16, MultSect=off
+ (maybe): CurCHS=16383/16/63, CurSects=16514064, LBA=yes, LBAsects=1953525168
+ IORDY=on/off, tPIO={min:120,w/IORDY:120}, tDMA={min:120,rec:120}
+ PIO modes:  pio0 pio3 pio4 
+ DMA modes:  mdma0 mdma1 mdma2 
+ UDMA modes: udma0 udma1 udma2 udma3 udma4 *udma5 
+ AdvancedPM=yes: unknown setting WriteCache=enabled
+ Drive conforms to: unknown:  ATA/ATAPI-1,2,3,4,5,6,7
+
+ * signifies the current active mode
+
+wruslan@PurpleWks-ubsrt35-5:~$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+
