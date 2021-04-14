@@ -1,0 +1,141 @@
+wruslan@hpelitebook8470p-ub2004-rt38:~$ date
+Wed 14 Apr 2021 06:53:35 AM +08
+
+wruslan@hpelitebook8470p-ub2004-rt38:~$ uname -a
+Linux hpelitebook8470p-ub2004-rt38 5.4.66-rt38 #1 SMP PREEMPT_RT 
+Sat Sep 26 16:51:59 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@hpelitebook8470p-ub2004-rt38:~$ lsb_release -a
+LSB Version:	core-11.1.0ubuntu2-noarch:security-11.1.0ubuntu2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.2 LTS
+Release:	20.04
+Codename:	focal
+wruslan@hpelitebook8470p-ub2004-rt38:~$ 
+
+===========================================================
+FOR USE TO MODIFY grub.cfg ON /dev/sdb6
+===========================================================
+Removing linux-image-5.4.0-67-generic (5.4.0-67.75) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-5.4.0-67-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/init-select.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.4.66-rt38
+Found initrd image: /boot/initrd.img-5.4.66-rt38
+Found linux image: /boot/vmlinuz-5.4.0-71-generic
+Found initrd image: /boot/initrd.img-5.4.0-71-generic
+Found linux image: /boot/vmlinuz-5.4.0-70-generic
+Found initrd image: /boot/initrd.img-5.4.0-70-generic
+Found memtest86+ image: /boot/memtest86+.elf
+Found memtest86+ image: /boot/memtest86+.bin
+Found Ubuntu 18.04.5 LTS (18.04) on /dev/sda1
+Found Ubuntu 20.04.2 LTS (20.04) on /dev/sda3
+Found Ubuntu 16.04.7 LTS (16.04) on /dev/sdb5
+done
+Removing linux-modules-5.4.0-67-generic (5.4.0-67.75) ...
+wruslan@hpelitebook8470p-ub2004-rt38:~$ 
+
+===========================================================
+wruslan@hpelitebook8470p-ub2004-rt38:~$ sudo apt update
+Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease                                                  
+Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease                                                        
+Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Get:5 http://archive.ubuntu.com/ubuntu focal-security InRelease [109 kB]
+Hit:6 http://ppa.launchpad.net/sunderme/texstudio/ubuntu focal InRelease            
+Fetched 324 kB in 7s (47.8 kB/s)                    
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+All packages are up to date.
+wruslan@hpelitebook8470p-ub2004-rt38:~$ 
+
+===========================================================
+wruslan@hpelitebook8470p-ub2004-rt38:~$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+wruslan@hpelitebook8470p-ub2004-rt38:~$ 
+
+===========================================================
+wruslan@hpelitebook8470p-ub2004-rt38:~$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+udev             8075872         0   8075872   0% /dev
+tmpfs            1624172      2108   1622064   1% /run
+/dev/sdb6      502914096 357894040 119403672  75% /         <=== THIS ONE
+tmpfs            8120856        16   8120840   1% /dev/shm
+tmpfs               5120         4      5116   1% /run/lock
+tmpfs            8120856         0   8120856   0% /sys/fs/cgroup
+/dev/loop0        142208    142208         0 100% /snap/chromium/1523
+/dev/loop1        142208    142208         0 100% /snap/chromium/1536
+/dev/loop2        101632    101632         0 100% /snap/core/10908
+/dev/loop4         56832     56832         0 100% /snap/core18/1997
+/dev/loop3         56832     56832         0 100% /snap/core18/1988
+/dev/loop5         63232     63232         0 100% /snap/core20/904
+/dev/loop6        165376    165376         0 100% /snap/gnome-3-28-1804/128
+/dev/loop7        144128    144128         0 100% /snap/gnome-3-26-1604/100
+/dev/loop9         63232     63232         0 100% /snap/core20/975
+/dev/loop12       224256    224256         0 100% /snap/gnome-3-34-1804/66
+/dev/loop10       101632    101632         0 100% /snap/core/10958
+/dev/loop11       166784    166784         0 100% /snap/gnome-3-28-1804/145
+/dev/loop13         2304      2304         0 100% /snap/gnome-system-monitor/148
+/dev/loop14        65920     65920         0 100% /snap/gtk-common-themes/1513
+/dev/loop15        66432     66432         0 100% /snap/gtk-common-themes/1514
+/dev/loop17         2304      2304         0 100% /snap/gnome-system-monitor/157
+/dev/loop16       236160    236160         0 100% /snap/obs-studio/1195
+/dev/loop18       283648    283648         0 100% /snap/octave/37
+/dev/loop19       286592    286592         0 100% /snap/octave/38
+/dev/loop21       278656    278656         0 100% /snap/telegram-desktop/2480
+/dev/loop20       436096    436096         0 100% /snap/pycharm-community/232
+/dev/loop22       246016    246016         0 100% /snap/zoom-client/138
+/dev/loop23       137728    137728         0 100% /snap/skype/164
+/dev/loop24       245888    245888         0 100% /snap/zoom-client/139
+/dev/loop25       435968    435968         0 100% /snap/pycharm-community/233
+/dev/loop26       278784    278784         0 100% /snap/telegram-desktop/2551
+/dev/loop27       144128    144128         0 100% /snap/gnome-3-26-1604/102
+tmpfs            1624168        44   1624124   1% /run/user/1000
+/dev/sda3      446605264 125088296 298760976  30% /media/wruslan/ubstudio-20.04.2
+wruslan@hpelitebook8470p-ub2004-rt38:~$ 
+
+===========================================================
+wruslan@hpelitebook8470p-ub2004-rt38:~$ ls -al /boot
+total 301964
+drwxr-xr-x  3 root root     4096 Apr 14 07:17 .
+drwxr-xr-x 26 root root     4096 Oct 22 14:54 ..
+-rw-r--r--  1 root root   237850 Mar 19 19:57 config-5.4.0-70-generic
+-rw-r--r--  1 root root   237851 Mar 24 18:25 config-5.4.0-71-generic
+-rw-r--r--  1 root root   235931 Sep 26  2020 config-5.4.66-rt38
+drwxr-xr-x  5 root root     4096 Apr 14 07:17 grub
+lrwxrwxrwx  1 root root       27 Apr 14 07:08 initrd.img -> initrd.img-5.4.0-71-generic
+-rw-r--r--  1 root root 85635971 Mar 24 08:53 initrd.img-5.4.0-70-generic
+-rw-r--r--  1 root root 87363205 Apr 14 07:11 initrd.img-5.4.0-71-generic
+-rw-r--r--  1 root root 85557627 Apr 14 07:11 initrd.img-5.4.66-rt38
+lrwxrwxrwx  1 root root       27 Apr 14 07:08 initrd.img.old -> initrd.img-5.4.0-70-generic
+-rw-r--r--  1 root root   182704 Aug 18  2020 memtest86+.bin
+-rw-r--r--  1 root root   184380 Aug 18  2020 memtest86+.elf
+-rw-r--r--  1 root root   184884 Aug 18  2020 memtest86+_multiboot.bin
+-rw-------  1 root root  4749710 Mar 19 19:57 System.map-5.4.0-70-generic
+-rw-------  1 root root  4750202 Mar 24 18:25 System.map-5.4.0-71-generic
+-rw-r--r--  1 root root  4636038 Sep 26  2020 System.map-5.4.66-rt38
+lrwxrwxrwx  1 root root       24 Apr 14 07:08 vmlinuz -> vmlinuz-5.4.0-71-generic
+-rw-------  1 root root 11756288 Mar 19 20:01 vmlinuz-5.4.0-70-generic
+-rw-------  1 root root 11760384 Mar 24 18:29 vmlinuz-5.4.0-71-generic
+-rw-r--r--  1 root root 11684736 Sep 26  2020 vmlinuz-5.4.66-rt38
+lrwxrwxrwx  1 root root       24 Apr 14 07:08 vmlinuz.old -> vmlinuz-5.4.0-70-generic
+wruslan@hpelitebook8470p-ub2004-rt38:~$ 
+
+===========================================================
+wruslan@hpelitebook8470p-ub2004-rt38:~$ sudo updatedb
+wruslan@hpelitebook8470p-ub2004-rt38:~$ sudo ldconfig
+wruslan@hpelitebook8470p-ub2004-rt38:~$ sudo depmod -a
+wruslan@hpelitebook8470p-ub2004-rt38:~$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+

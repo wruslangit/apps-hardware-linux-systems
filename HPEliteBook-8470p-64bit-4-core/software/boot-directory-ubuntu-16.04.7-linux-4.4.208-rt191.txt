@@ -1,0 +1,101 @@
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ date
+Wed Apr 14 04:50:56 +08 2021
+
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ uname -a
+Linux HPEliteBk8470p-ub1604-rt191 4.4.208-rt191 #1 SMP PREEMPT RT 
+Tue Jan 21 00:50:16 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ lsb_release -a
+LSB Version:	core-9.20160110ubuntu0.2-amd64:core-9.20160110ubuntu0.2-noarch:
+security-9.20160110ubuntu0.2-amd64:security-9.20160110ubuntu0.2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.7 LTS
+Release:	16.04
+Codename:	xenial
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ 
+
+===========================================================
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+udev             8009436         0   8009436   0% /dev
+tmpfs            1629232      9912   1619320   1% /run
+/dev/sdb5      438111736 227879404 187954496  55% /             <=== THIS ONE
+tmpfs            8146140       268   8145872   1% /dev/shm
+tmpfs               5120         4      5116   1% /run/lock
+tmpfs            8146140         0   8146140   0% /sys/fs/cgroup
+tmpfs            1629232        12   1629220   1% /run/user/135
+tmpfs            1629232        60   1629172   1% /run/user/1000
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ 
+
+===========================================================
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ ls -al /boot
+total 956044
+drwxr-xr-x  3 root root      4096 Apr 14 04:50 .
+drwxr-xr-x 26 root root      4096 Apr 14 04:38 ..
+-rw-r--r--  1 root root    191006 Mar 16 17:08 config-4.4.0-206-generic
+-rw-r--r--  1 root root    191002 Apr  1 20:31 config-4.4.0-208-generic
+-rw-r--r--  1 root root    184955 Nov 29  2019 config-4.4.176-rtai-5.2
+-rw-r--r--  1 root root    186792 Jan 21  2020 config-4.4.208-rt191
+-rw-r--r--  1 root root    185042 Jan 24  2019 config-4.4.43-rtai-5.0.1
+drwxr-xr-x  6 root root      4096 Apr 14 04:50 grub
+-rw-r--r--  1 root root  56704414 Mar 20 14:27 initrd.img-4.4.0-206-generic
+-rw-r--r--  1 root root  56701934 Apr 14 04:40 initrd.img-4.4.0-208-generic
+-rw-r--r--  1 root root 266511964 Jul  3  2020 initrd.img-4.4.176-rtai-5.2
+-rw-r--r--  1 root root 276497398 Nov 15 18:32 initrd.img-4.4.208-rt191
+-rw-r--r--  1 root root 269062160 Jul  3  2020 initrd.img-4.4.43-rtai-5.0.1
+-rw-r--r--  1 root root    182704 Jan 28  2016 memtest86+.bin
+-rw-r--r--  1 root root    184380 Jan 28  2016 memtest86+.elf
+-rw-r--r--  1 root root    184840 Jan 28  2016 memtest86+_multiboot.bin
+-rw-------  1 root root   3925579 Mar 16 17:08 System.map-4.4.0-206-generic
+-rw-------  1 root root   3925753 Apr  1 20:31 System.map-4.4.0-208-generic
+-rw-r--r--  1 root root   3179469 Nov 29  2019 System.map-4.4.176-rtai-5.2
+-rw-r--r--  1 root root   3783273 Jan 21  2020 System.map-4.4.208-rt191
+-rw-r--r--  1 root root   3164677 Jan 24  2019 System.map-4.4.43-rtai-5.0.1
+-rw-------  1 root root   7224000 Mar 17 18:20 vmlinuz-4.4.0-206-generic
+-rw-------  1 root root   7226176 Apr  2 10:33 vmlinuz-4.4.0-208-generic
+-rw-r--r--  1 root root   6285056 Nov 29  2019 vmlinuz-4.4.176-rtai-5.2
+-rw-r--r--  1 root root   7002880 Jan 21  2020 vmlinuz-4.4.208-rt191
+-rw-r--r--  1 root root   6220736 Jan 24  2019 vmlinuz-4.4.43-rtai-5.0.1
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ 
+
+===========================================================
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ sudo apt update
+Hit:1 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 https://deb.opera.com/opera-stable stable InRelease                                                                                           
+Hit:3 http://ppa.launchpad.net/alexlarsson/flatpak/ubuntu xenial InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu xenial InRelease                                                       
+Get:5 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]                                      
+Hit:6 http://ppa.launchpad.net/freetuxtv/freetuxtv-dev/ubuntu xenial InRelease     
+Hit:7 http://ppa.launchpad.net/freetuxtv/freetuxtv/ubuntu xenial InRelease                                               
+Get:8 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]                                               
+Hit:9 http://ppa.launchpad.net/iconnor/zoneminder-1.34/ubuntu xenial InRelease     
+Hit:10 http://ppa.launchpad.net/lttng/stable-2.10/ubuntu xenial InRelease                                                
+Get:11 http://archive.ubuntu.com/ubuntu xenial-security InRelease [109 kB]                                     
+Hit:12 http://ppa.launchpad.net/obsproject/obs-studio/ubuntu xenial InRelease               
+Hit:13 http://ppa.launchpad.net/ubuntu-mate-dev/xenial-mate/ubuntu xenial InRelease                                        
+Fetched 325 kB in 3s (107 kB/s)                                                                
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ 
+
+===========================================================
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ 
+
+===========================================================
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ sudo updatedb
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ sudo ldconfig
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ sudo depmod -a
+wruslan@HPEliteBk8470p-ub1604-rt191:~$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+

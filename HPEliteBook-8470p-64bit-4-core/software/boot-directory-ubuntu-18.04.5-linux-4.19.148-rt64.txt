@@ -1,0 +1,121 @@
+wruslan@hp-elitebook-ub1804-rt64:~$ date
+Wed Apr 14 06:10:04 +08 2021
+
+wruslan@hp-elitebook-ub1804-rt64:~$ uname -a
+Linux hp-elitebook-ub1804-rt64 4.19.148-rt64 #1 SMP PREEMPT RT 
+Wed Oct 7 08:11:43 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@hp-elitebook-ub1804-rt64:~$ lsb_release -a
+LSB Version:	core-9.20170808ubuntu1-noarch:security-9.20170808ubuntu1-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.5 LTS
+Release:	18.04
+Codename:	bionic
+wruslan@hp-elitebook-ub1804-rt64:~$ 
+
+===========================================================
+wruslan@hp-elitebook-ub1804-rt64:~$ df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+udev             8116980         0   8116980   0% /dev
+tmpfs            1628060      2172   1625888   1% /run
+/dev/sda1      496971240 183609484 291894120  39% /          <=== THIS ONE
+tmpfs            8140296         0   8140296   0% /dev/shm
+tmpfs               5120         4      5116   1% /run/lock
+tmpfs            8140296         0   8140296   0% /sys/fs/cgroup
+/dev/loop0         56832     56832         0 100% /snap/core18/1944
+/dev/loop1           640       640         0 100% /snap/gnome-logs/103
+/dev/loop2         66432     66432         0 100% /snap/gtk-common-themes/1514
+/dev/loop3        144128    144128         0 100% /snap/gnome-3-26-1604/100
+/dev/loop4          2560      2560         0 100% /snap/gnome-calculator/884
+/dev/loop5        223232    223232         0 100% /snap/gnome-3-34-1804/60
+/dev/loop6          2304      2304         0 100% /snap/gnome-system-monitor/148
+/dev/loop7        278784    278784         0 100% /snap/telegram-desktop/2551
+/dev/loop8          2304      2304         0 100% /snap/gnome-system-monitor/157
+/dev/loop9         12544     12544         0 100% /snap/gnome-characters/69
+/dev/loop10       285184    285184         0 100% /snap/octave/30
+/dev/loop11       143488    143488         0 100% /snap/gnome-3-26-1604/59
+/dev/loop12       236160    236160         0 100% /snap/obs-studio/1195
+/dev/loop13       101632    101632         0 100% /snap/core/10859
+/dev/loop14          384       384         0 100% /snap/gnome-characters/570
+/dev/loop15       224256    224256         0 100% /snap/gnome-3-34-1804/66
+/dev/loop16       101632    101632         0 100% /snap/core/10908
+/dev/loop17       436096    436096         0 100% /snap/pycharm-community/232
+/dev/loop18       435968    435968         0 100% /snap/pycharm-community/233
+/dev/loop19        63616     63616         0 100% /snap/gtk-common-themes/1506
+/dev/loop20       137728    137728         0 100% /snap/skype/164
+/dev/loop21         2560      2560         0 100% /snap/gnome-calculator/826
+/dev/loop22         1024      1024         0 100% /snap/gnome-logs/100
+/dev/loop23       166784    166784         0 100% /snap/gnome-3-28-1804/145
+/dev/loop24        63232     63232         0 100% /snap/core20/904
+/dev/loop25        56832     56832         0 100% /snap/core18/1988
+tmpfs            1628056        16   1628040   1% /run/user/120
+tmpfs            1628056       124   1627932   1% /run/user/1000
+wruslan@hp-elitebook-ub1804-rt64:~$ 
+
+===========================================================
+wruslan@hp-elitebook-ub1804-rt64:~$ ls -al /boot
+total 206536
+drwxr-xr-x  3 root root     4096 Apr 14 06:06 .
+drwxr-xr-x 27 root root     4096 Apr 14 05:14 ..
+-rw-r--r--  1 root root   217420 Mar 19 20:17 config-4.15.0-140-generic
+-rw-r--r--  1 root root   217414 Mar 25 01:47 config-4.15.0-141-generic
+-rw-r--r--  1 root root   218505 Oct  7  2020 config-4.19.148-rt64
+-rw-r--r--  1 root root   218530 Oct  6  2020 config-4.19.94-rt38
+drwxr-xr-x  5 root root     4096 Apr 14 06:06 grub
+-rw-r--r--  1 root root 39989203 Apr 14 06:04 initrd.img-4.15.0-140-generic
+-rw-r--r--  1 root root 40701743 Apr 14 06:04 initrd.img-4.15.0-141-generic
+-rw-r--r--  1 root root 39263316 Apr 14 06:03 initrd.img-4.19.148-rt64
+-rw-r--r--  1 root root 39035380 Apr 14 06:04 initrd.img-4.19.94-rt38
+-rw-r--r--  1 root root   182704 Jan 28  2016 memtest86+.bin
+-rw-r--r--  1 root root   184380 Jan 28  2016 memtest86+.elf
+-rw-r--r--  1 root root   184840 Jan 28  2016 memtest86+_multiboot.bin
+-rw-------  1 root root  4078906 Mar 19 20:17 System.map-4.15.0-140-generic
+-rw-------  1 root root  4081420 Mar 25 01:47 System.map-4.15.0-141-generic
+-rw-r--r--  1 root root  4364260 Oct  7  2020 System.map-4.19.148-rt64
+-rw-r--r--  1 root root  4221199 Oct  6  2020 System.map-4.19.94-rt38
+-rw-------  1 root root  8396448 Mar 19 21:26 vmlinuz-4.15.0-140-generic
+-rw-------  1 root root  8445600 Mar 25 00:00 vmlinuz-4.15.0-141-generic
+-rw-r--r--  1 root root  8738688 Oct  7  2020 vmlinuz-4.19.148-rt64
+-rw-r--r--  1 root root  8701824 Oct  6  2020 vmlinuz-4.19.94-rt38
+wruslan@hp-elitebook-ub1804-rt64:~$ 
+
+===========================================================
+wruslan@hp-elitebook-ub1804-rt64:~$ sudo apt update
+[sudo] password for wruslan: 
+Hit:1 http://us.archive.ubuntu.com/ubuntu bionic InRelease                            
+Hit:2 https://desktop-download.mendeley.com/download/apt stable InRelease             
+Hit:3 http://us.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:4 http://us.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:5 http://dl.google.com/linux/chrome/deb stable InRelease                     
+Hit:6 http://us.archive.ubuntu.com/ubuntu bionic-security InRelease              
+Hit:7 https://deb.opera.com/opera-stable stable InRelease         
+Hit:8 http://ppa.launchpad.net/jonathonf/mate-1.22/ubuntu bionic InRelease
+Hit:9 http://ppa.launchpad.net/ondrej/apache2/ubuntu bionic InRelease                   
+Hit:10 http://ppa.launchpad.net/ondrej/php/ubuntu bionic InRelease                      
+Reading package lists... Done                                
+Building dependency tree       
+Reading state information... Done
+All packages are up to date.
+wruslan@hp-elitebook-ub1804-rt64:~$ 
+
+===========================================================
+wruslan@hp-elitebook-ub1804-rt64:~$ sudo apt upgrade
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Calculating upgrade... Done
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+wruslan@hp-elitebook-ub1804-rt64:~$ 
+
+===========================================================
+wruslan@hp-elitebook-ub1804-rt64:~$ sudo updatedb
+wruslan@hp-elitebook-ub1804-rt64:~$ sudo ldconfig
+wruslan@hp-elitebook-ub1804-rt64:~$ sudo depmod -a
+wruslan@hp-elitebook-ub1804-rt64:~$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+
+
+

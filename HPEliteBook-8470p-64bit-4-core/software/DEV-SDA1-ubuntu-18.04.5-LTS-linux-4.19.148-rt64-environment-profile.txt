@@ -122,6 +122,9 @@ INCLUDE PATH ===> ls -al /usr/include/boost
 /usr/include/boost/array.hpp
 /usr/include/boost/asio
 /usr/include/boost/asio.hpp
+....
+....
+
 
 ===========================================================
 (4) GNAT ADA COMPILER (GNATMAKE, GNATBIND, GNATLINK)
